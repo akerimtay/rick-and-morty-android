@@ -9,7 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.navigation
-import com.akerimtay.rickandmorty.character.CHARACTER_ID_KEY
+import com.akerimtay.rickandmorty.character.CharacterDetailParameters
 import com.akerimtay.rickandmorty.character.CharacterDetailScreen
 import com.akerimtay.rickandmorty.character.CharactersScreen
 import com.akerimtay.rickandmorty.common.lifecycleIsResumed
@@ -18,16 +18,23 @@ import com.akerimtay.rickandmorty.location.LocationsScreen
 import com.akerimtay.rickandmorty.main.MainNavigationItem
 import com.akerimtay.rickandmorty.settings.SettingsScreen
 
-object MainDestinations {
-    const val MAIN_ROUTE = "main"
-    const val CHARACTER_DETAIL_ROUTE = "character_detail"
+object Routes {
+    const val MAIN = "main"
+    const val MAIN_CHARACTER = "main/character"
+    const val CHARACTER_DETAIL = "character_detail"
+    const val MAIN_LOCATION = "main/locations"
+    const val LOCATION_DETAIL = "location_detail"
+    const val MAIN_EPISODE = "main/episodes"
+    const val EPISODE_DETAIL = "episode_detail"
+    const val MAIN_SETTINGS = "main/settings"
+    const val SEARCH = "search"
 }
 
 @Composable
 fun JetMoviesNavGraph(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    startDestination: String = MainDestinations.MAIN_ROUTE,
+    startDestination: String = Routes.MAIN,
 ) {
     NavHost(
         navController = navController,
@@ -35,7 +42,7 @@ fun JetMoviesNavGraph(
         modifier = modifier
     ) {
         navigation(
-            route = MainDestinations.MAIN_ROUTE,
+            route = Routes.MAIN,
             startDestination = MainNavigationItem.Characters.route
         ) {
             composable(MainNavigationItem.Characters.route) { from ->
@@ -60,11 +67,11 @@ fun JetMoviesNavGraph(
             }
         }
         composable(
-            route = "${MainDestinations.CHARACTER_DETAIL_ROUTE}/{$CHARACTER_ID_KEY}",
-            arguments = listOf(navArgument(CHARACTER_ID_KEY) { type = NavType.LongType })
+            route = "${Routes.CHARACTER_DETAIL}/{${CharacterDetailParameters.CHARACTER_ID_KEY}}",
+            arguments = listOf(navArgument(CharacterDetailParameters.CHARACTER_ID_KEY) { type = NavType.LongType })
         ) { backStackEntry ->
             val arguments = requireNotNull(backStackEntry.arguments)
-            val characterId = arguments.getLong(CHARACTER_ID_KEY)
+            val characterId = arguments.getLong(CharacterDetailParameters.CHARACTER_ID_KEY)
             CharacterDetailScreen(
                 characterId = characterId,
                 upPress = { navController.navigateUp() }
@@ -79,6 +86,6 @@ private fun openCharacterDetail(
     characterId: Long
 ) {
     if (backStackEntry.lifecycleIsResumed()) {
-        navController.navigate("${MainDestinations.CHARACTER_DETAIL_ROUTE}/$characterId")
+        navController.navigate("${Routes.CHARACTER_DETAIL}/$characterId")
     }
 }

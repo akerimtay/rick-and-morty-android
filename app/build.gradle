@@ -62,12 +62,12 @@ android {
 dependencies {
     implementation androidXDependencies.coreKtx
     implementation androidXDependencies.appCompat
+    implementation androidXDependencies.activityCompose
     implementation androidXDependencies.lifecycleRuntimeKtx
     implementation androidXDependencies.composeUi
     implementation androidXDependencies.composeMaterial
     implementation androidXDependencies.composeTooling
     implementation androidXDependencies.composeToolingPreview
-    implementation androidXDependencies.composeActivity
 
     implementation googleDepencencies.materialDesign
 

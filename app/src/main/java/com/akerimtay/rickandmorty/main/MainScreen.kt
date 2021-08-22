@@ -6,12 +6,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
@@ -19,7 +19,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.akerimtay.rickandmorty.JetMoviesNavGraph
 import com.akerimtay.rickandmorty.R
-import com.akerimtay.rickandmorty.ui.theme.Purple500
+import com.akerimtay.rickandmorty.Routes
+import com.akerimtay.rickandmorty.ui.theme.Gray300
 
 @Composable
 fun MainScreen() {
@@ -47,8 +48,7 @@ fun BottomNavigationBar(navController: NavController) {
     val routes = items.map { it.route }
     if (currentRoute in routes) {
         BottomNavigation(
-            backgroundColor = Purple500,
-            contentColor = Color.White
+            backgroundColor = MaterialTheme.colors.primary
         ) {
             items.forEach { item ->
                 BottomNavigationItem(
@@ -59,8 +59,8 @@ fun BottomNavigationBar(navController: NavController) {
                         )
                     },
                     label = { Text(text = stringResource(id = item.title)) },
-                    selectedContentColor = Color.White,
-                    unselectedContentColor = Color.White.copy(0.4f),
+                    selectedContentColor = MaterialTheme.colors.secondary,
+                    unselectedContentColor = Gray300,
                     selected = currentRoute == item.route,
                     onClick = {
                         if (currentRoute != item.route) {
@@ -86,8 +86,27 @@ sealed class MainNavigationItem(
     @DrawableRes val icon: Int,
     val route: String
 ) {
-    object Characters : MainNavigationItem(R.string.characters_title, R.drawable.ic_character_grey, "main/character")
-    object Locations : MainNavigationItem(R.string.locations_title, R.drawable.ic_locations_grey, "main/locations")
-    object Episodes : MainNavigationItem(R.string.episodes_title, R.drawable.ic_episodes_grey, "main/episodes")
-    object Settings : MainNavigationItem(R.string.settings_title, R.drawable.ic_settings_grey, "main/settings")
+    object Characters : MainNavigationItem(
+        title = R.string.characters_title,
+        icon = R.drawable.ic_character_grey,
+        route = Routes.MAIN_CHARACTER
+    )
+
+    object Locations : MainNavigationItem(
+        title = R.string.locations_title,
+        icon = R.drawable.ic_locations_grey,
+        route = Routes.MAIN_LOCATION
+    )
+
+    object Episodes : MainNavigationItem(
+        title = R.string.episodes_title,
+        icon = R.drawable.ic_episodes_grey,
+        route = Routes.MAIN_EPISODE
+    )
+
+    object Settings : MainNavigationItem(
+        title = R.string.settings_title,
+        icon = R.drawable.ic_settings_grey,
+        route = Routes.MAIN_SETTINGS
+    )
 }
