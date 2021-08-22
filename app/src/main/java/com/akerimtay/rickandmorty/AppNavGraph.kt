@@ -9,9 +9,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.navigation
-import com.akerimtay.rickandmorty.character.CharacterDetailParameters
-import com.akerimtay.rickandmorty.character.CharacterDetailScreen
-import com.akerimtay.rickandmorty.character.CharactersScreen
+import com.akerimtay.rickandmorty.character.ui.CharactersScreen
+import com.akerimtay.rickandmorty.characterdetail.CharacterDetailParameters
+import com.akerimtay.rickandmorty.characterdetail.CharacterDetailScreen
 import com.akerimtay.rickandmorty.common.lifecycleIsResumed
 import com.akerimtay.rickandmorty.episode.EpisodesScreen
 import com.akerimtay.rickandmorty.location.LocationsScreen
@@ -23,15 +23,13 @@ object Routes {
     const val MAIN_CHARACTER = "main/character"
     const val CHARACTER_DETAIL = "character_detail"
     const val MAIN_LOCATION = "main/locations"
-    const val LOCATION_DETAIL = "location_detail"
     const val MAIN_EPISODE = "main/episodes"
-    const val EPISODE_DETAIL = "episode_detail"
     const val MAIN_SETTINGS = "main/settings"
     const val SEARCH = "search"
 }
 
 @Composable
-fun JetMoviesNavGraph(
+fun AppNavGraph(
     modifier: Modifier = Modifier,
     navController: NavHostController,
     startDestination: String = Routes.MAIN,

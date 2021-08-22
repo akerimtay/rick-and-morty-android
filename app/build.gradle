@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
 }
 
@@ -70,6 +71,7 @@ dependencies {
     implementation androidXDependencies.composeToolingPreview
 
     implementation googleDepencencies.materialDesign
+    implementation googleDepencencies.gson
 
     implementation daggerHiltDependencies.hiltCore
     implementation daggerHiltDependencies.hiltNavigation
@@ -77,4 +79,10 @@ dependencies {
 
     implementation accompanistDependencies.insets
     implementation accompanistDependencies.systemUiController
+
+    implementation retrofitDependencies.core
+    implementation retrofitDependencies.gson
+    implementation retrofitDependencies.coroutinesAdapter
+    
+    implementation otherDependencies.timber
 }

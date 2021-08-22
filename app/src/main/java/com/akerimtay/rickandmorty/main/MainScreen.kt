@@ -17,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.akerimtay.rickandmorty.JetMoviesNavGraph
+import com.akerimtay.rickandmorty.AppNavGraph
 import com.akerimtay.rickandmorty.R
 import com.akerimtay.rickandmorty.Routes
 import com.akerimtay.rickandmorty.ui.theme.Gray300
@@ -28,7 +28,7 @@ fun MainScreen() {
     Scaffold(
         bottomBar = { BottomNavigationBar(navController = navController) }
     ) { innerPaddingModifier ->
-        JetMoviesNavGraph(
+        AppNavGraph(
             navController = navController,
             modifier = Modifier.padding(innerPaddingModifier)
         )

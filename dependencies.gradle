@@ -37,7 +37,7 @@ ext {
     googleDepencencies = [
             materialDesign: "com.google.android.material:material:1.4.0",
             // https://github.com/google/gson
-            gson          : "com.google.code.gson:gson:2.8.7",
+            gson          : "com.google.code.gson:gson:2.8.8"
     ]
 
     coroutinesVersion = '1.4.3'
@@ -51,7 +51,6 @@ ext {
             // https://github.com/square/retrofit
             core             : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             gson             : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
-            scalars          : "com.squareup.retrofit2:converter-scalars:$retrofitVersion",
             coroutinesAdapter: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
     ]
 
