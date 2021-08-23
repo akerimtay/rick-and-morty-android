@@ -8,7 +8,6 @@ plugins {
 
 android {
     compileSdk = Config.Android.androidCompileSdkVersion
-    buildToolsVersion = Config.Android.androidBuildToolsVersion
 
     defaultConfig {
         applicationId = Environments.Release.appId
@@ -58,6 +57,8 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.resources))
+
     implementation(Dependencies.AndroidXDependencies.coreKtx)
     implementation(Dependencies.AndroidXDependencies.appCompat)
     implementation(Dependencies.AndroidXDependencies.activityCompose)
