@@ -1,23 +1,23 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("kotlin-parcelize")
-    id("dagger.hilt.android.plugin")
+    id(Config.Plugins.android)
+    id(Config.Plugins.kotlinAndroid)
+    id(Config.Plugins.kotlinKapt)
+    id(Config.Plugins.kotlinParcelize)
+    id(Config.Plugins.daggerHilt)
 }
 
 android {
-    compileSdk = 31
-    buildToolsVersion = "30.0.3"
+    compileSdk = Config.Android.androidCompileSdkVersion
+    buildToolsVersion = Config.Android.androidBuildToolsVersion
 
     defaultConfig {
-        applicationId = "com.akerimtay.rickandmorty"
-        minSdk = 21
-        targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Environments.Release.appId
+        minSdk = Config.Android.androidMinSdkVersion
+        targetSdk = Config.Android.androidTargetSdkVersion
+        versionCode = Environments.Release.appVersionCode
+        versionName = Environments.Release.appVersionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Config.testRunner
     }
 
     buildTypes {
@@ -58,22 +58,21 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.6.0")
-    implementation("androidx.appcompat:appcompat:1.3.1")
-    implementation("androidx.activity:activity-compose:1.3.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation("androidx.compose.ui:ui:1.0.1")
-    implementation("androidx.compose.material:material:1.0.1")
-    implementation("androidx.compose.ui:ui-tooling:1.0.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.0.1")
+    implementation(Dependencies.AndroidXDependencies.coreKtx)
+    implementation(Dependencies.AndroidXDependencies.appCompat)
+    implementation(Dependencies.AndroidXDependencies.activityCompose)
+    implementation(Dependencies.AndroidXDependencies.lifecycleRuntimeKtx)
+    implementation(Dependencies.AndroidXDependencies.composeUi)
+    implementation(Dependencies.AndroidXDependencies.composeMaterial)
+    implementation(Dependencies.AndroidXDependencies.composeTooling)
+    implementation(Dependencies.AndroidXDependencies.composeToolingPreview)
 
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("com.google.code.gson:gson:2.8.8")
+    implementation(Dependencies.GoogleDependencies.materialDesign)
+    implementation(Dependencies.GoogleDependencies.gson)
+    implementation(Dependencies.GoogleDependencies.accompanistInsets)
+    implementation(Dependencies.GoogleDependencies.accompanistSystemUiController)
 
-    implementation("com.google.dagger:hilt-android:2.38.1")
-    implementation("androidx.hilt:hilt-navigation-compose:2.38.1")
-    kapt("com.google.dagger:hilt-compiler:2.38.1")
-
-    implementation("com.google.accompanist:accompanist-insets:0.16.1")
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.16.1")
+    implementation(Dependencies.DaggerHiltDependencies.hiltCore)
+    implementation(Dependencies.DaggerHiltDependencies.hiltNavigation)
+    kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
 }
