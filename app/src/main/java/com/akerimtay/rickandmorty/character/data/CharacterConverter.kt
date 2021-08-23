@@ -3,8 +3,8 @@ package com.akerimtay.rickandmorty.character.data
 import com.akerimtay.rickandmorty.character.data.api.CharacterResponse
 import com.akerimtay.rickandmorty.character.model.Character
 import com.akerimtay.rickandmorty.character.model.Location
-import com.akerimtay.rickandmorty.common.BasePagedConverter
-import com.akerimtay.rickandmorty.common.BasePagedModel
+import com.akerimtay.rickandmorty.network.BasePagedConverter
+import com.akerimtay.common.BasePagedModel
 import com.akerimtay.rickandmorty.network.BasePagedResponse
 
 object CharacterConverter {

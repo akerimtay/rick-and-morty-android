@@ -1,6 +1,6 @@
-package com.akerimtay.rickandmorty.common
+package com.akerimtay.rickandmorty.network
 
-import com.akerimtay.rickandmorty.network.BasePagedResponse
+import com.akerimtay.common.Info
 
 object BasePagedConverter {
     fun fromNetwork(response: BasePagedResponse.InfoResponse): Info =

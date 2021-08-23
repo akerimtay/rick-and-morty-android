@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.common
+package com.akerimtay.common
 
 import androidx.annotation.StringRes
 

@@ -2,6 +2,7 @@ package com.akerimtay.rickandmorty
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -12,7 +13,6 @@ import androidx.navigation.navigation
 import com.akerimtay.rickandmorty.character.ui.CharactersScreen
 import com.akerimtay.rickandmorty.characterdetail.CharacterDetailParameters
 import com.akerimtay.rickandmorty.characterdetail.CharacterDetailScreen
-import com.akerimtay.rickandmorty.common.lifecycleIsResumed
 import com.akerimtay.rickandmorty.episode.EpisodesScreen
 import com.akerimtay.rickandmorty.location.LocationsScreen
 import com.akerimtay.rickandmorty.main.MainNavigationItem
@@ -87,3 +87,11 @@ private fun openCharacterDetail(
         navController.navigate("${Routes.CHARACTER_DETAIL}/$characterId")
     }
 }
+
+/**
+ * If the lifecycle is not resumed it means this NavBackStackEntry already processed a nav event.
+ *
+ * This is used to de-duplicate navigation events.
+ */
+fun NavBackStackEntry.lifecycleIsResumed() =
+    this.lifecycle.currentState == Lifecycle.State.RESUMED

@@ -1,6 +1,6 @@
 package com.akerimtay.rickandmorty.character
 
-import com.akerimtay.rickandmorty.common.BaseError
+import com.akerimtay.common.BaseError
 
 sealed class CharacterError(
     override val message: String? = null

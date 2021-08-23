@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.common
+package com.akerimtay.common
 
 data class BasePagedModel<T>(
     val info: Info,
