@@ -1,0 +1,19 @@
+package com.akerimtay.rickandmorty.common
+
+import androidx.annotation.StringRes
+
+private const val NO_RES_ID = 0
+
+abstract class BaseError(
+    override val message: String? = null,
+    @StringRes open val errorResId: Int = NO_RES_ID
+) : Throwable(message) {
+    object UnknownError : BaseError()
+
+    fun getErrorMessage(@StringRes defaultResId: Int = NO_RES_ID): StringWrapper =
+        when {
+            !message.isNullOrEmpty() -> StringWrapper(message = message, resId = defaultResId)
+            errorResId != NO_RES_ID -> StringWrapper(resId = errorResId)
+            else -> StringWrapper(resId = defaultResId)
+        }
+}

@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">RickAndMorty</string>
-    <string name="characters_title">Персонажи</string>
-    <string name="locations_title">Локации</string>
-    <string name="episodes_title">Эпизоды</string>
-    <string name="settings_title">Настройки</string>
-</resources>
