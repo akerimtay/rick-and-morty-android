@@ -10,10 +10,13 @@ object Config {
         const val androidGradle = "com.android.tools.build:gradle:${Versions.gradlePlugin}"
         const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
         const val daggerHiltGradle = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hiltCore}"
+        const val mavenGoogle = "https://maven.google.com/"
+        const val jitpack = "https://jitpack.io"
     }
 
     object Plugins {
-        const val android = "com.android.application"
+        const val android = "android"
+        const val androidApplication = "com.android.application"
         const val androidLibrary = "com.android.library"
         const val kotlinAndroid = "kotlin-android"
         const val kotlinKapt = "kotlin-kapt"

@@ -7,6 +7,6 @@ object Environments {
     object Release {
         const val appId = "com.akerimtay.rickandmorty"
         const val appVersionCode = VERSION_BUILD
-        const val appVersionName = "$VERSION_MAJOR + \".\" + $VERSION_MINOR + \".\" + $VERSION_PATCH"
+        const val appVersionName = "$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH"
     }
 }

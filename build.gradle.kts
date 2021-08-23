@@ -10,6 +10,14 @@ buildscript {
     }
 }
 
-tasks.register("type", Delete::class.java) {
+allprojects {
+    repositories {
+        mavenCentral()
+        maven(url = Config.ClassPaths.mavenGoogle)
+        maven(url = Config.ClassPaths.jitpack)
+    }
+}
+
+tasks.register("clean", Delete::class.java) {
     delete(rootProject.buildDir)
 }

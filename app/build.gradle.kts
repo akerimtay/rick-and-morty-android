@@ -1,5 +1,5 @@
 plugins {
-    id(Config.Plugins.android)
+    id(Config.Plugins.androidApplication)
     id(Config.Plugins.kotlinAndroid)
     id(Config.Plugins.kotlinKapt)
     id(Config.Plugins.kotlinParcelize)
@@ -75,4 +75,16 @@ dependencies {
     implementation(Dependencies.DaggerHiltDependencies.hiltCore)
     implementation(Dependencies.DaggerHiltDependencies.hiltNavigation)
     kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
+
+    implementation(Dependencies.RetrofitDependencies.core)
+    implementation(Dependencies.RetrofitDependencies.gson)
+    implementation(Dependencies.RetrofitDependencies.coroutinesAdapter)
+
+    implementation(Dependencies.OkHttpDependencies.core)
+    implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
+
+    implementation(Dependencies.CoroutinesDependencies.coroutines)
+    implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
+    
+    implementation(Dependencies.OtherDependencies.timber)
 }
