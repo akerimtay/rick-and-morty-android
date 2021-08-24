@@ -36,5 +36,10 @@ android {
 }
 
 dependencies {
+    implementation(Dependencies.AndroidXDependencies.lifecycleViewModelKtx)
+
     implementation(Dependencies.GoogleDependencies.materialDesign)
+
+    implementation(Dependencies.CoroutinesDependencies.coroutines)
+    implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
 }

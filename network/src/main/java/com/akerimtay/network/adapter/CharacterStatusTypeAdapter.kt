@@ -17,5 +17,5 @@ class CharacterStatusTypeAdapter : JsonSerializer<CharacterStatus?>, JsonDeseria
         json: JsonElement?,
         typeOfT: Type?,
         context: JsonDeserializationContext?
-    ): CharacterStatus = CharacterStatus.toCharacterStatus(json?.asString.orEmpty())
+    ): CharacterStatus = CharacterStatus.toCharacterStatus(json?.asString?.lowercase().orEmpty())
 }

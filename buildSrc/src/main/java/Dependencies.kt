@@ -10,10 +10,12 @@ object Dependencies {
         const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
 
         // https://developer.android.com/topic/libraries/architecture/lifecycle
-        const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleKtx}"
+        const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"
+        const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModelKtx}"
 
         // https://developer.android.com/jetpack/compose/setup
         const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
+        const val composeLiveData = "androidx.compose.runtime:runtime-livedata:${Versions.compose}"
         const val composeMaterial = "androidx.compose.material:material:${Versions.compose}"
         const val composeTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
         const val composeToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"

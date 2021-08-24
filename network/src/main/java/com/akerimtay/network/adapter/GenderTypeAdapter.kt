@@ -14,5 +14,5 @@ class GenderTypeAdapter : JsonSerializer<Gender?>, JsonDeserializer<Gender> {
         JsonPrimitive(src?.serializedName)
 
     override fun deserialize(json: JsonElement?, typeOfT: Type?, context: JsonDeserializationContext?): Gender =
-        Gender.toGender(json?.asString.orEmpty())
+        Gender.toGender(json?.asString?.lowercase().orEmpty())
 }

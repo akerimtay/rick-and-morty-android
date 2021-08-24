@@ -69,6 +69,7 @@ dependencies {
     implementation(Dependencies.AndroidXDependencies.composeMaterial)
     implementation(Dependencies.AndroidXDependencies.composeTooling)
     implementation(Dependencies.AndroidXDependencies.composeToolingPreview)
+    implementation(Dependencies.AndroidXDependencies.composeLiveData)
 
     implementation(Dependencies.GoogleDependencies.materialDesign)
     implementation(Dependencies.GoogleDependencies.gson)
@@ -87,6 +88,6 @@ dependencies {
 
     implementation(Dependencies.CoroutinesDependencies.coroutines)
     implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
-    
+
     implementation(Dependencies.OtherDependencies.timber)
 }

@@ -15,6 +15,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import java.util.Date
 import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -30,10 +31,12 @@ object NetworkModule {
     private const val BASE_URL = "https://rickandmortyapi.com/api/"
 
     @Provides
+    @Singleton
     fun provideLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().applyIf(BuildConfig.DEBUG) { level = HttpLoggingInterceptor.Level.BODY }
 
     @Provides
+    @Singleton
     fun provideGson(): Gson =
         GsonBuilder()
             .registerTypeAdapter(Date::class.java, DateTypeAdapter())
@@ -42,6 +45,7 @@ object NetworkModule {
             .create()
 
     @Provides
+    @Singleton
     fun provideOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient =
@@ -54,6 +58,7 @@ object NetworkModule {
             .build()
 
     @Provides
+    @Singleton
     fun provideRetrofit(client: OkHttpClient, gson: Gson): Retrofit =
         Retrofit.Builder()
             .baseUrl(BASE_URL)

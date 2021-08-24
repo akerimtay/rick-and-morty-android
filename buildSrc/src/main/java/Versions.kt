@@ -6,7 +6,8 @@ object Versions {
     const val coreKtx = "1.6.0"
     const val appCompat = "1.3.1"
     const val activityCompose = "1.3.1"
-    const val lifecycleKtx = "2.3.1"
+    const val lifecycleRuntimeKtx = "2.3.1"
+    const val lifecycleViewModelKtx = "2.2.0"
     const val compose = "1.0.1"
 
     // Google
