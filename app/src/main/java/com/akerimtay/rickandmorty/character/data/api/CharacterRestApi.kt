@@ -5,9 +5,9 @@ import com.akerimtay.rickandmorty.character.CharacterError
 import com.akerimtay.rickandmorty.character.data.CharacterConverter
 import com.akerimtay.rickandmorty.character.domain.CharacterRemoteGateway
 import com.akerimtay.rickandmorty.character.model.Character
-import com.akerimtay.rickandmorty.character.model.CharacterStatus
+import com.akerimtay.common.model.CharacterStatus
 import com.akerimtay.rickandmorty.character.model.Characters
-import com.akerimtay.rickandmorty.character.model.Gender
+import com.akerimtay.common.model.Gender
 import javax.inject.Inject
 import retrofit2.Response
 

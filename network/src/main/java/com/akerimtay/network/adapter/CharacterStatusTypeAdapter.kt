@@ -1,6 +1,6 @@
-package com.akerimtay.rickandmorty.network.adapter
+package com.akerimtay.network.adapter
 
-import com.akerimtay.rickandmorty.character.model.CharacterStatus
+import com.akerimtay.common.model.CharacterStatus
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement

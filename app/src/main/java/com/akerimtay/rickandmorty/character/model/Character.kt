@@ -1,6 +1,8 @@
 package com.akerimtay.rickandmorty.character.model
 
 import android.os.Parcelable
+import com.akerimtay.common.model.CharacterStatus
+import com.akerimtay.common.model.Gender
 import java.util.Date
 import kotlinx.parcelize.Parcelize
 
