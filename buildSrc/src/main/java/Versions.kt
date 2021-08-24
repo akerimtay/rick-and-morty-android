@@ -23,7 +23,6 @@ object Versions {
 
     // Network
     const val retrofit = "2.9.0"
-    const val retrofitCoroutinesAdapter = "0.9.2"
     const val okHttp = "4.9.1"
 
     // Other

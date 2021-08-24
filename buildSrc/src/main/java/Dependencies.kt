@@ -49,8 +49,6 @@ object Dependencies {
         // https://github.com/square/retrofit
         const val core = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         const val gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
-        const val coroutinesAdapter =
-            "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutinesAdapter}"
     }
 
     object OkHttpDependencies {

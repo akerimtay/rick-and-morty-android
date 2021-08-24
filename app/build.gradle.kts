@@ -80,7 +80,6 @@ dependencies {
 
     implementation(Dependencies.RetrofitDependencies.core)
     implementation(Dependencies.RetrofitDependencies.gson)
-    implementation(Dependencies.RetrofitDependencies.coroutinesAdapter)
 
     implementation(Dependencies.OkHttpDependencies.core)
     implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
