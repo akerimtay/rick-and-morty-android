@@ -3,8 +3,8 @@ package com.akerimtay.rickandmorty.character.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.akerimtay.common.base.BaseViewModel
-import com.akerimtay.rickandmorty.character.domain.GetCharactersUseCase
-import com.akerimtay.rickandmorty.character.model.Characters
+import com.akerimtay.domain.model.Characters
+import com.akerimtay.domain.usecase.GetCharactersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import timber.log.Timber

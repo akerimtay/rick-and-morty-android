@@ -3,4 +3,6 @@ object Modules {
     const val resources = ":resources"
     const val common = ":common"
     const val network = ":network"
+    const val domain = ":domain"
+    const val data = ":data"
 }

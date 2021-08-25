@@ -2,4 +2,5 @@ rootProject.name = "RickAndMorty"
 include(":app")
 include(":resources")
 include(":common")
-include(":network")
+include(":domain")
+include(":data")
