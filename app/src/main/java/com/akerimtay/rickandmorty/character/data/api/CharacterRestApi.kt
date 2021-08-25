@@ -1,17 +1,16 @@
 package com.akerimtay.rickandmorty.character.data.api
 
 import com.akerimtay.common.BaseError
-import com.akerimtay.common.BasePagedModel
+import com.akerimtay.common.model.CharacterStatus
+import com.akerimtay.common.model.Gender
 import com.akerimtay.rickandmorty.character.CharacterError
 import com.akerimtay.rickandmorty.character.data.CharacterConverter
 import com.akerimtay.rickandmorty.character.domain.CharacterRemoteGateway
 import com.akerimtay.rickandmorty.character.model.Character
-import com.akerimtay.rickandmorty.character.model.CharacterStatus
-import com.akerimtay.rickandmorty.character.model.Gender
-import javax.inject.Inject
+import com.akerimtay.rickandmorty.character.model.Characters
 import retrofit2.Response
 
-class CharacterRestApi @Inject constructor(
+class CharacterRestApi(
     private val characterService: CharacterService
 ) : CharacterRemoteGateway {
     override suspend fun getCharacters(
@@ -19,7 +18,7 @@ class CharacterRestApi @Inject constructor(
         name: String?,
         status: CharacterStatus?,
         gender: Gender?
-    ): BasePagedModel<List<Character>> = CharacterConverter.fromNetwork(
+    ): Characters = CharacterConverter.fromNetwork(
         extractResponseData(
             response = characterService.getCharactersAsync(
                 page = page,

@@ -1,7 +1,7 @@
-package com.akerimtay.rickandmorty.character.data.api
+package com.akerimtay.rickandmorty.character.data.api.model
 
-import com.akerimtay.rickandmorty.character.model.CharacterStatus
-import com.akerimtay.rickandmorty.character.model.Gender
+import com.akerimtay.common.model.CharacterStatus
+import com.akerimtay.common.model.Gender
 import com.google.gson.annotations.SerializedName
 import java.util.Date
 
@@ -30,11 +30,11 @@ data class CharacterResponse(
     val url: String,
     @SerializedName("created")
     val created: Date?
-)
-
-data class LocationResponse(
-    @SerializedName("name")
-    val name: String,
-    @SerializedName("url")
-    val url: String
-)
+) {
+    data class LocationResponse(
+        @SerializedName("name")
+        val name: String,
+        @SerializedName("url")
+        val url: String
+    )
+}

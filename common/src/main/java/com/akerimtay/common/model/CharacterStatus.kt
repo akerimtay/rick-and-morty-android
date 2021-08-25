@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.character.model
+package com.akerimtay.common.model
 
 enum class CharacterStatus(val serializedName: String) {
     ALIVE(serializedName = "alive"),

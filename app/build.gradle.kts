@@ -59,6 +59,7 @@ android {
 dependencies {
     implementation(project(Modules.resources))
     implementation(project(Modules.common))
+    implementation(project(Modules.network))
 
     implementation(Dependencies.AndroidXDependencies.coreKtx)
     implementation(Dependencies.AndroidXDependencies.appCompat)
@@ -68,6 +69,7 @@ dependencies {
     implementation(Dependencies.AndroidXDependencies.composeMaterial)
     implementation(Dependencies.AndroidXDependencies.composeTooling)
     implementation(Dependencies.AndroidXDependencies.composeToolingPreview)
+    implementation(Dependencies.AndroidXDependencies.composeLiveData)
 
     implementation(Dependencies.GoogleDependencies.materialDesign)
     implementation(Dependencies.GoogleDependencies.gson)
@@ -80,13 +82,12 @@ dependencies {
 
     implementation(Dependencies.RetrofitDependencies.core)
     implementation(Dependencies.RetrofitDependencies.gson)
-    implementation(Dependencies.RetrofitDependencies.coroutinesAdapter)
 
     implementation(Dependencies.OkHttpDependencies.core)
     implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
 
     implementation(Dependencies.CoroutinesDependencies.coroutines)
     implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
-    
+
     implementation(Dependencies.OtherDependencies.timber)
 }

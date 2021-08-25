@@ -1,12 +1,12 @@
-package com.akerimtay.rickandmorty.network
+package com.akerimtay.rickandmorty.character.data.api.model
 
 import com.google.gson.annotations.SerializedName
 
-data class BasePagedResponse<T>(
+data class CharactersResponse(
     @SerializedName("info")
-    var infoResponse: InfoResponse,
+    val infoResponse: InfoResponse,
     @SerializedName("results")
-    var results: T
+    val results: List<CharacterResponse>
 ) {
     data class InfoResponse(
         @SerializedName("count")

@@ -1,6 +1,6 @@
-package com.akerimtay.rickandmorty.network.adapter
+package com.akerimtay.network.adapter
 
-import com.akerimtay.rickandmorty.character.model.Gender
+import com.akerimtay.common.model.Gender
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
@@ -14,5 +14,5 @@ class GenderTypeAdapter : JsonSerializer<Gender?>, JsonDeserializer<Gender> {
         JsonPrimitive(src?.serializedName)
 
     override fun deserialize(json: JsonElement?, typeOfT: Type?, context: JsonDeserializationContext?): Gender =
-        Gender.toGender(json?.asString.orEmpty())
+        Gender.toGender(json?.asString?.lowercase().orEmpty())
 }

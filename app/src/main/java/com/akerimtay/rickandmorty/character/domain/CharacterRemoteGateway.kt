@@ -1,9 +1,9 @@
 package com.akerimtay.rickandmorty.character.domain
 
-import com.akerimtay.common.BasePagedModel
 import com.akerimtay.rickandmorty.character.model.Character
-import com.akerimtay.rickandmorty.character.model.CharacterStatus
-import com.akerimtay.rickandmorty.character.model.Gender
+import com.akerimtay.common.model.CharacterStatus
+import com.akerimtay.rickandmorty.character.model.Characters
+import com.akerimtay.common.model.Gender
 
 interface CharacterRemoteGateway {
     suspend fun getCharacters(
@@ -11,7 +11,7 @@ interface CharacterRemoteGateway {
         name: String? = null,
         status: CharacterStatus? = null,
         gender: Gender? = null
-    ): BasePagedModel<List<Character>>
+    ): Characters
 
     suspend fun getCharacterById(characterId: Int): Character
 }

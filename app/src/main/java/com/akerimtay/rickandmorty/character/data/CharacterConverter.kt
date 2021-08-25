@@ -1,11 +1,10 @@
 package com.akerimtay.rickandmorty.character.data
 
-import com.akerimtay.rickandmorty.character.data.api.CharacterResponse
+import com.akerimtay.rickandmorty.character.data.api.model.CharacterResponse
+import com.akerimtay.rickandmorty.character.data.api.model.CharactersResponse
 import com.akerimtay.rickandmorty.character.model.Character
+import com.akerimtay.rickandmorty.character.model.Characters
 import com.akerimtay.rickandmorty.character.model.Location
-import com.akerimtay.rickandmorty.network.BasePagedConverter
-import com.akerimtay.common.BasePagedModel
-import com.akerimtay.rickandmorty.network.BasePagedResponse
 
 object CharacterConverter {
     fun fromNetwork(response: CharacterResponse) =
@@ -30,9 +29,14 @@ object CharacterConverter {
             created = response.created
         )
 
-    fun fromNetwork(response: BasePagedResponse<List<CharacterResponse>>): BasePagedModel<List<Character>> =
-        BasePagedModel(
-            info = BasePagedConverter.fromNetwork(response.infoResponse),
+    fun fromNetwork(response: CharactersResponse): Characters =
+        Characters(
+            info = Characters.Info(
+                count = response.infoResponse.count,
+                pages = response.infoResponse.pages,
+                next = response.infoResponse.next,
+                prev = response.infoResponse.prev
+            ),
             results = response.results.map { fromNetwork(it) }
         )
 }

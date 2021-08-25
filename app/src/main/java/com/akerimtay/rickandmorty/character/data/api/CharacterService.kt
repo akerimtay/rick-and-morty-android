@@ -1,8 +1,9 @@
 package com.akerimtay.rickandmorty.character.data.api
 
-import com.akerimtay.rickandmorty.character.model.CharacterStatus
-import com.akerimtay.rickandmorty.character.model.Gender
-import com.akerimtay.rickandmorty.network.BasePagedResponse
+import com.akerimtay.rickandmorty.character.data.api.model.CharacterResponse
+import com.akerimtay.rickandmorty.character.data.api.model.CharactersResponse
+import com.akerimtay.common.model.CharacterStatus
+import com.akerimtay.common.model.Gender
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -15,7 +16,7 @@ interface CharacterService {
         @Query("name") name: String? = null,
         @Query("status") status: CharacterStatus? = null,
         @Query("gender") gender: Gender? = null
-    ): Response<BasePagedResponse<List<CharacterResponse>>>
+    ): Response<CharactersResponse>
 
     @GET("character/{character_id}")
     suspend fun getCharacterAsync(

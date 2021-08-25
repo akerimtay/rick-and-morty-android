@@ -2,6 +2,7 @@ package com.akerimtay.rickandmorty
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
@@ -11,6 +12,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.navigation
 import com.akerimtay.rickandmorty.character.ui.CharactersScreen
+import com.akerimtay.rickandmorty.character.ui.CharactersViewModel
 import com.akerimtay.rickandmorty.characterdetail.CharacterDetailParameters
 import com.akerimtay.rickandmorty.characterdetail.CharacterDetailScreen
 import com.akerimtay.rickandmorty.episode.EpisodesScreen
@@ -44,7 +46,9 @@ fun AppNavGraph(
             startDestination = MainNavigationItem.Characters.route
         ) {
             composable(MainNavigationItem.Characters.route) { from ->
+                val viewModel = hiltViewModel<CharactersViewModel>()
                 CharactersScreen(
+                    viewModel = viewModel,
                     onCharacterClick = { characterId ->
                         openCharacterDetail(
                             backStackEntry = from,

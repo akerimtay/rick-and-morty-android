@@ -1,6 +1,7 @@
 plugins {
     id(Config.Plugins.androidLibrary)
     id(Config.Plugins.kotlinAndroid)
+    id(Config.Plugins.kotlinKapt)
 }
 
 android {
@@ -36,10 +37,14 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.AndroidXDependencies.lifecycleViewModelKtx)
+    implementation(project(Modules.common))
 
-    implementation(Dependencies.GoogleDependencies.materialDesign)
+    implementation(Dependencies.RetrofitDependencies.core)
+    implementation(Dependencies.RetrofitDependencies.gson)
 
-    implementation(Dependencies.CoroutinesDependencies.coroutines)
-    implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
+    implementation(Dependencies.OkHttpDependencies.core)
+    implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
+
+    implementation(Dependencies.DaggerHiltDependencies.hiltCore)
+    kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
 }

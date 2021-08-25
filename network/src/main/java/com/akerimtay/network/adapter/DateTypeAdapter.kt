@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.network.adapter
+package com.akerimtay.network.adapter
 
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
