@@ -1,3 +1,5 @@
+import dependencies.Dependencies
+
 plugins {
     id(Config.Plugins.androidApplication)
     id(Config.Plugins.kotlinAndroid)

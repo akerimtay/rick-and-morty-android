@@ -1,3 +1,5 @@
+import dependencies.Versions
+
 object Config {
     object Android {
         const val androidMinSdkVersion = 21

@@ -1,3 +1,5 @@
+package dependencies
+
 object Dependencies {
     object KotlinDependencies {
         // https://kotlinlang.org/
