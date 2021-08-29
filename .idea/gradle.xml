@@ -15,6 +15,9 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/feature_character" />
+            <option value="$PROJECT_DIR$/feature_character/character_details" />
+            <option value="$PROJECT_DIR$/feature_character/characters" />
             <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/resources" />
           </set>

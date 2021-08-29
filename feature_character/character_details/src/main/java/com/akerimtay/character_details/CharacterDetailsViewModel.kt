@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty
+package com.akerimtay.character_details
 
 import androidx.lifecycle.SavedStateHandle
 import com.akerimtay.common.base.BaseViewModel

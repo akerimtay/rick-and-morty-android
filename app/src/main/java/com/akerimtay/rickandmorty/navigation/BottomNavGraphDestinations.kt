@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.akerimtay.characters.CharactersScreen
 import com.akerimtay.navigation.bottomnavigation.BottomNavigationItem
 import com.akerimtay.navigation.destination.MainDestination
-import com.akerimtay.rickandmorty.CharactersScreen
 import com.akerimtay.rickandmorty.EpisodesScreen
 import com.akerimtay.rickandmorty.LocationsScreen
 import com.akerimtay.rickandmorty.SettingsScreen
