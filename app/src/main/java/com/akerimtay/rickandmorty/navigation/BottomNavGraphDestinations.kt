@@ -5,10 +5,10 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.akerimtay.characters.CharactersScreen
+import com.akerimtay.episodes.EpisodesScreen
 import com.akerimtay.locations.LocationsScreen
 import com.akerimtay.navigation.bottomnavigation.BottomNavigationItem
 import com.akerimtay.navigation.destination.MainDestination
-import com.akerimtay.rickandmorty.EpisodesScreen
 import com.akerimtay.rickandmorty.SettingsScreen
 
 private val destinationsBottomNav: Map<BottomNavigationItem, @Composable () -> Unit> = mapOf(

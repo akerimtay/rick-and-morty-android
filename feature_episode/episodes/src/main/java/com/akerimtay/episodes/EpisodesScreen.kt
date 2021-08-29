@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty
+package com.akerimtay.episodes
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,14 +10,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun SettingsScreen() {
+fun EpisodesScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .wrapContentSize(Alignment.Center)
     ) {
         Text(
-            text = "Settings Screen",
+            text = "Episodes Screen",
             color = MaterialTheme.colors.secondary
         )
     }
