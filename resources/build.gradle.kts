@@ -1,3 +1,5 @@
+import dependencies.Dependencies
+
 plugins {
     id(Config.Plugins.androidLibrary)
     id(Config.Plugins.kotlinAndroid)
@@ -33,10 +35,20 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.1"
+    }
 }
 
 dependencies {
     implementation(Dependencies.AndroidXDependencies.coreKtx)
     implementation(Dependencies.AndroidXDependencies.appCompat)
+    implementation(Dependencies.AndroidXDependencies.composeUi)
+    implementation(Dependencies.AndroidXDependencies.composeMaterial)
+
+    implementation(Dependencies.GoogleDependencies.accompanistSystemUiController)
     implementation(Dependencies.GoogleDependencies.materialDesign)
 }

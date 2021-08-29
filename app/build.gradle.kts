@@ -1,3 +1,5 @@
+import dependencies.Dependencies
+
 plugins {
     id(Config.Plugins.androidApplication)
     id(Config.Plugins.kotlinAndroid)
@@ -59,7 +61,14 @@ android {
 dependencies {
     implementation(project(Modules.resources))
     implementation(project(Modules.common))
-    implementation(project(Modules.network))
+    implementation(project(Modules.domain))
+    implementation(project(Modules.data))
+    implementation(project(Modules.navigation))
+    implementation(project(Modules.characters))
+    implementation(project(Modules.characterDetails))
+    implementation(project(Modules.locations))
+    implementation(project(Modules.episodes))
+    implementation(project(Modules.settings))
 
     implementation(Dependencies.AndroidXDependencies.coreKtx)
     implementation(Dependencies.AndroidXDependencies.appCompat)
@@ -79,15 +88,6 @@ dependencies {
     implementation(Dependencies.DaggerHiltDependencies.hiltCore)
     implementation(Dependencies.DaggerHiltDependencies.hiltNavigation)
     kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
-
-    implementation(Dependencies.RetrofitDependencies.core)
-    implementation(Dependencies.RetrofitDependencies.gson)
-
-    implementation(Dependencies.OkHttpDependencies.core)
-    implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
-
-    implementation(Dependencies.CoroutinesDependencies.coroutines)
-    implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
 
     implementation(Dependencies.OtherDependencies.timber)
 }
