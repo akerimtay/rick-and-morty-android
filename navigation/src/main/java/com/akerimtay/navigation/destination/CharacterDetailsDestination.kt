@@ -11,8 +11,9 @@ object CharacterDetailsDestination : NavigationDestination {
     override val arguments: List<NamedNavArgument>
         get() = listOf(navArgument(CHARACTER_ID_PARAM) { type = NavType.LongType })
 
-    private const val CHARACTER_ID_PARAM = "characterId"
-    private const val CHARACTER_DETAILS_ROUTE = "character_detail"
+    const val CHARACTER_ID_PARAM = "characterId"
+    private const val CHARACTER_DETAILS = "character_detail"
+    private const val CHARACTER_DETAILS_ROUTE = "character_detail/{$CHARACTER_ID_PARAM}"
 
-    fun createCharacterDetailsRoute(characterId: String) = "$CHARACTER_DETAILS_ROUTE/${characterId.lowercase()}"
+    fun createCharacterDetailsRoute(characterId: Long) = "$CHARACTER_DETAILS/$characterId"
 }

@@ -24,7 +24,8 @@ private val LightColorPalette = lightColors(
     secondary = Cyan400,
     secondaryVariant = Cyan400,
     background = Gray50,
-    error = Red400
+    error = Red400,
+    onSecondary = Color.White
 )
 
 @Composable
