@@ -9,4 +9,5 @@ object Modules {
     const val characterDetails = ":feature_character:character_details"
     const val locations = ":feature_location:locations"
     const val episodes = ":feature_episode:episodes"
+    const val settings = ":feature_settings:settings"
 }

@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty
+package com.akerimtay.settings
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

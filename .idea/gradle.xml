@@ -22,6 +22,8 @@
             <option value="$PROJECT_DIR$/feature_episode/episodes" />
             <option value="$PROJECT_DIR$/feature_location" />
             <option value="$PROJECT_DIR$/feature_location/locations" />
+            <option value="$PROJECT_DIR$/feature_settings" />
+            <option value="$PROJECT_DIR$/feature_settings/settings" />
             <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/resources" />
           </set>

@@ -9,7 +9,7 @@ import com.akerimtay.episodes.EpisodesScreen
 import com.akerimtay.locations.LocationsScreen
 import com.akerimtay.navigation.bottomnavigation.BottomNavigationItem
 import com.akerimtay.navigation.destination.MainDestination
-import com.akerimtay.rickandmorty.SettingsScreen
+import com.akerimtay.settings.SettingsScreen
 
 private val destinationsBottomNav: Map<BottomNavigationItem, @Composable () -> Unit> = mapOf(
     BottomNavigationItem.Characters to { CharactersScreen() },
