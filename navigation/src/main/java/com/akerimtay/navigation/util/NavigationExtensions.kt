@@ -1,4 +1,4 @@
-package com.akerimtay.navigation
+package com.akerimtay.navigation.util
 
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavBackStackEntry
