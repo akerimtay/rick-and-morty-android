@@ -1,10 +1,9 @@
-package com.akerimtay.rickandmorty.ui.theme
+package com.akerimtay.resources
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import com.akerimtay.rickandmorty.R
 
 val Roboto = FontFamily(
     Font(resId = R.font.roboto_black, weight = FontWeight.Black),

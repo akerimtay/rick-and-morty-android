@@ -4,4 +4,5 @@ object Modules {
     const val common = ":common"
     const val domain = ":domain"
     const val data = ":data"
+    const val navigation = ":navigation"
 }

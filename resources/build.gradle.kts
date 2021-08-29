@@ -40,5 +40,9 @@ android {
 dependencies {
     implementation(Dependencies.AndroidXDependencies.coreKtx)
     implementation(Dependencies.AndroidXDependencies.appCompat)
+    implementation(Dependencies.AndroidXDependencies.composeUi)
+    implementation(Dependencies.AndroidXDependencies.composeMaterial)
+
+    implementation(Dependencies.GoogleDependencies.accompanistSystemUiController)
     implementation(Dependencies.GoogleDependencies.materialDesign)
 }

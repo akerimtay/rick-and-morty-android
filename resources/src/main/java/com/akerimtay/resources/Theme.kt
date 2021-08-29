@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.ui.theme
+package com.akerimtay.resources
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

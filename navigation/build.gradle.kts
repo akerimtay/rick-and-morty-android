@@ -1,41 +1,32 @@
 import dependencies.Dependencies
 
 plugins {
-    id(Config.Plugins.androidApplication)
+    id(Config.Plugins.androidLibrary)
     id(Config.Plugins.kotlinAndroid)
     id(Config.Plugins.kotlinKapt)
-    id(Config.Plugins.kotlinParcelize)
-    id(Config.Plugins.daggerHilt)
 }
 
 android {
     compileSdk = Config.Android.androidCompileSdkVersion
 
     defaultConfig {
-        applicationId = Environments.Release.appId
         minSdk = Config.Android.androidMinSdkVersion
         targetSdk = Config.Android.androidTargetSdkVersion
-        versionCode = Environments.Release.appVersionCode
-        versionName = Environments.Release.appVersionName
 
         testInstrumentationRunner = Config.testRunner
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         getByName("release") {
-            isDebuggable = false
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
         getByName("debug") {
-            isDebuggable = true
             isMinifyEnabled = false
-            isShrinkResources = false
-            applicationIdSuffix = ".debug"
         }
     }
     compileOptions {
@@ -45,25 +36,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.1"
-    }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
     implementation(project(Modules.resources))
     implementation(project(Modules.common))
     implementation(project(Modules.domain))
-    implementation(project(Modules.data))
-    implementation(project(Modules.navigation))
 
     implementation(Dependencies.AndroidXDependencies.coreKtx)
     implementation(Dependencies.AndroidXDependencies.appCompat)
@@ -75,14 +53,11 @@ dependencies {
     implementation(Dependencies.AndroidXDependencies.composeToolingPreview)
     implementation(Dependencies.AndroidXDependencies.composeLiveData)
 
-    implementation(Dependencies.GoogleDependencies.materialDesign)
-    implementation(Dependencies.GoogleDependencies.gson)
     implementation(Dependencies.GoogleDependencies.accompanistInsets)
     implementation(Dependencies.GoogleDependencies.accompanistSystemUiController)
+    implementation(Dependencies.GoogleDependencies.materialDesign)
 
     implementation(Dependencies.DaggerHiltDependencies.hiltCore)
     implementation(Dependencies.DaggerHiltDependencies.hiltNavigation)
     kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
-
-    implementation(Dependencies.OtherDependencies.timber)
 }
