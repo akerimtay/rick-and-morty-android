@@ -43,9 +43,13 @@ dependencies {
 
     implementation(Dependencies.RetrofitDependencies.core)
     implementation(Dependencies.RetrofitDependencies.gson)
-
     implementation(Dependencies.OkHttpDependencies.core)
     implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
+
+    implementation(Dependencies.AndroidXDependencies.roomKtx)
+    implementation(Dependencies.AndroidXDependencies.roomRuntime)
+    implementation(Dependencies.AndroidXDependencies.roomPaging)
+    kapt(Dependencies.AndroidXDependencies.roomCompiler)
 
     implementation(Dependencies.DaggerHiltDependencies.hiltCore)
     kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
