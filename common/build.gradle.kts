@@ -33,15 +33,15 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Config.Kotlin.jvmTargetVersion
     }
 }
 
 dependencies {
+    implementation(project(Modules.resources))
+
     implementation(Dependencies.AndroidXDependencies.lifecycleViewModelKtx)
-
     implementation(Dependencies.GoogleDependencies.materialDesign)
-
     implementation(Dependencies.CoroutinesDependencies.coroutines)
     implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
 }

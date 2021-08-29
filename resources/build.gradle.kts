@@ -33,13 +33,13 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Config.Kotlin.jvmTargetVersion
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.1"
+        kotlinCompilerExtensionVersion = Config.Kotlin.kotlinCompilerExtensionVersion
     }
 }
 
@@ -48,7 +48,6 @@ dependencies {
     implementation(Dependencies.AndroidXDependencies.appCompat)
     implementation(Dependencies.AndroidXDependencies.composeUi)
     implementation(Dependencies.AndroidXDependencies.composeMaterial)
-
     implementation(Dependencies.GoogleDependencies.accompanistSystemUiController)
     implementation(Dependencies.GoogleDependencies.materialDesign)
 }

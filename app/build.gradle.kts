@@ -43,13 +43,13 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Config.Kotlin.jvmTargetVersion
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.1"
+        kotlinCompilerExtensionVersion = Config.Kotlin.kotlinCompilerExtensionVersion
     }
     packagingOptions {
         resources {
@@ -81,13 +81,10 @@ dependencies {
     implementation(Dependencies.AndroidXDependencies.composeLiveData)
 
     implementation(Dependencies.GoogleDependencies.materialDesign)
-    implementation(Dependencies.GoogleDependencies.gson)
     implementation(Dependencies.GoogleDependencies.accompanistInsets)
     implementation(Dependencies.GoogleDependencies.accompanistSystemUiController)
 
     implementation(Dependencies.DaggerHiltDependencies.hiltCore)
     implementation(Dependencies.DaggerHiltDependencies.hiltNavigation)
     kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
-
-    implementation(Dependencies.OtherDependencies.timber)
 }

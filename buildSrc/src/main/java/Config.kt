@@ -26,5 +26,10 @@ object Config {
         const val daggerHilt = "dagger.hilt.android.plugin"
     }
 
+    object Kotlin {
+        const val jvmTargetVersion = "1.8"
+        const val kotlinCompilerExtensionVersion = "1.0.1"
+    }
+
     const val testRunner = "androidx.test.runner.AndroidJUnitRunner"
 }
