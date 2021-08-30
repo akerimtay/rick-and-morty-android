@@ -29,7 +29,7 @@ data class CharacterResponse(
     @SerializedName("url")
     val url: String,
     @SerializedName("created")
-    val created: Date?
+    val created: Date
 ) {
     data class LocationResponse(
         @SerializedName("name")

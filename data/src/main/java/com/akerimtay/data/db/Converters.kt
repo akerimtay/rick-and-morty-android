@@ -2,17 +2,36 @@ package com.akerimtay.data.db
 
 import androidx.room.TypeConverter
 import com.akerimtay.domain.model.CharacterStatus
+import com.akerimtay.domain.model.Gender
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import java.util.Date
 
 class Converters {
-    @TypeConverter
-    fun dateFromTimestamp(value: Long?): Date? = if (value == null) null else Date(value)
+    private val gson = GsonBuilder()
+        .create()
 
     @TypeConverter
-    fun dateToTimestamp(date: Date?): Long? = date?.time
+    fun toDate(value: Long?): Date? = if (value == null) null else Date(value)
+
+    @TypeConverter
+    fun fromDate(date: Date?): Long? = date?.time
 
     @TypeConverter
     fun fromCharacterStatus(status: CharacterStatus): String = status.serializedName
 
-    fun stringToCharacterStatus(value: String?) = value?.let { CharacterStatus.toCharacterStatus(it) }
+    @TypeConverter
+    fun toCharacterStatus(value: String) = CharacterStatus.toCharacterStatus(value)
+
+    @TypeConverter
+    fun fromGender(gender: Gender): String = gender.serializedName
+
+    @TypeConverter
+    fun toGender(value: String): Gender = Gender.toGender(value)
+
+    @TypeConverter
+    fun fromListString(list: List<String>): String = gson.toJson(list)
+
+    @TypeConverter
+    fun toListString(value: String): List<String> = gson.fromJson(value, object : TypeToken<List<String>>() {}.type)
 }

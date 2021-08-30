@@ -37,5 +37,5 @@ data class CharacterEntity(
     @ColumnInfo(name = "url")
     val url: String,
     @ColumnInfo(name = "created_date")
-    val createdDate: Date?
+    val createdDate: Date
 )
