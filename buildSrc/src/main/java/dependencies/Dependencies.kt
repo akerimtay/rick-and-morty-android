@@ -21,6 +21,12 @@ object Dependencies {
         const val composeMaterial = "androidx.compose.material:material:${Versions.compose}"
         const val composeTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
         const val composeToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
+
+        // https://developer.android.com/training/data-storage/room#kts
+        const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+        const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+        const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
+        const val roomPaging = "androidx.room:room-paging:${Versions.roomPaging}"
     }
 
     object DaggerHiltDependencies {

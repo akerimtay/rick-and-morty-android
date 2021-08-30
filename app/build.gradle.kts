@@ -80,6 +80,16 @@ dependencies {
     implementation(Dependencies.AndroidXDependencies.composeToolingPreview)
     implementation(Dependencies.AndroidXDependencies.composeLiveData)
 
+    implementation(Dependencies.RetrofitDependencies.core)
+    implementation(Dependencies.RetrofitDependencies.gson)
+    implementation(Dependencies.OkHttpDependencies.core)
+    implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
+
+    implementation(Dependencies.AndroidXDependencies.roomKtx)
+    implementation(Dependencies.AndroidXDependencies.roomRuntime)
+    implementation(Dependencies.AndroidXDependencies.roomPaging)
+    kapt(Dependencies.AndroidXDependencies.roomCompiler)
+
     implementation(Dependencies.GoogleDependencies.materialDesign)
     implementation(Dependencies.GoogleDependencies.accompanistInsets)
     implementation(Dependencies.GoogleDependencies.accompanistSystemUiController)
@@ -87,4 +97,6 @@ dependencies {
     implementation(Dependencies.DaggerHiltDependencies.hiltCore)
     implementation(Dependencies.DaggerHiltDependencies.hiltNavigation)
     kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
+
+    implementation(Dependencies.OtherDependencies.timber)
 }

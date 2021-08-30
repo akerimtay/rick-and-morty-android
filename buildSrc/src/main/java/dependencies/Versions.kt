@@ -11,6 +11,8 @@ object Versions {
     const val lifecycleRuntimeKtx = "2.3.1"
     const val lifecycleViewModelKtx = "2.2.0"
     const val compose = "1.0.1"
+    const val room = "2.3.0"
+    const val roomPaging = "2.4.0-alpha04"
 
     // Google
     const val materialDesign = "1.4.0"
