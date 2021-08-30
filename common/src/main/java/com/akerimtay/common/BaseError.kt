@@ -8,6 +8,7 @@ abstract class BaseError(
     override val message: String? = null,
     @StringRes open val errorResId: Int = NO_RES_ID
 ) : Throwable(message) {
+    object NetworkError : BaseError(errorResId = R.string.error_network)
     object UnknownError : BaseError()
 
     fun getErrorMessage(@StringRes defaultResId: Int = NO_RES_ID): StringWrapper =

@@ -5,6 +5,7 @@ import com.akerimtay.common.util.applyIf
 import com.akerimtay.data.remote.adapter.CharacterStatusTypeAdapter
 import com.akerimtay.data.remote.adapter.DateTypeAdapter
 import com.akerimtay.data.remote.adapter.GenderTypeAdapter
+import com.akerimtay.data.remote.base.NetworkResponseAdapterFactory
 import com.akerimtay.domain.model.CharacterStatus
 import com.akerimtay.domain.model.Gender
 import com.google.gson.Gson
@@ -62,6 +63,7 @@ object NetworkModule {
     fun provideRetrofit(client: OkHttpClient, gson: Gson): Retrofit =
         Retrofit.Builder()
             .baseUrl(BASE_URL)
+            .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()

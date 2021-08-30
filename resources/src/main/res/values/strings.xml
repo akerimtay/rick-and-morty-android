@@ -4,4 +4,5 @@
     <string name="locations_title">Locations</string>
     <string name="episodes_title">Episodes</string>
     <string name="settings_title">Settings</string>
+    <string name="error_network">Error with network. Please, check internet connection</string>
 </resources>
