@@ -13,17 +13,18 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/common" />
-            <option value="$PROJECT_DIR$/data" />
-            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/feature_character" />
-            <option value="$PROJECT_DIR$/feature_character/character_details" />
-            <option value="$PROJECT_DIR$/feature_character/characters" />
+            <option value="$PROJECT_DIR$/feature_character/character_data" />
+            <option value="$PROJECT_DIR$/feature_character/character_detail_ui" />
+            <option value="$PROJECT_DIR$/feature_character/character_domain" />
+            <option value="$PROJECT_DIR$/feature_character/character_ui" />
             <option value="$PROJECT_DIR$/feature_episode" />
-            <option value="$PROJECT_DIR$/feature_episode/episodes" />
+            <option value="$PROJECT_DIR$/feature_episode/episode_ui" />
             <option value="$PROJECT_DIR$/feature_location" />
-            <option value="$PROJECT_DIR$/feature_location/locations" />
+            <option value="$PROJECT_DIR$/feature_location/location_ui" />
             <option value="$PROJECT_DIR$/feature_settings" />
-            <option value="$PROJECT_DIR$/feature_settings/settings" />
+            <option value="$PROJECT_DIR$/feature_settings/settings_ui" />
             <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/resources" />
           </set>

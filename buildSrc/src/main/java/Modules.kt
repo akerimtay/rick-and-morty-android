@@ -2,12 +2,15 @@ object Modules {
     const val app = ":app"
     const val resources = ":resources"
     const val common = ":common"
-    const val domain = ":domain"
-    const val data = ":data"
+    const val core = ":core"
     const val navigation = ":navigation"
-    const val characters = ":feature_character:characters"
-    const val characterDetails = ":feature_character:character_details"
-    const val locations = ":feature_location:locations"
-    const val episodes = ":feature_episode:episodes"
-    const val settings = ":feature_settings:settings"
+
+    const val characterDomain = ":feature_character:character_domain"
+    const val characterData = ":feature_character:character_data"
+    const val characterUi = ":feature_character:character_ui"
+    const val characterDetailUi = ":feature_character:character_detail_ui"
+
+    const val locationsUi = ":feature_location:location_ui"
+    const val episodesUi = ":feature_episode:episode_ui"
+    const val settingsUi = ":feature_settings:settings_ui"
 }

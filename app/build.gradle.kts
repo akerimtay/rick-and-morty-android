@@ -61,14 +61,17 @@ android {
 dependencies {
     implementation(project(Modules.resources))
     implementation(project(Modules.common))
-    implementation(project(Modules.domain))
-    implementation(project(Modules.data))
+    implementation(project(Modules.core))
     implementation(project(Modules.navigation))
-    implementation(project(Modules.characters))
-    implementation(project(Modules.characterDetails))
-    implementation(project(Modules.locations))
-    implementation(project(Modules.episodes))
-    implementation(project(Modules.settings))
+
+    implementation(project(Modules.characterDomain))
+    implementation(project(Modules.characterData))
+    implementation(project(Modules.characterUi))
+    implementation(project(Modules.characterDetailUi))
+
+    implementation(project(Modules.locationsUi))
+    implementation(project(Modules.episodesUi))
+    implementation(project(Modules.settingsUi))
 
     implementation(Dependencies.AndroidXDependencies.coreKtx)
     implementation(Dependencies.AndroidXDependencies.appCompat)
