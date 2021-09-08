@@ -1,7 +1,7 @@
 package dependencies
 
 object Versions {
-    const val gradlePlugin = "7.0.1"
+    const val gradlePlugin = "7.0.2"
     const val kotlin = "1.5.21"
 
     // AndroidX

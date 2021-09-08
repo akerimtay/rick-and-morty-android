@@ -4,12 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.akerimtay.characters.CharactersScreen
-import com.akerimtay.episodes.EpisodesScreen
-import com.akerimtay.locations.LocationsScreen
-import com.akerimtay.navigation.bottomnavigation.BottomNavigationItem
-import com.akerimtay.navigation.destination.MainDestination
-import com.akerimtay.settings.SettingsScreen
+import com.akerimtay.rickandmorty.character.ui.CharactersScreen
+import com.akerimtay.rickandmorty.episode.ui.EpisodesScreen
+import com.akerimtay.rickandmorty.location.ui.LocationsScreen
+import com.akerimtay.rickandmorty.navigation.bottomnavigation.BottomNavigationItem
+import com.akerimtay.rickandmorty.navigation.destination.MainDestination
+import com.akerimtay.rickandmorty.settings.ui.SettingsScreen
 
 private val destinationsBottomNav: Map<BottomNavigationItem, @Composable () -> Unit> = mapOf(
     BottomNavigationItem.Characters to { CharactersScreen() },

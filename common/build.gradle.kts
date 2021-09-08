@@ -41,7 +41,12 @@ dependencies {
     implementation(project(Modules.resources))
 
     implementation(Dependencies.AndroidXDependencies.lifecycleViewModelKtx)
+
     implementation(Dependencies.GoogleDependencies.materialDesign)
+
+    implementation(Dependencies.RetrofitDependencies.core)
+    implementation(Dependencies.RetrofitDependencies.gson)
+    
     implementation(Dependencies.CoroutinesDependencies.coroutines)
     implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
 }
