@@ -7,8 +7,8 @@ import androidx.navigation.navigation
 import com.akerimtay.characters.CharactersScreen
 import com.akerimtay.episodes.EpisodesScreen
 import com.akerimtay.locations.LocationsScreen
-import com.akerimtay.navigation.bottomnavigation.BottomNavigationItem
-import com.akerimtay.navigation.destination.MainDestination
+import com.akerimtay.rickandmorty.navigation.bottomnavigation.BottomNavigationItem
+import com.akerimtay.rickandmorty.navigation.destination.MainDestination
 import com.akerimtay.settings.SettingsScreen
 
 private val destinationsBottomNav: Map<BottomNavigationItem, @Composable () -> Unit> = mapOf(

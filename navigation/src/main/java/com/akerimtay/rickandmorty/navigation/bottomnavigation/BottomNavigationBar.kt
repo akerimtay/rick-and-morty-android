@@ -1,4 +1,4 @@
-package com.akerimtay.navigation.bottomnavigation
+package com.akerimtay.rickandmorty.navigation.bottomnavigation
 
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
@@ -13,7 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.akerimtay.resources.Gray300
+import com.akerimtay.rickandmorty.resources.Gray300
 import com.google.accompanist.insets.navigationBarsPadding
 
 @Composable

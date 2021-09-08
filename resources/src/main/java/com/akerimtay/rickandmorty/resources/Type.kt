@@ -1,4 +1,4 @@
-package com.akerimtay.resources
+package com.akerimtay.rickandmorty.resources
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.font.Font

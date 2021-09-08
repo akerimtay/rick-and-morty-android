@@ -10,8 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.akerimtay.navigation.NavigatorViewModel
-import com.akerimtay.navigation.destination.CharacterDetailsDestination
+import com.akerimtay.rickandmorty.navigation.NavigatorViewModel
+import com.akerimtay.rickandmorty.navigation.destination.CharacterDetailsDestination
 import kotlin.random.Random
 
 @Composable

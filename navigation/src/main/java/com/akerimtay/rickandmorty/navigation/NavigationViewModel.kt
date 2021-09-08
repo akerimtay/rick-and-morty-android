@@ -1,7 +1,7 @@
-package com.akerimtay.navigation
+package com.akerimtay.rickandmorty.navigation
 
 import androidx.lifecycle.ViewModel
-import com.akerimtay.navigation.navigator.Navigator
+import com.akerimtay.rickandmorty.navigation.navigator.Navigator
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

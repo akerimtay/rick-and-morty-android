@@ -1,9 +1,9 @@
-package com.akerimtay.navigation.destination
+package com.akerimtay.rickandmorty.navigation.destination
 
 import androidx.navigation.NavType
 import androidx.navigation.compose.NamedNavArgument
 import androidx.navigation.compose.navArgument
-import com.akerimtay.navigation.navigator.NavigationDestination
+import com.akerimtay.rickandmorty.navigation.navigator.NavigationDestination
 
 object CharacterDetailsDestination : NavigationDestination {
     override fun route(): String = CHARACTER_DETAILS_ROUTE

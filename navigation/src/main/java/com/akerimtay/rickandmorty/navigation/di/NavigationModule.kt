@@ -1,7 +1,7 @@
-package com.akerimtay.navigation.di
+package com.akerimtay.rickandmorty.navigation.di
 
-import com.akerimtay.navigation.navigator.Navigator
-import com.akerimtay.navigation.navigator.NavigatorImpl
+import com.akerimtay.rickandmorty.navigation.navigator.Navigator
+import com.akerimtay.rickandmorty.navigation.navigator.NavigatorImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

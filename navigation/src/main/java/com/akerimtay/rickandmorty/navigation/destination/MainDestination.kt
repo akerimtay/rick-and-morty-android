@@ -1,6 +1,6 @@
-package com.akerimtay.navigation.destination
+package com.akerimtay.rickandmorty.navigation.destination
 
-import com.akerimtay.navigation.navigator.NavigationDestination
+import com.akerimtay.rickandmorty.navigation.navigator.NavigationDestination
 
 object MainDestination : NavigationDestination {
     override fun route(): String = MAIN_ROUTE

@@ -1,4 +1,4 @@
-package com.akerimtay.resources
+package com.akerimtay.rickandmorty.resources
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

@@ -1,4 +1,4 @@
-package com.akerimtay.navigation.navigator
+package com.akerimtay.rickandmorty.navigation.navigator
 
 import androidx.navigation.NavOptionsBuilder
 import kotlinx.coroutines.flow.Flow

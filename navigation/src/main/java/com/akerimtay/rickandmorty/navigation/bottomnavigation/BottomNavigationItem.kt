@@ -1,9 +1,9 @@
-package com.akerimtay.navigation.bottomnavigation
+package com.akerimtay.rickandmorty.navigation.bottomnavigation
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import com.akerimtay.navigation.R
-import com.akerimtay.navigation.destination.MainDestination
+import com.akerimtay.rickandmorty.navigation.R
+import com.akerimtay.rickandmorty.navigation.destination.MainDestination
 
 sealed class BottomNavigationItem(
     @StringRes val title: Int,
