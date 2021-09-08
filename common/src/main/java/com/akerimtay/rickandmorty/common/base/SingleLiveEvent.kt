@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.akerimtay.common.base
+package com.akerimtay.rickandmorty.common.base
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner

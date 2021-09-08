@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.akerimtay.common.util
+package com.akerimtay.rickandmorty.common.util
 
 /**
  * Helper to force a when statement to assert all options are matched in a when statement.

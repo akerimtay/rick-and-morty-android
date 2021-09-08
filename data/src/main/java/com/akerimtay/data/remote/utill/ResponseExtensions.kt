@@ -1,6 +1,6 @@
 package com.akerimtay.data.remote.utill
 
-import com.akerimtay.common.BaseError
+import com.akerimtay.rickandmorty.common.BaseError
 import com.akerimtay.data.remote.base.BaseResponse
 import com.akerimtay.data.remote.base.NetworkResponse
 

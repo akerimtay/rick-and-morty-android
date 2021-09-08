@@ -1,4 +1,4 @@
-package com.akerimtay.common.base
+package com.akerimtay.rickandmorty.common.base
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext

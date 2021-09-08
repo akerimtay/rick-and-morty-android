@@ -1,10 +1,10 @@
 package com.akerimtay.character_details
 
 import androidx.lifecycle.SavedStateHandle
-import com.akerimtay.common.base.BaseViewModel
 import com.akerimtay.domain.usecase.GetCharactersUseCase
 import com.akerimtay.navigation.destination.CharacterDetailsDestination
 import com.akerimtay.navigation.navigator.Navigator
+import com.akerimtay.rickandmorty.common.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import timber.log.Timber

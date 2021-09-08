@@ -1,7 +1,7 @@
 package com.akerimtay.data.di
 
 import com.akerimtay.common.BuildConfig
-import com.akerimtay.common.util.applyIf
+import com.akerimtay.rickandmorty.common.util.applyIf
 import com.akerimtay.data.remote.adapter.CharacterStatusTypeAdapter
 import com.akerimtay.data.remote.adapter.DateTypeAdapter
 import com.akerimtay.data.remote.adapter.GenderTypeAdapter

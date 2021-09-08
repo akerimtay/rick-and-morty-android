@@ -1,8 +1,8 @@
 package com.akerimtay.domain.usecase
 
-import com.akerimtay.common.base.UseCase
 import com.akerimtay.domain.model.Characters
 import com.akerimtay.domain.repository.CharacterRepository
+import com.akerimtay.rickandmorty.common.base.UseCase
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

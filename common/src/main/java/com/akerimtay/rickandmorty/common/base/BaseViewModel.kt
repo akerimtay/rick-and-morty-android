@@ -1,4 +1,4 @@
-package com.akerimtay.common.base
+package com.akerimtay.rickandmorty.common.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
