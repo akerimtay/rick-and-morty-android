@@ -1,13 +1,13 @@
 package com.akerimtay.data.di
 
-import com.akerimtay.common.BuildConfig
-import com.akerimtay.rickandmorty.common.util.applyIf
+import com.akerimtay.data.BuildConfig
 import com.akerimtay.data.remote.adapter.CharacterStatusTypeAdapter
 import com.akerimtay.data.remote.adapter.DateTypeAdapter
 import com.akerimtay.data.remote.adapter.GenderTypeAdapter
 import com.akerimtay.data.remote.base.NetworkResponseAdapterFactory
 import com.akerimtay.domain.model.CharacterStatus
 import com.akerimtay.domain.model.Gender
+import com.akerimtay.rickandmorty.common.util.applyIf
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
