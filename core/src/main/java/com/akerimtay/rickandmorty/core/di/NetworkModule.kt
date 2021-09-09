@@ -4,10 +4,10 @@ import com.akerimtay.rickandmorty.character.data.remote.adapter.CharacterStatusT
 import com.akerimtay.rickandmorty.character.data.remote.adapter.GenderTypeAdapter
 import com.akerimtay.rickandmorty.character.domain.model.CharacterStatus
 import com.akerimtay.rickandmorty.character.domain.model.Gender
-import com.akerimtay.rickandmorty.common.DateTypeAdapter
-import com.akerimtay.rickandmorty.common.base.network.NetworkResponseAdapterFactory
 import com.akerimtay.rickandmorty.common.util.applyIf
 import com.akerimtay.rickandmorty.core.BuildConfig
+import com.akerimtay.rickandmorty.core.remote.DateTypeAdapter
+import com.akerimtay.rickandmorty.core.remote.NetworkResponseAdapterFactory
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

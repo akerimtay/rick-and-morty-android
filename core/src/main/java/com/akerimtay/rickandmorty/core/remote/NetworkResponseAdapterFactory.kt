@@ -1,5 +1,6 @@
-package com.akerimtay.rickandmorty.common.base.network
+package com.akerimtay.rickandmorty.core.remote
 
+import com.akerimtay.rickandmorty.common.NetworkResponse
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 import retrofit2.Call

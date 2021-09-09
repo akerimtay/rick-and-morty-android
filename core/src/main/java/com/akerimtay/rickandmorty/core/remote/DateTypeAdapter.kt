@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.common
+package com.akerimtay.rickandmorty.core.remote
 
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer

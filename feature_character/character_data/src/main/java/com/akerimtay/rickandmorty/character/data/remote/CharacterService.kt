@@ -4,7 +4,7 @@ import com.akerimtay.rickandmorty.character.data.remote.model.CharacterResponse
 import com.akerimtay.rickandmorty.character.data.remote.model.CharactersResponse
 import com.akerimtay.rickandmorty.character.domain.model.CharacterStatus
 import com.akerimtay.rickandmorty.character.domain.model.Gender
-import com.akerimtay.rickandmorty.common.base.network.BaseResponse
+import com.akerimtay.rickandmorty.common.base.BaseResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
