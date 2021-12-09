@@ -33,11 +33,15 @@ android {
     kotlinOptions {
         jvmTarget = Config.Kotlin.jvmTargetVersion
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation(project(Modules.resources))
 
+    implementation(Dependencies.AndroidXDependencies.lifecycleCommon)
     implementation(Dependencies.AndroidXDependencies.lifecycleViewModelKtx)
 
     implementation(Dependencies.GoogleDependencies.materialDesign)

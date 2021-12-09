@@ -7,6 +7,7 @@ buildscript {
         classpath(Config.ClassPaths.androidGradle)
         classpath(Config.ClassPaths.kotlinGradle)
         classpath(Config.ClassPaths.daggerHiltGradle)
+        classpath(Config.ClassPaths.navigationSafeArgs)
     }
 }
 

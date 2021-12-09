@@ -9,17 +9,25 @@ object Dependencies {
     object AndroidXDependencies {
         private const val coreKtxVersion = "1.6.0"
         private const val appCompatVersion = "1.3.1"
-        private const val lifecycleRuntimeKtxVersion = "2.3.1"
-        private const val lifecycleViewModelKtxVersion = "2.2.0"
-        private const val roomVersion = "2.3.0"
-        private const val roomPagingVersion = "2.4.0-alpha04"
 
         const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
         const val appCompat = "androidx.appcompat:appcompat:$appCompatVersion"
 
+        // https://developer.android.com/guide/navigation
+        const val navigationVersion = "2.4.0-beta02"
+        const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+        const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+        private const val lifecycleRuntimeKtxVersion = "2.3.1"
+        private const val lifecycleVersion = "2.2.0"
+
         // https://developer.android.com/topic/libraries/architecture/lifecycle
         const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleRuntimeKtxVersion"
-        const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleViewModelKtxVersion"
+        const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+        const val lifecycleCommon = "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+
+        private const val roomVersion = "2.3.0"
+        private const val roomPagingVersion = "2.4.0-alpha04"
 
         // https://developer.android.com/training/data-storage/room#kts
         const val roomRuntime = "androidx.room:room-runtime:$roomVersion"

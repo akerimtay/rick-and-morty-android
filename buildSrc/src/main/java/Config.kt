@@ -14,6 +14,8 @@ object Config {
             "org.jetbrains.kotlin:kotlin-gradle-plugin:${Dependencies.KotlinDependencies.kotlinVersion}"
         const val daggerHiltGradle =
             "com.google.dagger:hilt-android-gradle-plugin:${Dependencies.DaggerHiltDependencies.hiltCoreVersion}"
+        const val navigationSafeArgs =
+            "androidx.navigation:navigation-safe-args-gradle-plugin:${Dependencies.AndroidXDependencies.navigationVersion}"
         const val mavenGoogle = "https://maven.google.com/"
         const val jitpack = "https://jitpack.io"
     }
@@ -26,6 +28,7 @@ object Config {
         const val kotlinKapt = "kotlin-kapt"
         const val kotlinParcelize = "kotlin-parcelize"
         const val daggerHilt = "dagger.hilt.android.plugin"
+        const val navigationSafeArgs = "androidx.navigation.safeargs.kotlin"
     }
 
     object Kotlin {

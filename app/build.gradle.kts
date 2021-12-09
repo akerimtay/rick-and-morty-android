@@ -3,6 +3,7 @@ plugins {
     id(Config.Plugins.kotlinAndroid)
     id(Config.Plugins.kotlinKapt)
     id(Config.Plugins.kotlinParcelize)
+    id(Config.Plugins.navigationSafeArgs)
 }
 
 android {
@@ -58,4 +59,6 @@ dependencies {
 
     implementation(Dependencies.AndroidXDependencies.coreKtx)
     implementation(Dependencies.AndroidXDependencies.appCompat)
+    implementation(Dependencies.AndroidXDependencies.navigationFragment)
+    implementation(Dependencies.AndroidXDependencies.navigationUi)
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/characters_graph"
+        android:icon="@drawable/ic_character_grey"
+        android:title="@string/characters_title" />
+
+    <item
+        android:id="@id/locations_graph"
+        android:icon="@drawable/ic_locations_grey"
+        android:title="@string/locations_title" />
+
+    <item
+        android:id="@id/episodes_graph"
+        android:icon="@drawable/ic_episodes_grey"
+        android:title="@string/episodes_title" />
+
+    <item
+        android:id="@id/settings_graph"
+        android:icon="@drawable/ic_settings_grey"
+        android:title="@string/settings_title" />
+</menu>
