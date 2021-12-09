@@ -9,18 +9,10 @@ object Dependencies {
     object AndroidXDependencies {
         const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
         const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
-        const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
 
         // https://developer.android.com/topic/libraries/architecture/lifecycle
         const val lifecycleRuntimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"
         const val lifecycleViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModelKtx}"
-
-        // https://developer.android.com/jetpack/compose/setup
-        const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
-        const val composeLiveData = "androidx.compose.runtime:runtime-livedata:${Versions.compose}"
-        const val composeMaterial = "androidx.compose.material:material:${Versions.compose}"
-        const val composeTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
-        const val composeToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
 
         // https://developer.android.com/training/data-storage/room#kts
         const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
@@ -33,7 +25,6 @@ object Dependencies {
         // https://dagger.dev/hilt/
         const val hiltCore = "com.google.dagger:hilt-android:${Versions.hiltCore}"
         const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hiltCore}"
-        const val hiltNavigation = "androidx.hilt:hilt-navigation-compose:${Versions.hiltCompose}"
     }
 
     object GoogleDependencies {
@@ -42,11 +33,6 @@ object Dependencies {
 
         // https://github.com/google/gson
         const val gson = "com.google.code.gson:gson:${Versions.gson}"
-
-        // https://github.com/google/accompanist
-        const val accompanistInsets = "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
-        const val accompanistSystemUiController =
-            "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}"
     }
 
     object CoroutinesDependencies {
