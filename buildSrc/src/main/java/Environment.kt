@@ -1,4 +1,4 @@
-object Environments {
+object Environment {
     private const val VERSION_MAJOR = 1
     private const val VERSION_MINOR = 0
     private const val VERSION_PATCH = 0

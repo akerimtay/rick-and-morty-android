@@ -1,5 +1,3 @@
-import dependencies.Versions
-
 object Config {
     object Android {
         const val androidMinSdkVersion = 21
@@ -9,9 +7,13 @@ object Config {
     }
 
     object ClassPaths {
-        const val androidGradle = "com.android.tools.build:gradle:${Versions.gradlePlugin}"
-        const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
-        const val daggerHiltGradle = "com.google.dagger:hilt-android-gradle-plugin:${Versions.hiltCore}"
+        private const val gradlePlugin = "7.0.4"
+
+        const val androidGradle = "com.android.tools.build:gradle:$gradlePlugin"
+        const val kotlinGradle =
+            "org.jetbrains.kotlin:kotlin-gradle-plugin:${Dependencies.KotlinDependencies.kotlinVersion}"
+        const val daggerHiltGradle =
+            "com.google.dagger:hilt-android-gradle-plugin:${Dependencies.DaggerHiltDependencies.hiltCoreVersion}"
         const val mavenGoogle = "https://maven.google.com/"
         const val jitpack = "https://jitpack.io"
     }
@@ -28,7 +30,6 @@ object Config {
 
     object Kotlin {
         const val jvmTargetVersion = "1.8"
-        const val kotlinCompilerExtensionVersion = "1.0.1"
     }
 
     const val testRunner = "androidx.test.runner.AndroidJUnitRunner"

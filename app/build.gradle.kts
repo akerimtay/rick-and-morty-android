@@ -1,5 +1,3 @@
-import dependencies.Dependencies
-
 plugins {
     id(Config.Plugins.androidApplication)
     id(Config.Plugins.kotlinAndroid)
@@ -11,11 +9,11 @@ android {
     compileSdk = Config.Android.androidCompileSdkVersion
 
     defaultConfig {
-        applicationId = Environments.Release.appId
+        applicationId = Environment.Release.appId
         minSdk = Config.Android.androidMinSdkVersion
         targetSdk = Config.Android.androidTargetSdkVersion
-        versionCode = Environments.Release.appVersionCode
-        versionName = Environments.Release.appVersionName
+        versionCode = Environment.Release.appVersionCode
+        versionName = Environment.Release.appVersionName
 
         testInstrumentationRunner = Config.testRunner
     }
