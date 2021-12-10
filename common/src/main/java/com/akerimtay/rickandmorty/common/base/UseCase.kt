@@ -11,6 +11,4 @@ abstract class UseCase<in P, R> {
     }
 
     protected abstract suspend fun execute(parameters: P): R
-
-    suspend fun invokeInCurrentContext(parameters: P): R = execute(parameters)
 }
