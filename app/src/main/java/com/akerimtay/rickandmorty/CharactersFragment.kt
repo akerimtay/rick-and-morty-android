@@ -3,6 +3,7 @@ package com.akerimtay.rickandmorty
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.akerimtay.rickandmorty.common.findTopNavController
 import com.akerimtay.rickandmorty.common.viewbinding.viewBinding
 import com.akerimtay.rickandmorty.databinding.FragmentCharactersBinding
 
@@ -16,6 +17,9 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
         binding.increaseButton.setOnClickListener {
             count++
             binding.countCharactersTextView.text = count.toString()
+        }
+        binding.openDetailButton.setOnClickListener {
+            findTopNavController().navigate(R.id.action_tabsFragment_to_characterDetailFragment)
         }
     }
 }

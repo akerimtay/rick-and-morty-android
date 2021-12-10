@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/Pet/RickAndMorty/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Projects/Pet/RickAndMorty/app/src/main/res/layout/fragment_character_detail.xml" value="0.25" />
         <entry key="..\:/Projects/Pet/RickAndMorty/app/src/main/res/layout/fragment_characters.xml" value="0.25" />
         <entry key="..\:/Projects/Pet/RickAndMorty/app/src/main/res/layout/fragment_episodes.xml" value="0.25" />
         <entry key="..\:/Projects/Pet/RickAndMorty/app/src/main/res/layout/fragment_locations.xml" value="0.25" />
