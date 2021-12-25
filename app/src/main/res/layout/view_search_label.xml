@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/search_label_view_height"
+    android:background="@drawable/bg_search_label_view">
+
+    <ImageView
+        android:id="@+id/search_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/actionBarItemBackground"
+        android:src="@drawable/ic_search_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/start_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/blue_grey_600"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/filter_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/actionBarItemBackground"
+        android:padding="4dp"
+        android:src="@drawable/ic_filter_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/blue_grey_600"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/divider_view"
+        android:layout_width="1dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="?attr/colorOnPrimarySurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/filter_image_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textColor="?attr/colorOnPrimarySurface"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/divider_view"
+        app:layout_constraintStart_toEndOf="@id/search_image_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="0dp"
+        tools:text="@string/find_character" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/filter_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="filter_image_view, divider_view"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
