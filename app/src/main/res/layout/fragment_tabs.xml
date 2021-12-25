@@ -17,12 +17,9 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
+        style="@style/Widget.RM.BottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/teal_700"
-        app:itemIconTint="@color/selector_navigation_item_color"
-        app:itemTextColor="@color/selector_navigation_item_color"
-        app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
