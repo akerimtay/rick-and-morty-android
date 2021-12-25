@@ -2,7 +2,7 @@
 
     <style name="Theme.RM" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-        <!--Color-->
+        <!--Material color attributes-->
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/grey_100</item>
         <item name="colorSecondary">@color/teal_400</item>
@@ -23,7 +23,7 @@
         <item name="android:windowBackground">?android:colorBackground</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
 
-        <!--Typography-->
+        <!--Material type attributes-->
         <item name="textAppearanceHeadline1">@style/TextAppearance.RM.Headline1</item>
         <item name="textAppearanceHeadline2">@style/TextAppearance.RM.Headline2</item>
         <item name="textAppearanceHeadline3">@style/TextAppearance.RM.Headline3</item>
@@ -37,6 +37,11 @@
         <item name="textAppearanceButton">@style/TextAppearance.RM.Button</item>
         <item name="textAppearanceCaption">@style/TextAppearance.RM.Caption</item>
         <item name="textAppearanceOverline">@style/TextAppearance.RM.Overline</item>
+
+        <!--Material shape attributes-->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Owl.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Owl.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Owl.LargeComponent</item>
 
         <!--Default styles-->
         <!--<item name="bottomNavigationStyle">@style/Widget.RM.BottomNavigationView</item>-->
