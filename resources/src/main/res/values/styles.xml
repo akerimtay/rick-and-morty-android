@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.RM.BottomNavigationView" parent="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface">
+        <item name="labelVisibilityMode">selected</item>
+        <item name="android:itemTextAppearance">?attr/textAppearanceCaption</item>
+        <item name="itemIconTint">@color/selector_navigation_item_color</item>
+        <item name="itemTextColor">@color/selector_navigation_item_color</item>
+    </style>
+
+</resources>
