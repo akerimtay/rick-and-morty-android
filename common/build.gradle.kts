@@ -43,6 +43,7 @@ dependencies {
 
     implementation(Dependencies.AndroidXDependencies.lifecycleCommon)
     implementation(Dependencies.AndroidXDependencies.lifecycleViewModelKtx)
+    implementation(Dependencies.AndroidXDependencies.pagingRuntime)
 
     implementation(Dependencies.GoogleDependencies.materialDesign)
     implementation(Dependencies.GoogleDependencies.gson)

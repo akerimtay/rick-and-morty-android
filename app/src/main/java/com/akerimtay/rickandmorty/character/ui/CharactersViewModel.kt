@@ -1,32 +1,45 @@
 package com.akerimtay.rickandmorty.character.ui
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.akerimtay.rickandmorty.character.domain.model.Character
-import com.akerimtay.rickandmorty.character.domain.usecase.GetAllCharactersUseCase
+import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import androidx.paging.map
+import com.akerimtay.rickandmorty.character.domain.usecase.GetAllCharactersAsFlowUseCase
+import com.akerimtay.rickandmorty.common.adapter.BaseContentItem
+import com.akerimtay.rickandmorty.common.base.Action
 import com.akerimtay.rickandmorty.common.base.BaseViewModel
-import com.akerimtay.rickandmorty.common.base.Resource
+import com.akerimtay.rickandmorty.common.base.SingleLiveEvent
+import com.akerimtay.rickandmorty.content.ItemContentType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 @HiltViewModel
 class CharactersViewModel @Inject constructor(
-    private val charactersUseCase: GetAllCharactersUseCase
+    charactersAsFlowUseCase: GetAllCharactersAsFlowUseCase
 ) : BaseViewModel() {
 
-    private val _characters = MutableLiveData<Resource<List<Character>>>()
-    val characters: LiveData<Resource<List<Character>>> = _characters
+    private val _actions = SingleLiveEvent<CharactersAction>()
+    val actions: LiveData<CharactersAction> = _actions
 
-    init {
-        launchSafe(
-            start = { _characters.postValue(Resource.Loading) },
-            body = {
-                val characters = charactersUseCase(Unit)
-                _characters.postValue(Resource.Success(data = characters))
-            },
-            handleError = {
-                _characters.postValue(Resource.Error(exception = it))
+    val characters: Flow<PagingData<BaseContentItem<ItemContentType>>> =
+        charactersAsFlowUseCase(
+            GetAllCharactersAsFlowUseCase.Param()
+        ).cachedIn(viewModelScope)
+            .map { pagingData ->
+                pagingData.map { character ->
+                    CharacterItem(
+                        character = character,
+                        onItemClickListener = {
+                            _actions.postValue(CharactersAction.ShowToast(character.name))
+                        }
+                    )
+                }
             }
-        )
-    }
+}
+
+sealed class CharactersAction : Action {
+    data class ShowToast(val message: String) : CharactersAction()
 }
