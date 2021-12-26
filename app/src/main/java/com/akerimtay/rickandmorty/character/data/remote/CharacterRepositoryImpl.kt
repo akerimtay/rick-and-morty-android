@@ -9,6 +9,7 @@ import javax.inject.Inject
 class CharacterRepositoryImpl @Inject constructor(
     private val characterService: CharacterService
 ) : CharacterRepository {
+
     override suspend fun getAll(): List<Character> {
         val networkResponse = characterService.getCharactersAsync()
         val response = networkResponse.handleResponse()

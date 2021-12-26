@@ -8,6 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CharacterService {
+
     @GET("character")
     suspend fun getCharactersAsync(
         @Query("page") page: Int? = null,

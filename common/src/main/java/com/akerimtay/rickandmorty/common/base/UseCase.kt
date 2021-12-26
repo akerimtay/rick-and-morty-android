@@ -1,10 +1,11 @@
 package com.akerimtay.rickandmorty.common.base
 
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 abstract class UseCase<in P, R> {
-    protected abstract val dispatcher: CoroutineDispatcher
+    open val dispatcher: CoroutineDispatcher = Dispatchers.IO
 
     suspend operator fun invoke(parameters: P): R = withContext(dispatcher) {
         execute(parameters)
