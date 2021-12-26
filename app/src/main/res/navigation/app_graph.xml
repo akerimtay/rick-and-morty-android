@@ -6,7 +6,7 @@
     app:startDestination="@id/tabsFragment">
     <fragment
         android:id="@+id/tabsFragment"
-        android:name="com.akerimtay.rickandmorty.TabsFragment"
+        android:name="com.akerimtay.rickandmorty.main.TabsFragment"
         android:label="TabsFragment"
         tools:layout="@layout/fragment_tabs">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/characterDetailFragment"
-        android:name="com.akerimtay.rickandmorty.CharacterDetailFragment"
+        android:name="com.akerimtay.rickandmorty.character.ui.CharacterDetailFragment"
         android:label="CharacterDetailFragment"
         tools:layout="@layout/fragment_character_detail" />
 </navigation>

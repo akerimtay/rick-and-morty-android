@@ -79,6 +79,14 @@ object Dependencies {
         const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
     }
 
+    object ChuckerDependencies {
+        private const val chuckerVersion = "3.5.2"
+
+        // https://github.com/ChuckerTeam/chucker
+        const val chuckerRelease = "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
+        const val chuckerDebug = "com.github.chuckerteam.chucker:library:$chuckerVersion"
+    }
+
     object OtherDependencies {
         private const val timberVersion = "4.7.1"
         private const val shimmerVersion = "0.5.0"

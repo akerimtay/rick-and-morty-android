@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.akerimtay.rickandmorty.SettingsFragment"
+        android:name="com.akerimtay.rickandmorty.settings.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings" />
 </navigation>

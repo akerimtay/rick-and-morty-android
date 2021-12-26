@@ -1,8 +1,9 @@
-package com.akerimtay.rickandmorty
+package com.akerimtay.rickandmorty.character.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.akerimtay.rickandmorty.R
 import com.akerimtay.rickandmorty.common.util.showToast
 import com.akerimtay.rickandmorty.common.viewbinding.viewBinding
 import com.akerimtay.rickandmorty.databinding.FragmentCharactersBinding

@@ -4,6 +4,7 @@ plugins {
     id(Config.Plugins.kotlinKapt)
     id(Config.Plugins.kotlinParcelize)
     id(Config.Plugins.navigationSafeArgs)
+    id(Config.Plugins.daggerHilt)
 }
 
 android {
@@ -61,4 +62,23 @@ dependencies {
     implementation(Dependencies.AndroidXDependencies.appCompat)
     implementation(Dependencies.AndroidXDependencies.navigationFragment)
     implementation(Dependencies.AndroidXDependencies.navigationUi)
+
+    implementation(Dependencies.GoogleDependencies.materialDesign)
+    implementation(Dependencies.GoogleDependencies.gson)
+
+    implementation(Dependencies.DaggerHiltDependencies.hiltCore)
+    kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
+
+    implementation(Dependencies.CoroutinesDependencies.coroutines)
+    implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
+
+    implementation(Dependencies.RetrofitDependencies.core)
+    implementation(Dependencies.RetrofitDependencies.gson)
+    implementation(Dependencies.OkHttpDependencies.core)
+    implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
+
+    releaseImplementation(Dependencies.ChuckerDependencies.chuckerRelease)
+    debugImplementation(Dependencies.ChuckerDependencies.chuckerDebug)
+
+    implementation(Dependencies.OtherDependencies.timber)
 }
