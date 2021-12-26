@@ -62,6 +62,7 @@ dependencies {
     implementation(Dependencies.AndroidXDependencies.appCompat)
     implementation(Dependencies.AndroidXDependencies.navigationFragment)
     implementation(Dependencies.AndroidXDependencies.navigationUi)
+    implementation(Dependencies.AndroidXDependencies.pagingRuntime)
 
     implementation(Dependencies.GoogleDependencies.materialDesign)
     implementation(Dependencies.GoogleDependencies.gson)
