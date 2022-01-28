@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.akerimtay.rickandmorty.R
 import com.akerimtay.rickandmorty.common.adapter.PagedContentAdapter
 import com.akerimtay.rickandmorty.common.base.BaseFragment
@@ -28,15 +29,10 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-            searchLabelView.onViewClickListener = {
-                showToast("view click")
-            }
-            searchLabelView.onSearchClickListener = {
-                showToast("search click")
-            }
-            searchLabelView.onFilterClickListener = {
-                showToast("filter click")
-            }
+            searchLabelView.onViewClickListener = { showToast("view click") }
+            searchLabelView.onSearchClickListener = { showToast("search click") }
+            searchLabelView.onFilterClickListener = { showToast("filter click") }
+            charactersRecyclerView.layoutManager = LinearLayoutManager(requireContext())
             charactersRecyclerView.adapter = pagedContentAdapter
         }
 
@@ -49,6 +45,9 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
             when (action) {
                 is CharactersAction.ShowToast -> showToast(message = action.message)
             }
+        }
+        viewModel.charactersCount.observe(viewLifecycleOwner) { count ->
+            binding.characterCountTextView.text = getString(R.string.characters_count_format, count)
         }
     }
 }

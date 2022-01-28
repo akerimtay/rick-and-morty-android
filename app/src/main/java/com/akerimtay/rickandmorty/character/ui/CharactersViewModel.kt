@@ -1,6 +1,7 @@
 package com.akerimtay.rickandmorty.character.ui
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
@@ -23,6 +24,9 @@ class CharactersViewModel @Inject constructor(
 
     private val _actions = SingleLiveEvent<CharactersAction>()
     val actions: LiveData<CharactersAction> = _actions
+
+    private val _charactersCount = MutableLiveData<Int>(200)
+    val charactersCount: LiveData<Int> = _charactersCount
 
     val characters: Flow<PagingData<BaseContentItem<ItemContentType>>> =
         charactersAsFlowUseCase(
