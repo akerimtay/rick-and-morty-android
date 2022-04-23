@@ -7,7 +7,6 @@ dependencyResolutionManagement {
         }
     }
 }
-
 rootProject.name = "RickAndMorty"
 include(":app")
 include(":common")
