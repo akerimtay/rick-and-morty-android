@@ -8,7 +8,7 @@ object Config {
 
     object ClassPaths {
         const val androidGradle = "com.android.tools.build:gradle:7.1.3"
-        const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0"
+        const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
         const val daggerHiltGradle = "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
         const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:2.4.1"
         const val mavenGoogle = "https://maven.google.com/"
@@ -27,7 +27,7 @@ object Config {
     }
 
     object Kotlin {
-        const val jvmTargetVersion = "1.8"
+        const val jvmTargetVersion = "11"
     }
 
     const val testRunner = "androidx.test.runner.AndroidJUnitRunner"

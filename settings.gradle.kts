@@ -7,7 +7,12 @@ dependencyResolutionManagement {
         }
     }
 }
+
 rootProject.name = "RickAndMorty"
 include(":app")
 include(":common")
 include(":resources")
+
+// Core
+include(":core:presentation")
+include(":core:common")
