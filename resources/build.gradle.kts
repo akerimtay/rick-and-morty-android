@@ -15,20 +15,17 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        getByName(Environment.BuildTypes.release) {
             isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-        getByName("debug") {
+        getByName(Environment.BuildTypes.debug) {
             isMinifyEnabled = false
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = Config.Kotlin.jvmTargetVersion
@@ -36,7 +33,7 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.AndroidXDependencies.coreKtx)
-    implementation(Dependencies.AndroidXDependencies.appCompat)
-    implementation(Dependencies.GoogleDependencies.materialDesign)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.google.material)
 }

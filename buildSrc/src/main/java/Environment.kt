@@ -9,4 +9,10 @@ object Environment {
         const val appVersionCode = VERSION_BUILD
         const val appVersionName = "$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH"
     }
+
+    object BuildTypes {
+        const val release = "release"
+        const val qa = "qa"
+        const val debug = "debug"
+    }
 }

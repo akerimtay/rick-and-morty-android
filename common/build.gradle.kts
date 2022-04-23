@@ -15,20 +15,17 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        getByName(Environment.BuildTypes.release) {
             isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-        getByName("debug") {
+        getByName(Environment.BuildTypes.debug) {
             isMinifyEnabled = false
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = Config.Kotlin.jvmTargetVersion
@@ -41,13 +38,13 @@ android {
 dependencies {
     implementation(project(Modules.resources))
 
-    implementation(Dependencies.AndroidXDependencies.lifecycleCommon)
-    implementation(Dependencies.AndroidXDependencies.lifecycleViewModelKtx)
-    implementation(Dependencies.AndroidXDependencies.pagingRuntime)
+    implementation(libs.androidx.lifecycle.compiler)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.paging)
 
-    implementation(Dependencies.GoogleDependencies.materialDesign)
-    implementation(Dependencies.GoogleDependencies.gson)
+    implementation(libs.google.material)
+    implementation(libs.google.gson)
 
-    implementation(Dependencies.CoroutinesDependencies.coroutines)
-    implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
 }

@@ -7,15 +7,10 @@ object Config {
     }
 
     object ClassPaths {
-        private const val gradlePlugin = "7.0.4"
-
-        const val androidGradle = "com.android.tools.build:gradle:$gradlePlugin"
-        const val kotlinGradle =
-            "org.jetbrains.kotlin:kotlin-gradle-plugin:${Dependencies.KotlinDependencies.kotlinVersion}"
-        const val daggerHiltGradle =
-            "com.google.dagger:hilt-android-gradle-plugin:${Dependencies.DaggerHiltDependencies.hiltCoreVersion}"
-        const val navigationSafeArgs =
-            "androidx.navigation:navigation-safe-args-gradle-plugin:${Dependencies.AndroidXDependencies.navigationVersion}"
+        const val androidGradle = "com.android.tools.build:gradle:7.1.3"
+        const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0"
+        const val daggerHiltGradle = "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
+        const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:2.4.1"
         const val mavenGoogle = "https://maven.google.com/"
         const val jitpack = "https://jitpack.io"
     }

@@ -21,25 +21,23 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        getByName(Environment.BuildTypes.release) {
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-        getByName("debug") {
+        getByName(Environment.BuildTypes.debug) {
             isDebuggable = true
             isMinifyEnabled = false
             isShrinkResources = false
             applicationIdSuffix = ".debug"
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = Config.Kotlin.jvmTargetVersion
@@ -47,39 +45,34 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
     implementation(project(Modules.resources))
     implementation(project(Modules.common))
 
-    implementation(Dependencies.AndroidXDependencies.coreKtx)
-    implementation(Dependencies.AndroidXDependencies.appCompat)
-    implementation(Dependencies.AndroidXDependencies.navigationFragment)
-    implementation(Dependencies.AndroidXDependencies.navigationUi)
-    implementation(Dependencies.AndroidXDependencies.pagingRuntime)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.androidx.paging)
 
-    implementation(Dependencies.GoogleDependencies.materialDesign)
-    implementation(Dependencies.GoogleDependencies.gson)
+    implementation(libs.google.material)
 
-    implementation(Dependencies.DaggerHiltDependencies.hiltCore)
-    kapt(Dependencies.DaggerHiltDependencies.hiltCompiler)
+    implementation(libs.dagger.hilt.android)
+    kapt(libs.dagger.hilt.compiler)
 
-    implementation(Dependencies.CoroutinesDependencies.coroutines)
-    implementation(Dependencies.CoroutinesDependencies.coroutinesAndroid)
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
 
-    implementation(Dependencies.RetrofitDependencies.core)
-    implementation(Dependencies.RetrofitDependencies.gson)
-    implementation(Dependencies.OkHttpDependencies.core)
-    implementation(Dependencies.OkHttpDependencies.loggingInterceptor)
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.gson)
 
-    releaseImplementation(Dependencies.ChuckerDependencies.chuckerRelease)
-    debugImplementation(Dependencies.ChuckerDependencies.chuckerDebug)
+    implementation(libs.okhttp.core)
+    implementation(libs.okhttp.logging.interceptor)
 
-    implementation(Dependencies.OtherDependencies.timber)
+    implementation(libs.other.timber)
+    releaseImplementation(libs.other.chucker.release)
+    debugImplementation(libs.other.chucker.debug)
 }

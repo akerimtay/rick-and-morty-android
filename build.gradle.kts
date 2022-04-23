@@ -2,6 +2,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
         classpath(Config.ClassPaths.androidGradle)
@@ -16,6 +17,12 @@ allprojects {
         mavenCentral()
         maven(url = Config.ClassPaths.mavenGoogle)
         maven(url = Config.ClassPaths.jitpack)
+    }
+
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+        kotlinOptions.freeCompilerArgs += listOf(
+            "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+        )
     }
 }
 
