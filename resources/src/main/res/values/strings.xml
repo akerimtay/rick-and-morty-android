@@ -8,4 +8,5 @@
     <string name="find_character">Find a character</string>
     <string name="find_location">Find a location</string>
     <string name="find_episode">Find a episode</string>
+    <string name="characters_count_format">Total characters: %d</string>
 </resources>

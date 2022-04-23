@@ -8,7 +8,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.akerimtay.rickandmorty.R
 import com.akerimtay.rickandmorty.common.viewbinding.viewBinding
 import com.akerimtay.rickandmorty.databinding.FragmentTabsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TabsFragment : Fragment(R.layout.fragment_tabs) {
     private val binding by viewBinding(FragmentTabsBinding::bind)
 

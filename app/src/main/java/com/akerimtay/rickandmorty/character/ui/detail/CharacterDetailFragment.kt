@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.character.ui
+package com.akerimtay.rickandmorty.character.ui.detail
 
 import androidx.fragment.app.Fragment
 import com.akerimtay.rickandmorty.R

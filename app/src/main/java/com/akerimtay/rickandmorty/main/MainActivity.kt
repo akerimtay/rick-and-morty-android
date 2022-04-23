@@ -1,6 +1,8 @@
 package com.akerimtay.rickandmorty.main
 
-import androidx.appcompat.app.AppCompatActivity
 import com.akerimtay.rickandmorty.R
+import com.akerimtay.rickandmorty.common.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity(R.layout.activity_main)
+@AndroidEntryPoint
+class MainActivity : BaseActivity(R.layout.activity_main)

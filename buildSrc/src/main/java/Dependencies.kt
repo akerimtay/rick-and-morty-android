@@ -34,6 +34,11 @@ object Dependencies {
         const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
         const val roomKtx = "androidx.room:room-ktx:$roomVersion"
         const val roomPaging = "androidx.room:room-paging:$roomPagingVersion"
+
+        private const val pagingVersion = "3.1.0"
+
+        // https://developer.android.com/topic/libraries/architecture/paging/v3-overview
+        const val pagingRuntime = "androidx.paging:paging-runtime:$pagingVersion"
     }
 
     object DaggerHiltDependencies {

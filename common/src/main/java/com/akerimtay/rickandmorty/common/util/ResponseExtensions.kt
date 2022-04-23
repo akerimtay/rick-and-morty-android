@@ -1,7 +1,7 @@
 package com.akerimtay.rickandmorty.common.util
 
-import com.akerimtay.rickandmorty.common.BaseError
 import com.akerimtay.rickandmorty.common.NetworkResponse
+import com.akerimtay.rickandmorty.common.base.BaseError
 import com.akerimtay.rickandmorty.common.base.BaseResponse
 
 fun <T : Any> BaseResponse<T>.handleResponse(): T {

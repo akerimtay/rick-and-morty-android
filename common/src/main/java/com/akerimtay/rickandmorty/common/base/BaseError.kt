@@ -1,6 +1,8 @@
-package com.akerimtay.rickandmorty.common
+package com.akerimtay.rickandmorty.common.base
 
 import androidx.annotation.StringRes
+import com.akerimtay.rickandmorty.common.R
+import com.akerimtay.rickandmorty.common.StringWrapper
 
 private const val NO_RES_ID = 0
 
