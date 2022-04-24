@@ -1,14 +1,14 @@
 package com.akerimtay.rickandmorty
 
 import android.app.Application
-import com.akerimtay.rickandmorty.timber.TimberManager
 import dagger.hilt.android.HiltAndroidApp
+import timber.log.Timber
 
 @HiltAndroidApp
-class RickAndMortyApp : Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        TimberManager.init()
+        if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
     }
 }
