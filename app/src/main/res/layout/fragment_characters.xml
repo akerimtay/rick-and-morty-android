@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?attr/colorBackground"
         app:liftOnScroll="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -39,7 +41,7 @@
                     android:layout_marginTop="24dp"
                     android:fontFamily="@font/roboto_medium"
                     android:textAppearance="?attr/textAppearanceOverline"
-                    android:textColor="?attr/colorOnSurface"
+                    android:textColor="?attr/colorLabelText"
                     app:layout_constraintStart_toStartOf="@id/start_toolbar_guideline"
                     app:layout_constraintTop_toBottomOf="@id/search_label_view"
                     tools:text="Total characters: 200" />
@@ -74,16 +76,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/characters_recycler_view"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:paddingVertical="8dp"
-                app:layout_constraintEnd_toEndOf="@id/end_guideline"
-                app:layout_constraintStart_toStartOf="@id/start_guideline"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:listitem="@layout/item_character" />
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/characters_recycler_view"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:clipToPadding="false"-->
+            <!--                android:paddingVertical="8dp"-->
+            <!--                app:layout_constraintEnd_toEndOf="@id/end_guideline"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/start_guideline"-->
+            <!--                app:layout_constraintTop_toTopOf="parent"-->
+            <!--                tools:listitem="@layout/item_character" />-->
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/start_guideline"

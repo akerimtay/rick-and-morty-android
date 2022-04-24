@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.V21.Theme.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">?attr/fontRegular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorPrimaryText</item>
+        <item name="android:textColorPrimary">?attr/colorPrimaryText</item>
+    </style>
+
+    <style name="Base.Theme.TextAppearance" parent="Base.V21.Theme.TextAppearance" />
+
+    <style name="Theme.TextAppearance" parent="Base.Theme.TextAppearance" />
+
+    <style name="Theme.TextAppearance.Regular12">
+        <item name="fontFamily">?attr/fontRegular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Theme.TextAppearance.Regular14">
+        <item name="fontFamily">?attr/fontRegular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Theme.TextAppearance.Regular16">
+        <item name="fontFamily">?attr/fontRegular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Theme.TextAppearance.Medium10">
+        <item name="fontFamily">?attr/fontMedium</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="Theme.TextAppearance.Medium12">
+        <item name="fontFamily">?attr/fontMedium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Theme.TextAppearance.Medium14">
+        <item name="fontFamily">?attr/fontMedium</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Theme.TextAppearance.Light12">
+        <item name="fontFamily">?attr/fontLight</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Theme.TextAppearance.Light14">
+        <item name="fontFamily">?attr/fontLight</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

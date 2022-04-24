@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.V26.Theme" parent="Base.V21.Theme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="Base.Theme" parent="Base.V26.Theme" />
+</resources>

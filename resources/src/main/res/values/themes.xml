@@ -1,50 +1,40 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <style name="Theme.RM" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Base.V21.Theme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="isLight">true</item>
 
-        <!--Material color attributes-->
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryVariant">@color/grey_100</item>
-        <item name="colorSecondary">@color/teal_400</item>
-        <item name="colorSurface">@color/white</item>
-        <item name="android:colorBackground">@color/grey_50</item>
+        <item name="android:windowBackground">?attr/colorBackground</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
 
-        <item name="colorOnPrimary">@color/blue_grey_950</item>
-        <item name="colorOnPrimarySurface">@color/grey_400</item>
-        <item name="colorOnSecondary">@color/white</item>
-        <item name="colorOnBackground">@color/grey_600</item>
-        <item name="colorOnSurface">@color/grey_600</item>
-        <item name="dividerColor">@color/grey_100</item>
-        <item name="greenColor">@color/green_600</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorOnPrimary">@color/silver</item>
+        <item name="colorPrimaryText">@color/firefly</item>
+        <item name="colorPrimaryVariant">@color/concrete</item>
+        <item name="colorBackground">@color/alabaster</item>
+        <item name="colorAccent">@color/eastern_blue</item>
+        <item name="colorLabelText">@color/gray</item>
+        <item name="colorDivider">@color/silver</item>
 
-        <!--System/Platform attributes-->
-        <item name="android:navigationBarColor">?attr/colorPrimary</item>
-        <item name="android:statusBarColor">?android:colorBackground</item>
-        <item name="android:windowBackground">?android:colorBackground</item>
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="shapeAppearanceSmallComponent">@style/Theme.ShapeAppearance.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/Theme.ShapeAppearance.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/Theme.ShapeAppearance.LargeComponent</item>
 
-        <!--Material type attributes-->
-        <item name="textAppearanceHeadline1">@style/TextAppearance.RM.Headline1</item>
-        <item name="textAppearanceHeadline2">@style/TextAppearance.RM.Headline2</item>
-        <item name="textAppearanceHeadline3">@style/TextAppearance.RM.Headline3</item>
-        <item name="textAppearanceHeadline4">@style/TextAppearance.RM.Headline4</item>
-        <item name="textAppearanceHeadline5">@style/TextAppearance.RM.Headline5</item>
-        <item name="textAppearanceHeadline6">@style/TextAppearance.RM.Headline6</item>
-        <item name="textAppearanceSubtitle1">@style/TextAppearance.RM.Subtitle1</item>
-        <item name="textAppearanceSubtitle2">@style/TextAppearance.RM.Subtitle2</item>
-        <item name="textAppearanceBody1">@style/TextAppearance.RM.Body1</item>
-        <item name="textAppearanceBody2">@style/TextAppearance.RM.Body2</item>
-        <item name="textAppearanceButton">@style/TextAppearance.RM.Button</item>
-        <item name="textAppearanceCaption">@style/TextAppearance.RM.Caption</item>
-        <item name="textAppearanceOverline">@style/TextAppearance.RM.Overline</item>
+        <item name="fontLight">@font/roboto_light</item>
+        <item name="fontRegular">@font/roboto_regular</item>
+        <item name="fontMedium">@font/roboto_medium</item>
 
-        <!--Material shape attributes-->
-        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Owl.SmallComponent</item>
-        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Owl.MediumComponent</item>
-        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Owl.LargeComponent</item>
-
-        <!--Default styles-->
-        <!--<item name="bottomNavigationStyle">@style/Widget.RM.BottomNavigationView</item>-->
+        <item name="styleTextRegular12">@style/Theme.TextAppearance.Regular12</item>
+        <item name="styleTextRegular14">@style/Theme.TextAppearance.Regular14</item>
+        <item name="styleTextRegular16">@style/Theme.TextAppearance.Regular16</item>
+        <item name="styleTextMedium10">@style/Theme.TextAppearance.Medium10</item>
+        <item name="styleTextMedium12">@style/Theme.TextAppearance.Medium12</item>
+        <item name="styleTextMedium14">@style/Theme.TextAppearance.Medium14</item>
+        <item name="styleTextLight12">@style/Theme.TextAppearance.Light12</item>
+        <item name="styleTextLight14">@style/Theme.TextAppearance.Light14</item>
     </style>
 
+    <style name="Base.Theme" parent="Base.V21.Theme" />
+
+    <style name="Theme.RM" parent="Base.Theme" />
 </resources>

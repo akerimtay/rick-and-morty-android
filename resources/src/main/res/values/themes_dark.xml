@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.V21.Theme.Dark" parent="Base.V21.Theme">
+        <item name="isLight">false</item>
+
+        <item name="colorPrimary">@color/big_stone</item>
+        <item name="colorOnPrimary">@color/shuttle_gray</item>
+        <item name="colorPrimaryText">@android:color/white</item>
+        <item name="colorPrimaryVariant">@color/big_stone</item>
+        <item name="colorBackground">@color/firefly</item>
+        <item name="colorAccent">@color/emerald</item>
+        <item name="colorLabelText">@color/raven</item>
+        <item name="colorDivider">@color/whiteAlpha10</item>
+    </style>
+</resources>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#FFFFFF</color>
-    <color name="blue_grey_900">#152A3A</color>
-    <color name="blue_grey_950">#0B1E2D</color>
-    <color name="blue_grey_600">#5B6975</color>
-    <color name="blue_grey_500">#6E798C</color>
-    <color name="teal_400">#22A2BD</color>
-    <color name="green_600">#27AE60</color>
-    <color name="green_500">#43D049</color>
-    <color name="grey_600">#828282</color>
-    <color name="grey_400">#BDBDBD</color>
-    <color name="grey_100">#F2F2F2</color>
-    <color name="grey_50">#FCFCFC</color>
+    <color name="whiteAlpha10">#1AFFFFFF</color>
+    <color name="alabaster">#FCFCFC</color>
+    <color name="concrete">#F2F2F2</color>
+    <color name="silver">#BDBDBD</color>
+    <color name="gray">#828282</color>
+    <color name="big_stone">#152A3A</color>
+    <color name="firefly">#0B1E2D</color>
+    <color name="shuttle_gray">#5B6975</color>
+    <color name="raven">#6E798C</color>
+    <color name="eastern_blue">#22A2BD</color>
+    <color name="jungle_green">#27AE60</color>
+    <color name="emerald">#43D049</color>
 </resources>

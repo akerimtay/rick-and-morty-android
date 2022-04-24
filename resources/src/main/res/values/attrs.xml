@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="dividerColor" format="color" />
-    <attr name="greenColor" format="color" />
+    <attr name="isLight" format="boolean" />
+
+    <attr name="colorPrimaryText" format="color|reference" />
+    <attr name="colorBackground" format="color|reference" />
+    <attr name="colorLabelText" format="color|reference" />
+    <attr name="colorDivider" format="color|reference" />
+
+    <attr name="fontLight" format="reference" />
+    <attr name="fontRegular" format="reference" />
+    <attr name="fontMedium" format="reference" />
+
+    <attr name="styleTextRegular12" format="reference" />
+    <attr name="styleTextRegular14" format="reference" />
+    <attr name="styleTextRegular16" format="reference" />
+    <attr name="styleTextMedium10" format="reference" />
+    <attr name="styleTextMedium12" format="reference" />
+    <attr name="styleTextMedium14" format="reference" />
+    <attr name="styleTextLight12" format="reference" />
+    <attr name="styleTextLight14" format="reference" />
 </resources>

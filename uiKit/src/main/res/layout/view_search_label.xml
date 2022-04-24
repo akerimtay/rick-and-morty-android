@@ -15,7 +15,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/start_guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/blue_grey_600"
         tools:ignore="ContentDescription" />
 
     <ImageView
@@ -28,7 +27,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/end_guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/blue_grey_600"
         tools:ignore="ContentDescription" />
 
     <View
@@ -36,7 +34,7 @@
         android:layout_width="1dp"
         android:layout_height="24dp"
         android:layout_marginEnd="8dp"
-        android:background="?attr/colorOnPrimarySurface"
+        android:background="?attr/colorDivider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/filter_image_view"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,8 +44,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
-        android:textAppearance="?attr/textAppearanceBody1"
-        android:textColor="?attr/colorOnPrimarySurface"
+        android:textAppearance="?attr/styleTextRegular16"
+        android:textColor="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/divider_view"
         app:layout_constraintStart_toEndOf="@id/search_image_view"
