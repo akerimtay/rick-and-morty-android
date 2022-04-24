@@ -14,7 +14,9 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/common" />
+            <option value="$PROJECT_DIR$/core/di" />
             <option value="$PROJECT_DIR$/core/presentation" />
+            <option value="$PROJECT_DIR$/moduleInjector" />
             <option value="$PROJECT_DIR$/resources" />
             <option value="$PROJECT_DIR$/uiKit" />
           </set>

@@ -9,7 +9,8 @@ androidx-recyclerview = "1.2.1"
 androidx-paging = "3.1.0"
 google-material = "1.5.0"
 google-gson = "2.8.8"
-dagger-hilt = "2.38.1"
+dagger = "2.35.1"
+dagger-compiler = "2.40.1"
 coroutine = "1.6.0"
 retrofit = "2.9.0"
 okhttp = "4.9.3"
@@ -35,8 +36,8 @@ androidx-paging = { module = "androidx.paging:paging-runtime", version.ref = "an
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
 
-dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger-hilt" }
-dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger-hilt" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger-compiler" }
 
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }

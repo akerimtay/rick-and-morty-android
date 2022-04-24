@@ -7,9 +7,8 @@ object Config {
     }
 
     object ClassPaths {
-        const val androidGradle = "com.android.tools.build:gradle:7.1.3"
-        const val kotlinGradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
-        const val daggerHiltGradle = "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
+        const val buildGradle = "com.android.tools.build:gradle:7.1.3"
+        const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
         const val navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:2.4.1"
         const val mavenGoogle = "https://maven.google.com/"
         const val jitpack = "https://jitpack.io"
@@ -22,7 +21,6 @@ object Config {
         const val kotlinAndroid = "kotlin-android"
         const val kotlinKapt = "kotlin-kapt"
         const val kotlinParcelize = "kotlin-parcelize"
-        const val daggerHilt = "dagger.hilt.android.plugin"
         const val navigationSafeArgs = "androidx.navigation.safeargs.kotlin"
     }
 

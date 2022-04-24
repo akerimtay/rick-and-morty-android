@@ -4,7 +4,6 @@ plugins {
     id(Config.Plugins.kotlinKapt)
     id(Config.Plugins.kotlinParcelize)
     id(Config.Plugins.navigationSafeArgs)
-    id(Config.Plugins.daggerHilt)
 }
 
 android {
@@ -48,10 +47,12 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.resources))
-    implementation(project(Modules.uiKit))
     implementation(project(Modules.corePresentation))
     implementation(project(Modules.coreCommon))
+    implementation(project(Modules.coreDi))
+    implementation(project(Modules.resources))
+    implementation(project(Modules.uiKit))
+    implementation(project(Modules.injector))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
@@ -62,8 +63,8 @@ dependencies {
 
     implementation(libs.google.material)
 
-    implementation(libs.dagger.hilt.android)
-    kapt(libs.dagger.hilt.compiler)
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)

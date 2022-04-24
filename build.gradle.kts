@@ -5,9 +5,8 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath(Config.ClassPaths.androidGradle)
-        classpath(Config.ClassPaths.kotlinGradle)
-        classpath(Config.ClassPaths.daggerHiltGradle)
+        classpath(Config.ClassPaths.buildGradle)
+        classpath(Config.ClassPaths.kotlin)
         classpath(Config.ClassPaths.navigationSafeArgs)
     }
 }

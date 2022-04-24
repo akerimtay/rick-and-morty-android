@@ -12,7 +12,9 @@ rootProject.name = "RickAndMorty"
 include(":app")
 
 // Shared
-include(":resources")
 include(":core:presentation")
 include(":core:common")
+include(":core:di")
+include(":resources")
 include(":uiKit")
+include(":moduleInjector")

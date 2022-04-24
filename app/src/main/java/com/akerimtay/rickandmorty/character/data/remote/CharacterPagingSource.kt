@@ -2,11 +2,9 @@ package com.akerimtay.rickandmorty.character.data.remote
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.akerimtay.rickandmorty.character.data.mapper.CharacterMapper
 import com.akerimtay.rickandmorty.character.domain.model.Character
 import com.akerimtay.rickandmorty.character.domain.model.CharacterStatus
 import com.akerimtay.rickandmorty.character.domain.model.Gender
-import com.akerimtay.rickandmorty.common.util.handleResponse
 import java.io.IOException
 import retrofit2.HttpException
 
@@ -18,6 +16,7 @@ class CharacterPagingSource(
     private val status: CharacterStatus? = null,
     private val gender: Gender? = null
 ) : PagingSource<Int, Character>() {
+
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         val page = params.key ?: DEFAULT_PAGE_INDEX
         return try {
@@ -27,14 +26,15 @@ class CharacterPagingSource(
                 status = status,
                 gender = gender
             )
-            val response = networkResponse.handleResponse()
-            val characters = CharacterMapper.fromNetwork(response = response).results
+//            val response = networkResponse.handleResponse()
+//            val characters = CharacterMapper.fromNetwork(response = response).results
 
-            LoadResult.Page(
-                data = characters,
-                prevKey = if (page == DEFAULT_PAGE_INDEX) null else page - 1,
-                nextKey = if (characters.isEmpty()) null else page + 1
-            )
+//            LoadResult.Page(
+//                data = characters,
+//                prevKey = if (page == DEFAULT_PAGE_INDEX) null else page - 1,
+//                nextKey = if (characters.isEmpty()) null else page + 1
+//            )
+            TODO("Implement after refactor")
         } catch (exception: IOException) {
             return LoadResult.Error(exception)
         } catch (exception: HttpException) {
