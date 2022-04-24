@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/core/common" />
             <option value="$PROJECT_DIR$/core/presentation" />
             <option value="$PROJECT_DIR$/resources" />
+            <option value="$PROJECT_DIR$/uiKit" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -49,6 +49,7 @@ android {
 
 dependencies {
     implementation(project(Modules.resources))
+    implementation(project(Modules.uiKit))
     implementation(project(Modules.corePresentation))
     implementation(project(Modules.coreCommon))
 

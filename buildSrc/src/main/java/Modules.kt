@@ -5,4 +5,5 @@ object Modules {
     const val resources = ":resources"
     const val corePresentation = ":core:presentation"
     const val coreCommon = ":core:common"
+    const val uiKit = ":uiKit"
 }
