@@ -1,6 +1,5 @@
 package com.akerimtay.rickandmorty.core.network
 
-import com.akerimtay.rickandmorty.common.NetworkResponse
 import java.io.IOException
 import okhttp3.Request
 import okhttp3.ResponseBody

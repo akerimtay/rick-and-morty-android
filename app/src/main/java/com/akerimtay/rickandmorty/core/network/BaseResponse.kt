@@ -1,6 +1,5 @@
-package com.akerimtay.rickandmorty.common.base
+package com.akerimtay.rickandmorty.core.network
 
-import com.akerimtay.rickandmorty.common.NetworkResponse
 import com.google.gson.annotations.SerializedName
 
 typealias BaseResponse<S> = NetworkResponse<S, BaseErrorResponse>

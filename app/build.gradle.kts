@@ -49,7 +49,6 @@ android {
 
 dependencies {
     implementation(project(Modules.resources))
-    implementation(project(Modules.common))
     implementation(project(Modules.corePresentation))
     implementation(project(Modules.coreCommon))
 

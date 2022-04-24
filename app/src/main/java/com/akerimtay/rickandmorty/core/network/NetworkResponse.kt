@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.common
+package com.akerimtay.rickandmorty.core.network
 
 import java.io.IOException
 

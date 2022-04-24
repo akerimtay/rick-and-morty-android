@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.akerimtay.rickandmorty.R
-import com.akerimtay.rickandmorty.common.util.setThrottleOnClickListener
+import com.akerimtay.rickandmorty.core.presentation.util.extensions.setOnSafeClickListener
 import com.akerimtay.rickandmorty.databinding.ViewSearchLabelBinding
 
 class SearchLabelView @JvmOverloads constructor(
@@ -40,9 +40,9 @@ class SearchLabelView @JvmOverloads constructor(
             with(binding) {
                 textView.text = attributes.getString(R.styleable.SearchLabelView_text).orEmpty()
                 filterGroup.isVisible = attributes.getBoolean(R.styleable.SearchLabelView_showFilter, false)
-                searchImageView.setThrottleOnClickListener { onSearchClickListener?.invoke(Unit) }
-                filterImageView.setThrottleOnClickListener { onFilterClickListener?.invoke(Unit) }
-                root.setThrottleOnClickListener { onViewClickListener?.invoke(Unit) }
+                searchImageView.setOnSafeClickListener { onSearchClickListener?.invoke(Unit) }
+                filterImageView.setOnSafeClickListener { onFilterClickListener?.invoke(Unit) }
+                root.setOnSafeClickListener { onViewClickListener?.invoke(Unit) }
             }
         } finally {
             attributes.recycle()

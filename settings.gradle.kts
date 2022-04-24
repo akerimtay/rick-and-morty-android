@@ -10,9 +10,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "RickAndMorty"
 include(":app")
-include(":common")
-include(":resources")
 
-// Core
+// Shared
+include(":resources")
 include(":core:presentation")
 include(":core:common")

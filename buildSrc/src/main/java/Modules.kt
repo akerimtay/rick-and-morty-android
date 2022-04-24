@@ -1,7 +1,8 @@
 object Modules {
     const val app = ":app"
+
+    // Shared
     const val resources = ":resources"
-    const val common = ":common"
     const val corePresentation = ":core:presentation"
     const val coreCommon = ":core:common"
 }

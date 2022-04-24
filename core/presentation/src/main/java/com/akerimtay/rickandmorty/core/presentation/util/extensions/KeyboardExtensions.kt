@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.core.presentation.util
+package com.akerimtay.rickandmorty.core.presentation.util.extensions
 
 import android.content.Context
 import android.view.View

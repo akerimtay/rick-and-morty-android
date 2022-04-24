@@ -26,3 +26,5 @@ abstract class BaseViewModel : ViewModel(), CoroutineScope {
         }
     }
 }
+
+interface Action

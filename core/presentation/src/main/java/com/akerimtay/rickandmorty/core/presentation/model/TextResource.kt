@@ -2,6 +2,7 @@ package com.akerimtay.rickandmorty.core.presentation.model
 
 import android.content.Context
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.StringRes
 
 interface TextResource {
@@ -48,5 +49,9 @@ fun @receiver:StringRes Int.toResource(): TextResource = AndroidTextResource(thi
 fun @receiver:StringRes Int.toResource(vararg formatArgs: Any?): TextResource = AndroidTextResource(this, formatArgs)
 
 fun TextView.setText(textResource: TextResource) {
-    text = textResource.getString(this.context)
+    text = textResource.getString(context)
+}
+
+fun Context.showToast(message: TextResource, duration: Int) {
+    Toast.makeText(this, message.getString(this), duration).show()
 }
