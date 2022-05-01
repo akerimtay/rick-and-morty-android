@@ -42,4 +42,6 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.paging)
+
+    implementation(libs.google.material)
 }

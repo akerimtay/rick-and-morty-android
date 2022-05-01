@@ -11,9 +11,10 @@ dependencyResolutionManagement {
 rootProject.name = "RickAndMorty"
 include(":app")
 
-// Shared
+// Core
 include(":core:presentation")
 include(":core:common")
 include(":core:di")
-include(":uiKit")
+
+// DI
 include(":moduleInjector")

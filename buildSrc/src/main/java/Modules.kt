@@ -1,10 +1,11 @@
 object Modules {
     const val app = ":app"
 
-    // Shared
+    // Core
     const val corePresentation = ":core:presentation"
     const val coreCommon = ":core:common"
     const val coreDi = ":core:di"
-    const val uiKit = ":uiKit"
+
+    // DI
     const val injector = ":moduleInjector"
 }

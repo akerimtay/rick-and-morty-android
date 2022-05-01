@@ -1,12 +1,13 @@
-package com.akerimtay.rickandmorty.uiKit
+package com.akerimtay.rickandmorty.core.presentation.widget
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
+import com.akerimtay.rickandmorty.core.presentation.R
+import com.akerimtay.rickandmorty.core.presentation.databinding.ViewSearchLabelBinding
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.setOnSafeClickListener
-import com.akerimtay.rickandmorty.uiKit.databinding.ViewSearchLabelBinding
 
 class SearchLabelView @JvmOverloads constructor(
     context: Context,
