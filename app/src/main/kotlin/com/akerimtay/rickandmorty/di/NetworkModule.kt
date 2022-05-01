@@ -1,14 +1,14 @@
-package com.akerimtay.rickandmorty.core.di
+package com.akerimtay.rickandmorty.di
 
 import android.content.Context
 import com.akerimtay.rickandmorty.BuildConfig
-import com.akerimtay.rickandmorty.character.data.remote.adapter.CharacterStatusTypeAdapter
-import com.akerimtay.rickandmorty.character.data.remote.adapter.GenderTypeAdapter
 import com.akerimtay.rickandmorty.character.domain.model.CharacterStatus
 import com.akerimtay.rickandmorty.character.domain.model.Gender
-import com.akerimtay.rickandmorty.core.network.DateTypeAdapter
-import com.akerimtay.rickandmorty.core.network.NetworkResponseAdapterFactory
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.applyIf
+import com.akerimtay.rickandmorty.network.NetworkResponseAdapterFactory
+import com.akerimtay.rickandmorty.network.adapter.CharacterStatusTypeAdapter
+import com.akerimtay.rickandmorty.network.adapter.DateTypeAdapter
+import com.akerimtay.rickandmorty.network.adapter.GenderTypeAdapter
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.core.network
+package com.akerimtay.rickandmorty.network
 
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
@@ -7,11 +7,8 @@ import retrofit2.CallAdapter
 import retrofit2.Retrofit
 
 class NetworkResponseAdapterFactory : CallAdapter.Factory() {
-    override fun get(
-        returnType: Type,
-        annotations: Array<Annotation>,
-        retrofit: Retrofit
-    ): CallAdapter<*, *>? {
+
+    override fun get(returnType: Type, annotations: Array<Annotation>, retrofit: Retrofit): CallAdapter<*, *>? {
         // suspend functions wrap the response type in `Call`
         if (Call::class.java != getRawType(returnType)) {
             return null

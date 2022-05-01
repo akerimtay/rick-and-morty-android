@@ -3,14 +3,14 @@ package com.akerimtay.rickandmorty.character.data.remote
 import com.akerimtay.rickandmorty.character.data.remote.model.CharactersResponse
 import com.akerimtay.rickandmorty.character.domain.model.CharacterStatus
 import com.akerimtay.rickandmorty.character.domain.model.Gender
-import com.akerimtay.rickandmorty.core.network.BaseResponse
+import com.akerimtay.rickandmorty.network.BaseResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CharacterService {
 
     @GET("character")
-    suspend fun getCharactersAsync(
+    suspend fun getCharacters(
         @Query("page") page: Int? = null,
         @Query("name") name: String? = null,
         @Query("status") status: CharacterStatus? = null,

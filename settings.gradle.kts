@@ -14,7 +14,6 @@ include(":app")
 // Core
 include(":core:presentation")
 include(":core:common")
-include(":core:di")
 
 // DI
 include(":moduleInjector")

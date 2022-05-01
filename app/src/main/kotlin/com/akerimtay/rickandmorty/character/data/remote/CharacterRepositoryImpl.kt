@@ -20,8 +20,8 @@ class CharacterRepositoryImpl @Inject constructor(
         name: String?,
         status: CharacterStatus?,
         gender: Gender?
-    ): Flow<PagingData<Character>> =
-        Pager(
+    ): Flow<PagingData<Character>> {
+        return Pager(
             config = PagingConfig(pageSize = DEFAULT_PAGE_SIZE),
             pagingSourceFactory = {
                 CharacterPagingSource(
@@ -32,4 +32,5 @@ class CharacterRepositoryImpl @Inject constructor(
                 )
             }
         ).flow
+    }
 }

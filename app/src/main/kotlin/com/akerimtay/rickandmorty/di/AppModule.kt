@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.core.di
+package com.akerimtay.rickandmorty.di
 
 import com.akerimtay.rickandmorty.character.data.remote.CharacterRepositoryImpl
 import com.akerimtay.rickandmorty.character.data.remote.CharacterService

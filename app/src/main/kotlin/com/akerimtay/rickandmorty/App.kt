@@ -2,9 +2,9 @@ package com.akerimtay.rickandmorty
 
 import android.app.Application
 import android.content.Context
-import com.akerimtay.rickandmorty.core.di.AppComponent
-import com.akerimtay.rickandmorty.core.di.AppComponentDependencies
-import com.akerimtay.rickandmorty.core.di.DaggerAppComponent
+import com.akerimtay.rickandmorty.di.AppComponent
+import com.akerimtay.rickandmorty.di.AppComponentDependencies
+import com.akerimtay.rickandmorty.di.DaggerAppComponent
 import timber.log.Timber
 
 class App : Application() {

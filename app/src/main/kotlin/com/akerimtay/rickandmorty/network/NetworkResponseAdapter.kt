@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.core.network
+package com.akerimtay.rickandmorty.network
 
 import java.lang.reflect.Type
 import okhttp3.ResponseBody

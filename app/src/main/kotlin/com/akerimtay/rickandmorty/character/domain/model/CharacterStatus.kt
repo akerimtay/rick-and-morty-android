@@ -6,7 +6,9 @@ enum class CharacterStatus(val serializedName: String) {
     UNKNOWN(serializedName = "unknown");
 
     companion object {
-        fun toCharacterStatus(value: String): CharacterStatus =
-            values().firstOrNull { it.serializedName == value } ?: UNKNOWN
+
+        fun toCharacterStatus(value: String): CharacterStatus {
+            return values().firstOrNull { it.serializedName == value } ?: UNKNOWN
+        }
     }
 }

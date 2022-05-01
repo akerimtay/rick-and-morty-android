@@ -49,7 +49,6 @@ android {
 dependencies {
     implementation(project(Modules.corePresentation))
     implementation(project(Modules.coreCommon))
-    implementation(project(Modules.coreDi))
     implementation(project(Modules.injector))
 
     implementation(libs.androidx.core)

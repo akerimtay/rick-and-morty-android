@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.core.network
+package com.akerimtay.rickandmorty.network
 
 import java.io.IOException
 import okhttp3.Request

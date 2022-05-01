@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.character.data.remote.adapter
+package com.akerimtay.rickandmorty.network.adapter
 
 import com.akerimtay.rickandmorty.character.domain.model.CharacterStatus
 import com.google.gson.JsonDeserializationContext
@@ -10,12 +10,16 @@ import com.google.gson.JsonSerializer
 import java.lang.reflect.Type
 
 class CharacterStatusTypeAdapter : JsonSerializer<CharacterStatus?>, JsonDeserializer<CharacterStatus> {
-    override fun serialize(src: CharacterStatus?, typeOfSrc: Type?, context: JsonSerializationContext?): JsonElement =
-        JsonPrimitive(src?.serializedName)
+
+    override fun serialize(src: CharacterStatus?, typeOfSrc: Type?, context: JsonSerializationContext?): JsonElement {
+        return JsonPrimitive(src?.serializedName)
+    }
 
     override fun deserialize(
         json: JsonElement?,
         typeOfT: Type?,
         context: JsonDeserializationContext?
-    ): CharacterStatus = CharacterStatus.toCharacterStatus(json?.asString?.lowercase().orEmpty())
+    ): CharacterStatus {
+        return CharacterStatus.toCharacterStatus(json?.asString?.lowercase().orEmpty())
+    }
 }

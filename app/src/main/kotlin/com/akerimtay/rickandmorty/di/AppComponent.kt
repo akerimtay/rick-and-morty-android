@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.core.di
+package com.akerimtay.rickandmorty.di
 
 import android.content.Context
 import com.akerimtay.rickandmorty.App

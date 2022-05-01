@@ -7,6 +7,9 @@ enum class Gender(val serializedName: String) {
     UNKNOWN(serializedName = "unknown");
 
     companion object {
-        fun toGender(value: String): Gender = values().firstOrNull { it.serializedName == value } ?: UNKNOWN
+
+        fun toGender(value: String): Gender {
+            return values().firstOrNull { it.serializedName == value } ?: UNKNOWN
+        }
     }
 }
