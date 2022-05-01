@@ -36,7 +36,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.resources))
     implementation(project(Modules.corePresentation))
 
     implementation(libs.androidx.core)
