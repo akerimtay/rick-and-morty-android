@@ -21,3 +21,4 @@ include(":moduleInjector")
 
 // Features
 include(":features:characters")
+include(":features:location")
