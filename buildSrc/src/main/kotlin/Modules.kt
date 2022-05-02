@@ -13,4 +13,5 @@ object Modules {
     // Features
     const val featureCharacter = ":features:character"
     const val featureLocation = ":features:location"
+    const val featureEpisode = ":features:episode"
 }

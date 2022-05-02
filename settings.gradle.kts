@@ -22,3 +22,4 @@ include(":moduleInjector")
 // Features
 include(":features:character")
 include(":features:location")
+include(":features:episode")

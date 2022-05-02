@@ -51,8 +51,10 @@ dependencies {
     implementation(project(Modules.coreCommon))
     implementation(project(Modules.model))
     implementation(project(Modules.injector))
+
     implementation(project(Modules.featureCharacter))
     implementation(project(Modules.featureLocation))
+    implementation(project(Modules.featureEpisode))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
