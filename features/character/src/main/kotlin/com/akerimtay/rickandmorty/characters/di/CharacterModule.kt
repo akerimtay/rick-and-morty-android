@@ -10,7 +10,7 @@ import javax.inject.Singleton
 import retrofit2.Retrofit
 
 @Module
-internal interface CharactersModule {
+internal interface CharacterModule {
 
     @Binds
     @Singleton

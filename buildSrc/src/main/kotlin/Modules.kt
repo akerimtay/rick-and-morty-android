@@ -11,6 +11,6 @@ object Modules {
     const val injector = ":moduleInjector"
 
     // Features
-    const val featureCharacters = ":features:characters"
+    const val featureCharacter = ":features:character"
     const val featureLocation = ":features:location"
 }

@@ -20,5 +20,5 @@ include(":core:common")
 include(":moduleInjector")
 
 // Features
-include(":features:characters")
+include(":features:character")
 include(":features:location")
