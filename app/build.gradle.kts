@@ -49,7 +49,9 @@ android {
 dependencies {
     implementation(project(Modules.corePresentation))
     implementation(project(Modules.coreCommon))
+    implementation(project(Modules.model))
     implementation(project(Modules.injector))
+    implementation(project(Modules.featureCharacters))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)

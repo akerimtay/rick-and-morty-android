@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/characterDetailFragment"
-        android:name="com.akerimtay.rickandmorty.character.ui.detail.CharacterDetailFragment"
+        android:name="com.akerimtay.rickandmorty.characters.presentation.detail.CharacterDetailFragment"
         android:label="CharacterDetailFragment"
         tools:layout="@layout/fragment_character_detail" />
 </navigation>

@@ -1,5 +1,6 @@
 package com.akerimtay.rickandmorty.network
 
+import com.akerimtay.rickandmorty.core.common.network.NetworkResponse
 import java.lang.reflect.Type
 import okhttp3.ResponseBody
 import retrofit2.Call
