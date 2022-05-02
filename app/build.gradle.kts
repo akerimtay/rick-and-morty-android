@@ -55,6 +55,7 @@ dependencies {
     implementation(project(Modules.featureCharacter))
     implementation(project(Modules.featureLocation))
     implementation(project(Modules.featureEpisode))
+    implementation(project(Modules.featureSettings))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
