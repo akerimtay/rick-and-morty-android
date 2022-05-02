@@ -3,8 +3,8 @@ package com.akerimtay.rickandmorty.di
 import android.content.Context
 import com.akerimtay.rickandmorty.BuildConfig
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.applyIf
-import com.akerimtay.rickandmorty.model.CharacterStatus
-import com.akerimtay.rickandmorty.model.Gender
+import com.akerimtay.rickandmorty.entity.CharacterStatus
+import com.akerimtay.rickandmorty.entity.Gender
 import com.akerimtay.rickandmorty.network.NetworkResponseAdapterFactory
 import com.akerimtay.rickandmorty.network.adapter.CharacterStatusTypeAdapter
 import com.akerimtay.rickandmorty.network.adapter.DateTypeAdapter

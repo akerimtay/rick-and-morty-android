@@ -3,9 +3,9 @@ package com.akerimtay.rickandmorty.characters.data.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.akerimtay.rickandmorty.characters.data.remote.CharacterRemoteDataSource
-import com.akerimtay.rickandmorty.model.Character
-import com.akerimtay.rickandmorty.model.CharacterStatus
-import com.akerimtay.rickandmorty.model.Gender
+import com.akerimtay.rickandmorty.entity.Character
+import com.akerimtay.rickandmorty.entity.CharacterStatus
+import com.akerimtay.rickandmorty.entity.Gender
 import java.io.IOException
 import retrofit2.HttpException
 

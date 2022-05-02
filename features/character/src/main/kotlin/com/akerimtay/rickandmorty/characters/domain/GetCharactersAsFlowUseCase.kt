@@ -3,9 +3,9 @@ package com.akerimtay.rickandmorty.characters.domain
 import androidx.paging.PagingData
 import com.akerimtay.rickandmorty.characters.data.repository.CharacterRepository
 import com.akerimtay.rickandmorty.core.common.usecase.FlowUseCase
-import com.akerimtay.rickandmorty.model.Character
-import com.akerimtay.rickandmorty.model.CharacterStatus
-import com.akerimtay.rickandmorty.model.Gender
+import com.akerimtay.rickandmorty.entity.Character
+import com.akerimtay.rickandmorty.entity.CharacterStatus
+import com.akerimtay.rickandmorty.entity.Gender
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 

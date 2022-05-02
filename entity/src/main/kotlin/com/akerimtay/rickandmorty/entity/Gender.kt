@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.model
+package com.akerimtay.rickandmorty.entity
 
 enum class Gender(val serializedName: String) {
     MALE(serializedName = "male"),

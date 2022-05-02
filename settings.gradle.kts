@@ -10,7 +10,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "RickAndMorty"
 include(":app")
-include(":model")
+include(":entity")
 
 // Core
 include(":core:presentation")

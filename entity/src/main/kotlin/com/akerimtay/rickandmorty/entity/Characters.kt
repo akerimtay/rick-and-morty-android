@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.model
+package com.akerimtay.rickandmorty.entity
 
 data class Characters(
     val info: Info,

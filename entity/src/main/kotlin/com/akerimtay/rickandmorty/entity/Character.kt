@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.model
+package com.akerimtay.rickandmorty.entity
 
 import android.os.Parcelable
 import java.util.Date

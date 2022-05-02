@@ -1,7 +1,7 @@
 object Modules {
 
     const val app = ":app"
-    const val model = ":model"
+    const val entity = ":entity"
 
     // Core
     const val corePresentation = ":core:presentation"

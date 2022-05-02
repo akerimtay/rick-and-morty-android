@@ -1,8 +1,8 @@
 package com.akerimtay.rickandmorty.characters.data.remote
 
-import com.akerimtay.rickandmorty.model.CharacterStatus
-import com.akerimtay.rickandmorty.model.Characters
-import com.akerimtay.rickandmorty.model.Gender
+import com.akerimtay.rickandmorty.entity.CharacterStatus
+import com.akerimtay.rickandmorty.entity.Characters
+import com.akerimtay.rickandmorty.entity.Gender
 
 internal interface CharacterRemoteDataSource {
 

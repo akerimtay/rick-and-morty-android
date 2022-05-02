@@ -49,7 +49,7 @@ android {
 dependencies {
     implementation(project(Modules.corePresentation))
     implementation(project(Modules.coreCommon))
-    implementation(project(Modules.model))
+    implementation(project(Modules.entity))
     implementation(project(Modules.injector))
 
     implementation(project(Modules.featureCharacter))

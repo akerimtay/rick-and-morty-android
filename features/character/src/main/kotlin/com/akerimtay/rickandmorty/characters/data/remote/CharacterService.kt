@@ -2,8 +2,8 @@ package com.akerimtay.rickandmorty.characters.data.remote
 
 import com.akerimtay.rickandmorty.characters.data.remote.model.CharactersResponse
 import com.akerimtay.rickandmorty.core.common.network.BaseResponse
-import com.akerimtay.rickandmorty.model.CharacterStatus
-import com.akerimtay.rickandmorty.model.Gender
+import com.akerimtay.rickandmorty.entity.CharacterStatus
+import com.akerimtay.rickandmorty.entity.Gender
 import retrofit2.http.GET
 import retrofit2.http.Query
 
