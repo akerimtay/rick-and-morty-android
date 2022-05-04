@@ -1,5 +1,7 @@
 package com.akerimtay.rickandmorty.characters.di
 
+import com.akerimtay.rickandmorty.characters.data.remote.CharacterRemoteDataSource
+import com.akerimtay.rickandmorty.characters.data.remote.CharacterRemoteDataSourceImpl
 import com.akerimtay.rickandmorty.characters.data.remote.CharacterService
 import com.akerimtay.rickandmorty.characters.data.repository.CharacterRepository
 import com.akerimtay.rickandmorty.characters.data.repository.CharacterRepositoryImpl
@@ -15,6 +17,10 @@ internal interface CharacterModule {
     @Binds
     @Singleton
     fun bindCharacterRepository(characterRepositoryImpl: CharacterRepositoryImpl): CharacterRepository
+
+    @Binds
+    @Singleton
+    fun bindCharacterDataSource(characterRemoteDataSourceImpl: CharacterRemoteDataSourceImpl): CharacterRemoteDataSource
 
     companion object {
 

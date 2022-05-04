@@ -14,5 +14,3 @@ abstract class UseCase<in P, R> {
 
     protected abstract suspend fun execute(parameters: P): R
 }
-
-object NoParams

@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 
 class GetCharactersAsFlowUseCase @Inject constructor(
     private val characterRepository: CharacterRepository
-) : FlowUseCase<GetCharactersAsFlowUseCase.Param, Flow<PagingData<Character>>>() {
+) : FlowUseCase<GetCharactersAsFlowUseCase.Param, PagingData<Character>>() {
 
     override fun execute(parameters: Param): Flow<PagingData<Character>> {
         return characterRepository.getAsPagingData(

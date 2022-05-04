@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface CharacterRepository {
 
+    val charactersCount: Flow<Int>
+
     fun getAsPagingData(
         pageSize: Int,
         name: String? = null,

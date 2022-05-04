@@ -15,6 +15,8 @@ internal class CharacterRepositoryImpl @Inject constructor(
     private val characterRemoteDataSource: CharacterRemoteDataSource
 ) : CharacterRepository {
 
+    override val charactersCount: Flow<Int> = characterRemoteDataSource.charactersCount
+
     override fun getAsPagingData(
         pageSize: Int,
         name: String?,
