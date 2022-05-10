@@ -7,6 +7,7 @@ androidx-annotation = "1.3.0"
 androidx-swiperefreshlayout = "1.1.0"
 androidx-recyclerview = "1.2.1"
 androidx-paging = "3.1.0"
+javax-inject = "1"
 google-material = "1.5.0"
 google-gson = "2.8.8"
 dagger = "2.35.1"
@@ -32,6 +33,8 @@ androidx-annotation = { module = "androidx.annotation:annotation", version.ref =
 androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "androidx-swiperefreshlayout" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "androidx-recyclerview" }
 androidx-paging = { module = "androidx.paging:paging-runtime", version.ref = "androidx-paging" }
+
+javax-inject = { module = "javax.inject:javax.inject", version.ref = "javax-inject" }
 
 google-material = { module = "com.google.android.material:material", version.ref = "google-material" }
 google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
