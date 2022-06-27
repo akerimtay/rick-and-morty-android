@@ -12,5 +12,6 @@
         <item name="colorAccent">@color/emerald</item>
         <item name="colorLabelText">@color/raven</item>
         <item name="colorDivider">@color/whiteAlpha10</item>
+        <item name="colorStatusText">@color/emerald</item>
     </style>
 </resources>

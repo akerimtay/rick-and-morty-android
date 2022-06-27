@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:layout_width="164dp">
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        tools:ignore="ContentDescription"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+        android:textColor="?attr/colorStatusText" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:textAppearance="@style/Theme.TextAppearance.Medium16"
+        android:textColor="?attr/colorPrimaryText" />
+
+    <TextView
+        android:id="@+id/tv_species"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="?attr/colorLabelText" />
+
+</LinearLayout>

@@ -3,3 +3,7 @@ plugins {
     id(Config.Plugins.kotlinAndroid)
     id(Config.Plugins.kotlinParcelize)
 }
+
+dependencies {
+    implementation(project(Modules.corePresentation))
+}

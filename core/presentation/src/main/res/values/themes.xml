@@ -15,6 +15,7 @@
         <item name="colorAccent">@color/eastern_blue</item>
         <item name="colorLabelText">@color/gray</item>
         <item name="colorDivider">@color/silver</item>
+        <item name="colorStatusText">@color/jungle_green</item>
 
         <item name="shapeAppearanceSmallComponent">@style/Theme.ShapeAppearance.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/Theme.ShapeAppearance.MediumComponent</item>
@@ -23,15 +24,6 @@
         <item name="fontLight">@font/roboto_light</item>
         <item name="fontRegular">@font/roboto_regular</item>
         <item name="fontMedium">@font/roboto_medium</item>
-
-        <item name="styleTextRegular12">@style/Theme.TextAppearance.Regular12</item>
-        <item name="styleTextRegular14">@style/Theme.TextAppearance.Regular14</item>
-        <item name="styleTextRegular16">@style/Theme.TextAppearance.Regular16</item>
-        <item name="styleTextMedium10">@style/Theme.TextAppearance.Medium10</item>
-        <item name="styleTextMedium12">@style/Theme.TextAppearance.Medium12</item>
-        <item name="styleTextMedium14">@style/Theme.TextAppearance.Medium14</item>
-        <item name="styleTextLight12">@style/Theme.TextAppearance.Light12</item>
-        <item name="styleTextLight14">@style/Theme.TextAppearance.Light14</item>
     </style>
 
     <style name="Base.Theme" parent="Base.V21.Theme" />

@@ -1,4 +1,4 @@
-package com.akerimtay.rickandmorty.characters.presentation
+package com.akerimtay.rickandmorty.characters.presentation.list
 
 import com.akerimtay.rickandmorty.characters.domain.GetCharactersAsFlowUseCase
 import com.akerimtay.rickandmorty.characters.domain.GetCharactersCountAsFlowUseCase

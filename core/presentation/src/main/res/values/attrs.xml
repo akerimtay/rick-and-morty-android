@@ -6,17 +6,9 @@
     <attr name="colorBackground" format="color|reference" />
     <attr name="colorLabelText" format="color|reference" />
     <attr name="colorDivider" format="color|reference" />
+    <attr name="colorStatusText" format="color|reference" />
 
     <attr name="fontLight" format="reference" />
     <attr name="fontRegular" format="reference" />
     <attr name="fontMedium" format="reference" />
-
-    <attr name="styleTextRegular12" format="reference" />
-    <attr name="styleTextRegular14" format="reference" />
-    <attr name="styleTextRegular16" format="reference" />
-    <attr name="styleTextMedium10" format="reference" />
-    <attr name="styleTextMedium12" format="reference" />
-    <attr name="styleTextMedium14" format="reference" />
-    <attr name="styleTextLight12" format="reference" />
-    <attr name="styleTextLight14" format="reference" />
 </resources>

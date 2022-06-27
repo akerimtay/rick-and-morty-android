@@ -9,4 +9,7 @@
     <string name="find_location">Find a location</string>
     <string name="find_episode">Find a episode</string>
     <string name="characters_count_format">Total characters: %d</string>
+    <string name="alive">Alive</string>
+    <string name="dead">Dead</string>
+    <string name="unknown">Unknown</string>
 </resources>
