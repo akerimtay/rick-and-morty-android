@@ -6,13 +6,14 @@ object Modules {
     // Core
     const val corePresentation = ":core:presentation"
     const val coreCommon = ":core:common"
+    const val coreStrings = ":core:strings"
 
     // DI
     const val injector = ":moduleInjector"
 
     // Features
-    const val featureCharacter = ":features:character"
-    const val featureLocation = ":features:location"
-    const val featureEpisode = ":features:episode"
-    const val featureSettings = ":features:settings"
+    const val featureCharacter = ":feature:character"
+    const val featureLocation = ":feature:location"
+    const val featureEpisode = ":feature:episode"
+    const val featureSettings = ":feature:settings"
 }

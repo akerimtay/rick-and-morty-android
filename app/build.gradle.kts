@@ -49,6 +49,7 @@ android {
 dependencies {
     implementation(project(Modules.corePresentation))
     implementation(project(Modules.coreCommon))
+    implementation(project(Modules.coreStrings))
     implementation(project(Modules.entity))
     implementation(project(Modules.injector))
 

@@ -15,12 +15,13 @@ include(":entity")
 // Core
 include(":core:presentation")
 include(":core:common")
+include(":core:strings")
 
 // DI
 include(":moduleInjector")
 
 // Features
-include(":features:character")
-include(":features:location")
-include(":features:episode")
-include(":features:settings")
+include(":feature:character")
+include(":feature:location")
+include(":feature:episode")
+include(":feature:settings")

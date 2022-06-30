@@ -12,7 +12,6 @@ object Environment {
 
     object BuildTypes {
         const val release = "release"
-        const val qa = "qa"
         const val debug = "debug"
     }
 }

@@ -1,7 +1,6 @@
 package com.akerimtay.rickandmorty
 
 import android.app.Application
-import android.content.Context
 import com.akerimtay.rickandmorty.di.AppComponent
 import com.akerimtay.rickandmorty.di.AppComponentDependencies
 import com.akerimtay.rickandmorty.di.DaggerAppComponent
@@ -28,12 +27,8 @@ class App : Application() {
 
         FeatureComponentsManager.init(this)
 
-        if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 }
-
-val Context.appComponent: AppComponent
-    get() = when (this) {
-        is App -> appComponent
-        else -> this.applicationContext.appComponent
-    }
