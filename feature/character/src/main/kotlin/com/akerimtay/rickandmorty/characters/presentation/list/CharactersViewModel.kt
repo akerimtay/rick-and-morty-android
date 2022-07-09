@@ -38,7 +38,8 @@ internal class CharactersViewModel(
                     CharacterItem(
                         name = character.name,
                         imageUrl = character.imageUrl,
-                        status = character.status.displayNameResId,
+                        statusNameResId = character.status.displayNameResId,
+                        statusColorResId = character.status.colorResId,
                         species = character.species
                     )
                 }

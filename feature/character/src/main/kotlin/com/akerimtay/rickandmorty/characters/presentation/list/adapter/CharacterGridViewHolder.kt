@@ -3,6 +3,7 @@ package com.akerimtay.rickandmorty.characters.presentation.list.adapter
 import com.akerimtay.rickandmorty.characters.databinding.ItemCharacterGridBinding
 import com.akerimtay.rickandmorty.characters.presentation.model.CharacterItem
 import com.akerimtay.rickandmorty.core.presentation.base.BaseViewHolder
+import com.akerimtay.rickandmorty.core.presentation.util.extensions.color
 import com.bumptech.glide.Glide
 
 class CharacterGridViewHolder(
@@ -34,7 +35,8 @@ class CharacterGridViewHolder(
     }
 
     private fun updateStatus(item: CharacterItem): Unit = with(viewBinding) {
-        tvStatus.text = root.context.getString(item.status)
+        tvStatus.text = root.context.getString(item.statusNameResId)
+        tvStatus.setTextColor(root.color(item.statusColorResId))
     }
 
     private fun updateName(item: CharacterItem): Unit = with(viewBinding) {

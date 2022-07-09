@@ -12,7 +12,8 @@ class CharacterDiffCallback : DiffUtil.ItemCallback<CharacterItem>() {
     override fun areContentsTheSame(oldItem: CharacterItem, newItem: CharacterItem): Boolean {
         return oldItem.name == newItem.name &&
             oldItem.imageUrl == newItem.imageUrl &&
-            oldItem.status == newItem.status &&
+            oldItem.statusNameResId == newItem.statusNameResId &&
+            oldItem.statusColorResId == newItem.statusColorResId &&
             oldItem.species == newItem.species
     }
 
@@ -20,7 +21,9 @@ class CharacterDiffCallback : DiffUtil.ItemCallback<CharacterItem>() {
         val diff = mutableSetOf<String>()
         if (oldItem.name != newItem.name) diff.add(DIFF_NAME)
         if (oldItem.imageUrl != newItem.imageUrl) diff.add(DIFF_IMAGE_URL)
-        if (oldItem.status != newItem.status) diff.add(DIFF_STATUS)
+        if (oldItem.statusNameResId != newItem.statusNameResId ||
+            oldItem.statusColorResId != newItem.statusColorResId
+        ) diff.add(DIFF_STATUS)
         if (oldItem.species != newItem.species) diff.add(DIFF_SPECIES)
         return diff.takeIf { it.isNotEmpty() }
     }

@@ -15,7 +15,6 @@
         <item name="colorAccent">@color/eastern_blue</item>
         <item name="colorLabelText">@color/gray</item>
         <item name="colorDivider">@color/silver</item>
-        <item name="colorStatusText">@color/jungle_green</item>
 
         <item name="shapeAppearanceSmallComponent">@style/Theme.ShapeAppearance.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/Theme.ShapeAppearance.MediumComponent</item>

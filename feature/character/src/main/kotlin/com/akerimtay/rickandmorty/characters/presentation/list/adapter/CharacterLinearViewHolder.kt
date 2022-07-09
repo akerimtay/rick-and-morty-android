@@ -7,6 +7,7 @@ import com.akerimtay.rickandmorty.characters.presentation.list.adapter.Character
 import com.akerimtay.rickandmorty.characters.presentation.list.adapter.CharacterDiffCallback.Companion.DIFF_STATUS
 import com.akerimtay.rickandmorty.characters.presentation.model.CharacterItem
 import com.akerimtay.rickandmorty.core.presentation.base.BaseViewHolder
+import com.akerimtay.rickandmorty.core.presentation.util.extensions.color
 import com.bumptech.glide.Glide
 
 class CharacterLinearViewHolder(
@@ -39,7 +40,8 @@ class CharacterLinearViewHolder(
     }
 
     private fun updateStatus(item: CharacterItem): Unit = with(viewBinding) {
-        tvStatus.text = root.context.getString(item.status)
+        tvStatus.text = root.context.getString(item.statusNameResId)
+        tvStatus.setTextColor(root.color(item.statusColorResId))
     }
 
     private fun updateName(item: CharacterItem): Unit = with(viewBinding) {

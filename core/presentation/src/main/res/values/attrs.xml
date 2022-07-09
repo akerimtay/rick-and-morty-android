@@ -6,7 +6,6 @@
     <attr name="colorBackground" format="color|reference" />
     <attr name="colorLabelText" format="color|reference" />
     <attr name="colorDivider" format="color|reference" />
-    <attr name="colorStatusText" format="color|reference" />
 
     <attr name="fontLight" format="reference" />
     <attr name="fontRegular" format="reference" />
