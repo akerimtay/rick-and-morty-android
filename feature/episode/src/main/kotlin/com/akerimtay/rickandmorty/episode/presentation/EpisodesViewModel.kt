@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import timber.log.Timber
 
-internal class EpisodesViewModel constructor(
+internal class EpisodesViewModel(
     private val getEpisodesUseCase: GetEpisodesUseCase,
 ) : BaseViewModel() {
 

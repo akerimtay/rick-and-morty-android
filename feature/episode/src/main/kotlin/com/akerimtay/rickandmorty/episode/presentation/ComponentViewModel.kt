@@ -1,9 +1,9 @@
 package com.akerimtay.rickandmorty.episode.presentation
 
-import com.akerimtay.rickandmorty.core.presentation.base.BaseViewModel
+import androidx.lifecycle.ViewModel
 import com.akerimtay.rickandmorty.episode.EpisodeComponentHolder
 
-internal class EpisodeComponentViewModel : BaseViewModel() {
+internal class ComponentViewModel : ViewModel() {
 
     val component = EpisodeComponentHolder.getComponent()
 }

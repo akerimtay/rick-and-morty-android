@@ -19,7 +19,7 @@ class EpisodesFragment : BaseFragment(R.layout.fragment_episodes) {
 
     private val viewBinding by viewBinding(FragmentEpisodesBinding::bind)
     private val viewModel: EpisodesViewModel by viewModels { viewModelFactory }
-    private val componentViewModel: EpisodeComponentViewModel by viewModels()
+    private val componentViewModel: ComponentViewModel by viewModels()
 
     override fun onAttach(context: Context) {
         componentViewModel.component.inject(this)

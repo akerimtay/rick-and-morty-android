@@ -8,7 +8,7 @@ import com.akerimtay.rickandmorty.core.presentation.base.BaseViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 
-internal class CharactersViewModel constructor(
+internal class CharactersViewModel(
     private val getCharactersAsFlowUseCase: GetCharactersAsFlowUseCase,
     getCharactersCountAsFlowUseCase: GetCharactersCountAsFlowUseCase
 ) : BaseViewModel() {
