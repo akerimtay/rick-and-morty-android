@@ -14,7 +14,7 @@ data class Character(
     val gender: Gender,
     val origin: Location,
     val location: Location,
-    val image: String,
+    val imageUrl: String,
     val episode: List<String>,
     val url: String,
     val createdDate: Date

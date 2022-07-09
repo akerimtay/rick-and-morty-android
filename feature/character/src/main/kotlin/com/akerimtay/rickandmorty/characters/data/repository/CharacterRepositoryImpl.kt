@@ -18,14 +18,13 @@ internal class CharacterRepositoryImpl @Inject constructor(
     override val charactersCount: Flow<Int> = characterRemoteDataSource.charactersCount
 
     override fun getAsPagingData(
-        pageSize: Int,
         name: String?,
         status: CharacterStatus?,
         gender: Gender?
     ): Flow<PagingData<Character>> {
         return Pager(
             config = PagingConfig(
-                pageSize = pageSize,
+                pageSize = DEFAULT_PAGE_SIZE,
                 enablePlaceholders = false
             ),
             pagingSourceFactory = {
@@ -41,5 +40,10 @@ internal class CharacterRepositoryImpl @Inject constructor(
 
     override suspend fun getCharacters(): List<Character> {
         return emptyList()
+    }
+
+    companion object {
+
+        private const val DEFAULT_PAGE_SIZE = 20
     }
 }

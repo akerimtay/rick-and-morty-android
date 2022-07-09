@@ -2,6 +2,7 @@ package com.akerimtay.rickandmorty.core.presentation.util.extensions
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
@@ -60,3 +61,8 @@ fun Fragment.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
 fun Context.showToast(message: String, duration: Int) {
     Toast.makeText(this, message, duration).show()
 }
+
+val Int.dp: Int
+    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+val Int.px: Int
+    get() = (this * Resources.getSystem().displayMetrics.density).toInt()

@@ -5,7 +5,6 @@ import com.akerimtay.rickandmorty.BuildConfig
 import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
 import com.akerimtay.rickandmorty.core.common.model.Gender
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.applyIf
-import com.akerimtay.rickandmorty.network.NetworkResponseAdapterFactory
 import com.akerimtay.rickandmorty.network.adapter.CharacterStatusTypeAdapter
 import com.akerimtay.rickandmorty.network.adapter.DateTypeAdapter
 import com.akerimtay.rickandmorty.network.adapter.GenderTypeAdapter
@@ -65,7 +64,6 @@ class NetworkModule {
     fun provideRetrofit(client: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://rickandmortyapi.com/api/")
-            .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()

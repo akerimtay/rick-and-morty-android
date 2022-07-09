@@ -3,7 +3,6 @@ package com.akerimtay.rickandmorty.characters.data.remote
 import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
 import com.akerimtay.rickandmorty.core.common.model.Characters
 import com.akerimtay.rickandmorty.core.common.model.Gender
-import com.akerimtay.rickandmorty.core.common.network.getOrThrow
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,7 +25,7 @@ internal class CharacterRemoteDataSourceImpl @Inject constructor(
             name = name,
             status = status,
             gender = gender
-        ).getOrThrow()
+        )
         val characters = CharacterMapper.fromNetwork(response)
         _charactersCount.value = characters.info.count
         return characters

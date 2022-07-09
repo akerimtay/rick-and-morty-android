@@ -15,7 +15,6 @@ class GetCharactersAsFlowUseCase @Inject constructor(
 
     override fun execute(parameters: Param): Flow<PagingData<Character>> {
         return characterRepository.getAsPagingData(
-            pageSize = parameters.pageSize,
             name = parameters.name,
             status = parameters.status,
             gender = parameters.gender
@@ -23,14 +22,8 @@ class GetCharactersAsFlowUseCase @Inject constructor(
     }
 
     data class Param(
-        val pageSize: Int = DEFAULT_PAGE_SIZE,
         val name: String? = null,
         val status: CharacterStatus? = null,
         val gender: Gender? = null
     )
-
-    companion object {
-
-        private const val DEFAULT_PAGE_SIZE = 20
-    }
 }

@@ -12,4 +12,5 @@
     <string name="alive">Alive</string>
     <string name="dead">Dead</string>
     <string name="unknown">Unknown</string>
+    <string name="retry">Retry</string>
 </resources>

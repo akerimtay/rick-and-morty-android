@@ -24,7 +24,7 @@ internal object CharacterMapper {
                 name = response.location.name,
                 url = response.location.url
             ),
-            image = response.image,
+            imageUrl = response.image,
             episode = response.episode,
             url = response.url,
             createdDate = response.created
