@@ -40,7 +40,10 @@ internal class CharactersViewModel(
                         imageUrl = character.imageUrl,
                         statusNameResId = character.status.displayNameResId,
                         statusColorResId = character.status.colorResId,
-                        species = character.species
+                        species = character.species,
+                        onItemClickListener = {
+
+                        }
                     )
                 }
             }

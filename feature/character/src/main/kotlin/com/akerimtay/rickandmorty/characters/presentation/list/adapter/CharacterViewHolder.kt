@@ -1,13 +1,18 @@
 package com.akerimtay.rickandmorty.characters.presentation.list.adapter
 
-import com.akerimtay.rickandmorty.characters.databinding.ItemCharacterGridBinding
+import com.akerimtay.rickandmorty.characters.databinding.ItemCharacterBinding
+import com.akerimtay.rickandmorty.characters.presentation.list.adapter.CharacterDiffCallback.Companion.DIFF_IMAGE_URL
+import com.akerimtay.rickandmorty.characters.presentation.list.adapter.CharacterDiffCallback.Companion.DIFF_NAME
+import com.akerimtay.rickandmorty.characters.presentation.list.adapter.CharacterDiffCallback.Companion.DIFF_SPECIES
+import com.akerimtay.rickandmorty.characters.presentation.list.adapter.CharacterDiffCallback.Companion.DIFF_STATUS
 import com.akerimtay.rickandmorty.characters.presentation.model.CharacterItem
 import com.akerimtay.rickandmorty.core.presentation.base.BaseViewHolder
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.color
+import com.akerimtay.rickandmorty.core.presentation.util.extensions.setOnSafeClickListener
 import com.bumptech.glide.Glide
 
-class CharacterGridViewHolder(
-    private val viewBinding: ItemCharacterGridBinding
+class CharacterViewHolder(
+    private val viewBinding: ItemCharacterBinding,
 ) : BaseViewHolder<CharacterItem>(viewBinding.root) {
 
     override fun onBind(item: CharacterItem): Unit = with(viewBinding) {
@@ -15,15 +20,17 @@ class CharacterGridViewHolder(
         updateStatus(item)
         updateName(item)
         updateSpecies(item)
+
+        root.setOnSafeClickListener { item.onItemClickListener() }
     }
 
     override fun update(item: CharacterItem, keys: Set<String>) {
         keys.forEach { key ->
             when (key) {
-                CharacterDiffCallback.DIFF_NAME -> updateName(item)
-                CharacterDiffCallback.DIFF_IMAGE_URL -> updateAvatar(item)
-                CharacterDiffCallback.DIFF_STATUS -> updateStatus(item)
-                CharacterDiffCallback.DIFF_SPECIES -> updateSpecies(item)
+                DIFF_NAME -> updateName(item)
+                DIFF_IMAGE_URL -> updateAvatar(item)
+                DIFF_STATUS -> updateStatus(item)
+                DIFF_SPECIES -> updateSpecies(item)
             }
         }
     }
@@ -31,6 +38,7 @@ class CharacterGridViewHolder(
     private fun updateAvatar(item: CharacterItem): Unit = with(viewBinding) {
         Glide.with(root)
             .load(item.imageUrl)
+            .circleCrop()
             .into(ivAvatar)
     }
 

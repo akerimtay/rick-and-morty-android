@@ -9,4 +9,5 @@ data class CharacterItem(
     @StringRes val statusNameResId: Int,
     @ColorRes val statusColorResId: Int,
     val species: String,
+    val onItemClickListener: () -> Unit,
 )
