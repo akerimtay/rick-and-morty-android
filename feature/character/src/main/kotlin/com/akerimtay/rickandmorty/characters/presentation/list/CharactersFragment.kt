@@ -10,13 +10,12 @@ import com.akerimtay.rickandmorty.characters.presentation.ComponentViewModel
 import com.akerimtay.rickandmorty.core.presentation.base.BaseFragment
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.launchWhenStarted
 import com.akerimtay.rickandmorty.core.presentation.viewbinding.viewBinding
-import com.akerimtay.rickandmorty.core.presentation.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
 
     @Inject
-    internal lateinit var viewModelFactory: ViewModelFactory<CharactersViewModel>
+    internal lateinit var viewModelFactory: CharactersViewModelFactory
 
     private val viewBinding by viewBinding(FragmentCharactersBinding::bind)
     private val viewModel: CharactersViewModel by viewModels { viewModelFactory }
