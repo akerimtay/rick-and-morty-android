@@ -1,8 +1,8 @@
 package com.akerimtay.rickandmorty.characters.data.remote
 
-import com.akerimtay.rickandmorty.entity.CharacterStatus
-import com.akerimtay.rickandmorty.entity.Characters
-import com.akerimtay.rickandmorty.entity.Gender
+import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
+import com.akerimtay.rickandmorty.core.common.model.Characters
+import com.akerimtay.rickandmorty.core.common.model.Gender
 import kotlinx.coroutines.flow.Flow
 
 internal interface CharacterRemoteDataSource {

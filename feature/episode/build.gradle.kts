@@ -11,7 +11,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.entity))
     implementation(project(Modules.injector))
     implementation(project(Modules.coreCommon))
     implementation(project(Modules.corePresentation))

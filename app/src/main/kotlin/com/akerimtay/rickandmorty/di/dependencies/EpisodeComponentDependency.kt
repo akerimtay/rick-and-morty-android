@@ -3,7 +3,7 @@ package com.akerimtay.rickandmorty.di.dependencies
 import com.akerimtay.rickandmorty.App
 import com.akerimtay.rickandmorty.characters.CharacterComponentHolder
 import com.akerimtay.rickandmorty.characters.CharacterFeatureApi
-import com.akerimtay.rickandmorty.entity.Character
+import com.akerimtay.rickandmorty.core.common.model.Character
 import com.akerimtay.rickandmorty.episode.CharacterContract
 import com.akerimtay.rickandmorty.episode.EpisodeComponentHolder
 import com.akerimtay.rickandmorty.episode.EpisodeFeatureDependencies

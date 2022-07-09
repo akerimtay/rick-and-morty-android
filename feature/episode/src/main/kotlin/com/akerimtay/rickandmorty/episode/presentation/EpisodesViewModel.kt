@@ -1,7 +1,7 @@
 package com.akerimtay.rickandmorty.episode.presentation
 
+import com.akerimtay.rickandmorty.core.common.model.Character
 import com.akerimtay.rickandmorty.core.presentation.base.BaseViewModel
-import com.akerimtay.rickandmorty.entity.Character
 import com.akerimtay.rickandmorty.episode.domain.GetCharactersUseCase
 import com.akerimtay.rickandmorty.episode.domain.GetEpisodesUseCase
 import javax.inject.Inject

@@ -1,7 +1,7 @@
 package com.akerimtay.rickandmorty.episode.domain
 
+import com.akerimtay.rickandmorty.core.common.model.Character
 import com.akerimtay.rickandmorty.core.common.usecase.UseCase
-import com.akerimtay.rickandmorty.entity.Character
 import com.akerimtay.rickandmorty.episode.CharacterContract
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher

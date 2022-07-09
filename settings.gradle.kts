@@ -10,15 +10,14 @@ dependencyResolutionManagement {
 
 rootProject.name = "RickAndMorty"
 include(":app")
-include(":entity")
+
+// DI
+include(":moduleInjector")
 
 // Core
 include(":core:presentation")
 include(":core:common")
 include(":core:strings")
-
-// DI
-include(":moduleInjector")
 
 // Features
 include(":feature:character")

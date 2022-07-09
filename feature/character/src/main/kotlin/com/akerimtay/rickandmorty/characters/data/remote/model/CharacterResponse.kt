@@ -1,7 +1,7 @@
 package com.akerimtay.rickandmorty.characters.data.remote.model
 
-import com.akerimtay.rickandmorty.entity.CharacterStatus
-import com.akerimtay.rickandmorty.entity.Gender
+import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
+import com.akerimtay.rickandmorty.core.common.model.Gender
 import com.google.gson.annotations.SerializedName
 import java.util.Date
 

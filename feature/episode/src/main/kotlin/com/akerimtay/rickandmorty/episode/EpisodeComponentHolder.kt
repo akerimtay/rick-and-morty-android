@@ -1,6 +1,6 @@
 package com.akerimtay.rickandmorty.episode
 
-import com.akerimtay.rickandmorty.entity.Character
+import com.akerimtay.rickandmorty.core.common.model.Character
 import com.akerimtay.rickandmorty.episode.data.repository.EpisodeRepository
 import com.akerimtay.rickandmorty.episode.di.EpisodeComponent
 import com.akerimtay.rickandmorty.moduleinjector.BaseFeatureAPI

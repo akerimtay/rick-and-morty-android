@@ -1,9 +1,9 @@
 package com.akerimtay.rickandmorty.characters.data.remote
 
+import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
+import com.akerimtay.rickandmorty.core.common.model.Characters
+import com.akerimtay.rickandmorty.core.common.model.Gender
 import com.akerimtay.rickandmorty.core.common.network.getOrThrow
-import com.akerimtay.rickandmorty.entity.CharacterStatus
-import com.akerimtay.rickandmorty.entity.Characters
-import com.akerimtay.rickandmorty.entity.Gender
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

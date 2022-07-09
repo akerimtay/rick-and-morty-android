@@ -1,6 +1,7 @@
-package com.akerimtay.rickandmorty.entity
+package com.akerimtay.rickandmorty.core.common.model
 
 import androidx.annotation.StringRes
+import com.akerimtay.rickandmorty.core.common.R
 
 enum class CharacterStatus(
     val serializedName: String,

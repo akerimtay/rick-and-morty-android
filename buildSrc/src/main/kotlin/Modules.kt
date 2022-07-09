@@ -1,15 +1,14 @@
 object Modules {
 
     const val app = ":app"
-    const val entity = ":entity"
+
+    // DI
+    const val injector = ":moduleInjector"
 
     // Core
     const val corePresentation = ":core:presentation"
     const val coreCommon = ":core:common"
     const val coreStrings = ":core:strings"
-
-    // DI
-    const val injector = ":moduleInjector"
 
     // Features
     const val featureCharacter = ":feature:character"

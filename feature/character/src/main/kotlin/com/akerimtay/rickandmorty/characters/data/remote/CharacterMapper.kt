@@ -2,9 +2,9 @@ package com.akerimtay.rickandmorty.characters.data.remote
 
 import com.akerimtay.rickandmorty.characters.data.remote.model.CharacterResponse
 import com.akerimtay.rickandmorty.characters.data.remote.model.CharactersResponse
-import com.akerimtay.rickandmorty.entity.Character
-import com.akerimtay.rickandmorty.entity.Characters
-import com.akerimtay.rickandmorty.entity.Location
+import com.akerimtay.rickandmorty.core.common.model.Character
+import com.akerimtay.rickandmorty.core.common.model.Characters
+import com.akerimtay.rickandmorty.core.common.model.Location
 
 internal object CharacterMapper {
 
