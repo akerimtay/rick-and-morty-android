@@ -10,7 +10,7 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.coreStrings))
+    implementation(projects.core.strings)
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)

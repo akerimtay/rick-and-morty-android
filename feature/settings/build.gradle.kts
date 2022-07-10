@@ -10,10 +10,11 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.injector))
-    implementation(project(Modules.coreCommon))
-    implementation(project(Modules.corePresentation))
-    implementation(project(Modules.coreStrings))
+    implementation(projects.moduleInjector)
+
+    implementation(projects.core.common)
+    implementation(projects.core.presentation)
+    implementation(projects.core.strings)
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)

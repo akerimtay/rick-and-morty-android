@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(Modules.coreStrings))
-    implementation(project(Modules.corePresentation))
+    implementation(projects.core.presentation)
+    implementation(projects.core.strings)
 
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)

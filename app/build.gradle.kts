@@ -47,15 +47,16 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.corePresentation))
-    implementation(project(Modules.coreCommon))
-    implementation(project(Modules.coreStrings))
-    implementation(project(Modules.injector))
+    implementation(projects.moduleInjector)
 
-    implementation(project(Modules.featureCharacter))
-    implementation(project(Modules.featureLocation))
-    implementation(project(Modules.featureEpisode))
-    implementation(project(Modules.featureSettings))
+    implementation(projects.core.common)
+    implementation(projects.core.presentation)
+    implementation(projects.core.strings)
+
+    implementation(projects.feature.character)
+    implementation(projects.feature.location)
+    implementation(projects.feature.episode)
+    implementation(projects.feature.settings)
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
