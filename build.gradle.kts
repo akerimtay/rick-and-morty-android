@@ -12,17 +12,17 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath(Config.ClassPaths.buildGradle)
-        classpath(Config.ClassPaths.kotlin)
-        classpath(Config.ClassPaths.navigationSafeArgs)
+        classpath("com.android.tools.build:gradle:7.1.3")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.0")
     }
 }
 
 allprojects {
     repositories {
         mavenCentral()
-        maven(url = Config.ClassPaths.mavenGoogle)
-        maven(url = Config.ClassPaths.jitpack)
+        maven(url = "https://maven.google.com/")
+        maven(url = "https://jitpack.io")
     }
 
     tasks.withType<KotlinCompile>().configureEach {
@@ -41,22 +41,22 @@ tasks.register("clean", Delete::class.java) {
 }
 
 fun BaseExtension.baseConfig() {
-    compileSdkVersion(Config.Android.androidCompileSdkVersion)
+    compileSdkVersion(31)
 
     defaultConfig {
-        minSdk = Config.Android.androidMinSdkVersion
-        targetSdk = Config.Android.androidTargetSdkVersion
+        minSdk = 21
+        targetSdk = 31
 
-        testInstrumentationRunner = Config.testRunner
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        getByName(Environment.BuildTypes.release) {
+        getByName("release") {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-        getByName(Environment.BuildTypes.debug) {
+        getByName("debug") {
             isMinifyEnabled = false
         }
     }
@@ -66,7 +66,7 @@ fun BaseExtension.baseConfig() {
     }
     tasks.withType<KotlinCompile> {
         kotlinOptions {
-            jvmTarget = Config.Kotlin.jvmTargetVersion
+            jvmTarget = "11"
         }
     }
 }

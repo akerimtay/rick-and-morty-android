@@ -1,32 +1,32 @@
 plugins {
-    id(Config.Plugins.androidApplication)
-    id(Config.Plugins.kotlinAndroid)
-    id(Config.Plugins.kotlinKapt)
-    id(Config.Plugins.kotlinParcelize)
-    id(Config.Plugins.navigationSafeArgs)
+    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
-    compileSdk = Config.Android.androidCompileSdkVersion
+    compileSdk = 31
 
     defaultConfig {
-        applicationId = Environment.Release.appId
-        minSdk = Config.Android.androidMinSdkVersion
-        targetSdk = Config.Android.androidTargetSdkVersion
-        versionCode = Environment.Release.appVersionCode
-        versionName = Environment.Release.appVersionName
+        applicationId = "com.akerimtay.rickandmorty"
+        minSdk = 21
+        targetSdk = 31
+        versionCode = 1
+        versionName = "1.0"
 
-        testInstrumentationRunner = Config.testRunner
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        getByName(Environment.BuildTypes.release) {
+        getByName("release") {
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-        getByName(Environment.BuildTypes.debug) {
+        getByName("debug") {
             isDebuggable = true
             isMinifyEnabled = false
             isShrinkResources = false
@@ -39,7 +39,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = Config.Kotlin.jvmTargetVersion
+        jvmTarget = "11"
     }
     buildFeatures {
         viewBinding = true

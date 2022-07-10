@@ -5,7 +5,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
-            from(files("config/dependencies.toml"))
+            from(files("gradle/dependencies.toml"))
         }
     }
 }
@@ -13,7 +13,7 @@ dependencyResolutionManagement {
 include(":app")
 
 // DI
-include(":moduleInjector")
+include(":module-injector")
 
 // Core
 include(":core:presentation")
