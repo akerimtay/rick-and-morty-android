@@ -9,7 +9,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        gradlePluginPortal()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:7.1.3")
