@@ -1,15 +1,6 @@
 enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-@Suppress("UnstableApiUsage")
-dependencyResolutionManagement {
-    versionCatalogs {
-        create("libs") {
-            from(files("gradle/dependencies.toml"))
-        }
-    }
-}
-
 include(":app")
 
 // DI
@@ -25,3 +16,19 @@ include(":feature:character")
 include(":feature:location")
 include(":feature:episode")
 include(":feature:settings")
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+//        maven("https://plugins.gradle.org/m2/")//for kapt plugin 1.5.30
+    }
+}
+
+@Suppress("UnstableApiUsage")
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
