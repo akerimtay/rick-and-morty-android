@@ -14,7 +14,7 @@ internal class LocationPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Location> {
         val page = params.key ?: DEFAULT_PAGE_INDEX
         return try {
-            val locations = locationRemoteDataSource.getLocations()
+            val locations = locationRemoteDataSource.getLocations(page = page)
             LoadResult.Page(
                 data = locations,
                 prevKey = if (page == DEFAULT_PAGE_INDEX) null else page - 1,

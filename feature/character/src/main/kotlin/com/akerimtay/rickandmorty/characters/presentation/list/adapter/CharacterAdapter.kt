@@ -10,8 +10,6 @@ import com.akerimtay.rickandmorty.core.presentation.util.extensions.layoutInflat
 class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<CharacterItem> {
-        return CharacterViewHolder(
-            ItemCharacterBinding.inflate(parent.layoutInflater, parent, false)
-        )
+        return CharacterViewHolder(ItemCharacterBinding.inflate(parent.layoutInflater, parent, false))
     }
 }

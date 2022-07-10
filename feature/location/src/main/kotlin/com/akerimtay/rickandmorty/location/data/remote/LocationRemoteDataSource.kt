@@ -7,5 +7,5 @@ internal interface LocationRemoteDataSource {
 
     val locationsCount: Flow<Int>
 
-    suspend fun getLocations(): List<Location>
+    suspend fun getLocations(page: Int? = null): List<Location>
 }
