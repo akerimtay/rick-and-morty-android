@@ -24,7 +24,7 @@ internal class CharacterPagingSource(
                 name = name,
                 status = status,
                 gender = gender
-            ).results
+            )
 
             LoadResult.Page(
                 data = characters,

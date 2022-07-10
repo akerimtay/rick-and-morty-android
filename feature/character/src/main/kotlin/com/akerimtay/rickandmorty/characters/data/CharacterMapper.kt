@@ -1,10 +1,9 @@
-package com.akerimtay.rickandmorty.characters.data.remote
+package com.akerimtay.rickandmorty.characters.data
 
 import com.akerimtay.rickandmorty.characters.data.remote.model.CharacterResponse
 import com.akerimtay.rickandmorty.characters.data.remote.model.CharactersResponse
 import com.akerimtay.rickandmorty.core.common.model.Character
 import com.akerimtay.rickandmorty.core.common.model.Characters
-import com.akerimtay.rickandmorty.core.common.model.Location
 
 internal object CharacterMapper {
 
@@ -16,11 +15,11 @@ internal object CharacterMapper {
             species = response.species,
             type = response.type,
             gender = response.gender,
-            origin = Location(
+            origin = Character.Location(
                 name = response.origin.name,
                 url = response.origin.url
             ),
-            location = Location(
+            location = Character.Location(
                 name = response.location.name,
                 url = response.location.url
             ),

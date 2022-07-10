@@ -1,6 +1,7 @@
 plugins {
     id(Config.Plugins.androidLibrary)
     id(Config.Plugins.kotlinAndroid)
+    id(Config.Plugins.kotlinKapt)
 }
 
 android {
@@ -24,4 +25,12 @@ dependencies {
     implementation(libs.androidx.paging)
 
     implementation(libs.google.material)
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+
+    implementation(libs.glide.core)
+
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.gson)
 }

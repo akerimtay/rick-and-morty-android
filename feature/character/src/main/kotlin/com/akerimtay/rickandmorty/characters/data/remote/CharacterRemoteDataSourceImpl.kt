@@ -1,7 +1,8 @@
 package com.akerimtay.rickandmorty.characters.data.remote
 
+import com.akerimtay.rickandmorty.characters.data.CharacterMapper
+import com.akerimtay.rickandmorty.core.common.model.Character
 import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
-import com.akerimtay.rickandmorty.core.common.model.Characters
 import com.akerimtay.rickandmorty.core.common.model.Gender
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
@@ -11,7 +12,7 @@ internal class CharacterRemoteDataSourceImpl @Inject constructor(
     private val characterService: CharacterService
 ) : CharacterRemoteDataSource {
 
-    private val _charactersCount = MutableStateFlow(INITIAL_CHARACTERS_COUNT)
+    private val _charactersCount = MutableStateFlow(INITIAL_COUNT)
     override val charactersCount: Flow<Int> = _charactersCount
 
     override suspend fun getCharacters(
@@ -19,7 +20,7 @@ internal class CharacterRemoteDataSourceImpl @Inject constructor(
         name: String?,
         status: CharacterStatus?,
         gender: Gender?
-    ): Characters {
+    ): List<Character> {
         val response = characterService.getCharacters(
             page = page,
             name = name,
@@ -28,11 +29,11 @@ internal class CharacterRemoteDataSourceImpl @Inject constructor(
         )
         val characters = CharacterMapper.fromNetwork(response)
         _charactersCount.value = characters.info.count
-        return characters
+        return characters.results
     }
 
     companion object {
 
-        private const val INITIAL_CHARACTERS_COUNT = 0
+        private const val INITIAL_COUNT = 0
     }
 }

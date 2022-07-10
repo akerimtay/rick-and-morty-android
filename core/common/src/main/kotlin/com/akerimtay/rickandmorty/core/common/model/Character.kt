@@ -18,4 +18,11 @@ data class Character(
     val episode: List<String>,
     val url: String,
     val createdDate: Date
-) : Parcelable
+) : Parcelable {
+
+    @Parcelize
+    data class Location(
+        val name: String,
+        val url: String
+    ) : Parcelable
+}
