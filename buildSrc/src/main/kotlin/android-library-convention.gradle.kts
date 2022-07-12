@@ -1,3 +1,5 @@
+import com.android.build.gradle.BaseExtension
+
 /**
  * Basic android library plugin.
  * It uses for configuring android library modules.
@@ -9,4 +11,16 @@ plugins {
     id("basic-kotlin-convention")
     id("kotlin-kapt")
     id("kotlin-parcelize")
+}
+
+configure<BaseExtension> {
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+        getByName("debug") {
+            isDebuggable = true
+        }
+    }
 }

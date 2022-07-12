@@ -4,7 +4,6 @@
  * The specific setups must be added in specific module.
  */
 import com.android.build.gradle.BaseExtension
-import com.android.builder.internal.BaseConfigImpl
 
 configure<BaseExtension> {
 
@@ -23,26 +22,5 @@ configure<BaseExtension> {
 
     viewBinding {
         isEnabled = true
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-        getByName("debug") {
-            addApplicationSuffixId(".debug")
-            isDebuggable = true
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-}
-
-fun BaseConfigImpl.addApplicationSuffixId(
-    suffixId: String
-) {
-    plugins.withId("com.android.application") {
-        applicationIdSuffix(suffixId)
     }
 }

@@ -1,9 +1,7 @@
 [versions]
-# Plugins
 android-gradle-plugin = "7.2.1"
 kotlin-gradle-plugin = "1.6.21"
 navigation-safe-args-gradle-plugin = "2.5.0"
-# Android
 androidx-core = "1.7.0"
 androidx-appcompat = "1.4.1"
 androidx-lifecycle = "2.4.0"
@@ -13,20 +11,14 @@ androidx-swiperefreshlayout = "1.1.0"
 androidx-recyclerview = "1.2.1"
 androidx-paging = "3.1.0"
 javax-inject = "1"
-# Google
 google-material = "1.5.0"
 google-gson = "2.8.8"
-# Dagger
 dagger = "2.35.1"
 dagger-compiler = "2.40.1"
-# Jetbrains
 coroutine = "1.6.0"
-# Squareup
 retrofit = "2.9.0"
 okhttp = "4.9.3"
-# Glide
 glide = "4.13.0"
-# Other
 other-timber = "5.0.1"
 other-chucker = "3.5.2"
 other-shimmer = "0.5.0"
