@@ -1,7 +1,5 @@
 plugins {
-    id(Config.Plugins.androidLibrary)
-    id(Config.Plugins.kotlinAndroid)
-    id(Config.Plugins.kotlinParcelize)
+    id("android-library-convention")
 }
 
 dependencies {

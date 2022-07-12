@@ -1,4 +1,7 @@
 [versions]
+android-gradle-plugin = "7.2.1"
+kotlin-gradle-plugin = "1.6.21"
+navigation-safe-args-gradle-plugin = "2.5.0"
 androidx-core = "1.7.0"
 androidx-appcompat = "1.4.1"
 androidx-lifecycle = "2.4.0"
@@ -21,6 +24,10 @@ other-chucker = "3.5.2"
 other-shimmer = "0.5.0"
 
 [libraries]
+plugin-android = { module = "com.android.tools.build:gradle", version.ref = "android-gradle-plugin" }
+plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin-gradle-plugin" }
+plugin-navigation-safeargs = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigation-safe-args-gradle-plugin" }
+
 androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }

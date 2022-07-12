@@ -1,48 +1,10 @@
 plugins {
-    id(Config.Plugins.androidApplication)
-    id(Config.Plugins.kotlinAndroid)
-    id(Config.Plugins.kotlinKapt)
-    id(Config.Plugins.kotlinParcelize)
-    id(Config.Plugins.navigationSafeArgs)
+    id("android-application-convention")
 }
 
 android {
-    compileSdk = Config.Android.androidCompileSdkVersion
-
     defaultConfig {
-        applicationId = Environment.Release.appId
-        minSdk = Config.Android.androidMinSdkVersion
-        targetSdk = Config.Android.androidTargetSdkVersion
-        versionCode = Environment.Release.appVersionCode
-        versionName = Environment.Release.appVersionName
-
-        testInstrumentationRunner = Config.testRunner
-    }
-
-    buildTypes {
-        getByName(Environment.BuildTypes.release) {
-            isDebuggable = false
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-        getByName(Environment.BuildTypes.debug) {
-            isDebuggable = true
-            isMinifyEnabled = false
-            isShrinkResources = false
-            applicationIdSuffix = ".debug"
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = Config.Kotlin.jvmTargetVersion
-    }
-    buildFeatures {
-        viewBinding = true
+        applicationId = "com.akerimtay.rickandmorty"
     }
 }
 
