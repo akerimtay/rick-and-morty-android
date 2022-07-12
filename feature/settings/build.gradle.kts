@@ -1,12 +1,5 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
-}
-
-android {
-    buildFeatures {
-        viewBinding = true
-    }
+    id("android-library-convention")
 }
 
 dependencies {
