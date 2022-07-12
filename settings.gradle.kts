@@ -43,15 +43,4 @@ pluginManagement {
         maven(url = "https://maven.google.com/")
         maven(url = "https://jitpack.io")
     }
-
-//    resolutionStrategy {
-//        eachPlugin {
-//            val pluginId = requested.id.id
-//            when {
-//                pluginId.contains("kotlin-dsl") -> useVersion("1.6.21")
-//                pluginId.startsWith("org.jetbrains.kotlin") -> useVersion("1.6.21")
-//                pluginId.startsWith("com.android.") -> useVersion("7.1.3")
-//            }
-//        }
-//    }
 }
