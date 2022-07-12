@@ -1,4 +1,2 @@
 [*.{kt, kts}]
-insert_final_newline = false
 max_line_length = 120
-disabled_rules = import-ordering
