@@ -6,6 +6,7 @@
         <item name="android:itemTextAppearance">@style/Theme.TextAppearance.Regular12</item>
         <item name="itemIconTint">@color/selector_navigation_item_color</item>
         <item name="itemTextColor">@color/selector_navigation_item_color</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
     </style>
 
     <style name="Widget.RM.Button" parent="@style/Widget.MaterialComponents.Button">
