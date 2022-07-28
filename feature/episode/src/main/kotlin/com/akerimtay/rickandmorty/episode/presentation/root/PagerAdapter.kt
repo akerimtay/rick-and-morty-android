@@ -1,9 +1,10 @@
-package com.akerimtay.rickandmorty.episode.presentation.tab
+package com.akerimtay.rickandmorty.episode.presentation.root
 
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.akerimtay.rickandmorty.episode.presentation.model.PageType
+import com.akerimtay.rickandmorty.episode.presentation.tab.EpisodesFragment
 
 internal class PagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 

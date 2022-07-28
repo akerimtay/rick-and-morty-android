@@ -9,7 +9,6 @@ import com.akerimtay.rickandmorty.core.presentation.viewbinding.viewBinding
 import com.akerimtay.rickandmorty.episode.R
 import com.akerimtay.rickandmorty.episode.databinding.FragmentEpisodesRootBinding
 import com.akerimtay.rickandmorty.episode.presentation.ComponentViewModel
-import com.akerimtay.rickandmorty.episode.presentation.tab.PagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class EpisodesRootFragment : BaseFragment(R.layout.fragment_episodes_root) {
@@ -26,7 +25,7 @@ class EpisodesRootFragment : BaseFragment(R.layout.fragment_episodes_root) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit = with(viewBinding) {
         super.onViewCreated(view, savedInstanceState)
         slvEpisodes.onSearchClickListener = { viewModel.onSearchClicked() }
-        slvEpisodes.onFilterClickListener = { viewModel.onFilterClicked() }
+        slvEpisodes.onViewClickListener = { viewModel.onSearchClicked() }
 
         val pagerAdapter = PagerAdapter(this@EpisodesRootFragment)
         vpEpisodes.adapter = pagerAdapter
