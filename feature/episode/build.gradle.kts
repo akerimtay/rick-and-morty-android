@@ -16,6 +16,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.paging)
 
     implementation(libs.dagger)
@@ -23,6 +24,8 @@ dependencies {
 
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.gson)
+
+    implementation(libs.glide.core)
 
     implementation(libs.google.material)
     implementation(libs.other.timber)

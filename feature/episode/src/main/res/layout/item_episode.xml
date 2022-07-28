@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+        android:textColor="@color/eastern_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Episode 1" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textAppearance="@style/Theme.TextAppearance.Medium16"
+        android:textColor="?attr/colorPrimaryText"
+        app:layout_constraintEnd_toEndOf="@id/tv_number"
+        app:layout_constraintStart_toStartOf="@id/tv_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_number"
+        tools:text="Rick And Morty" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:textAppearance="@style/Theme.TextAppearance.Regular14"
+        android:textColor="?attr/colorLabelText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tv_number"
+        app:layout_constraintStart_toStartOf="@id/tv_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="June 20, 2021" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ import com.akerimtay.rickandmorty.location.presentation.model.LocationItem
 import com.bumptech.glide.Glide
 import java.util.Locale
 
-class CharacterViewHolder(
+class LocationViewHolder(
     private val viewBinding: ItemLocationBinding,
 ) : BaseViewHolder<LocationItem>(viewBinding.root) {
 

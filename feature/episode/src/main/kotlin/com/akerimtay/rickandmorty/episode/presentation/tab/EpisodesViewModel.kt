@@ -4,10 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.akerimtay.rickandmorty.core.common.model.Episode
 import com.akerimtay.rickandmorty.core.presentation.base.BaseViewModel
-import com.akerimtay.rickandmorty.episode.R
 import com.akerimtay.rickandmorty.episode.domain.GetEpisodesUseCase
 import com.akerimtay.rickandmorty.episode.presentation.model.EpisodeItem
 import com.akerimtay.rickandmorty.episode.presentation.model.PageType
+import com.akerimtay.rickandmorty.episode.utils.ImageUtils
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -21,6 +21,9 @@ internal class EpisodesViewModel(
     private val getEpisodesUseCase: GetEpisodesUseCase
 ) : BaseViewModel() {
 
+    private val _isSwipeRefreshing = MutableStateFlow(false)
+    val isSwipeRefreshing: Flow<Boolean> = _isSwipeRefreshing
+
     private val _episodes = MutableStateFlow<List<Episode>>(emptyList())
     val episodes: Flow<List<EpisodeItem>> = _episodes
         .map { episodes ->
@@ -28,19 +31,25 @@ internal class EpisodesViewModel(
                 EpisodeItem(
                     id = episode.id,
                     name = episode.name,
-                    season = episode.code,
+                    number = episode.code.getEpisodeNumber(),
                     date = episode.date,
                     // Sample image for items, because API don't provide pictures
-                    imageResId = R.drawable.sample_location,
+                    imageResId = ImageUtils.getRandomImage(),
                     onItemClickListener = {
-                        Timber.e("onClick: ${episode.id}")
+
                     }
                 )
             }
         }
 
     init {
+        refresh()
+    }
+
+    fun refresh() {
         launchSafe(
+            start = { _isSwipeRefreshing.value = true },
+            finish = { _isSwipeRefreshing.value = false },
             body = {
                 _episodes.value = getEpisodesUseCase(GetEpisodesUseCase.Param(pageType.seasonCode))
             },
@@ -48,6 +57,10 @@ internal class EpisodesViewModel(
                 Timber.e(it, "Couldn't load episodes")
             }
         )
+    }
+
+    private fun String.getEpisodeNumber(): Int {
+        return substringAfter('E').toInt()
     }
 }
 

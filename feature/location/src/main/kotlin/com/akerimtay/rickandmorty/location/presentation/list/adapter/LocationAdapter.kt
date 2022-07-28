@@ -10,6 +10,6 @@ import com.akerimtay.rickandmorty.location.presentation.model.LocationItem
 class LocationAdapter : BasePagingAdapter<LocationItem>(LocationDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<LocationItem> {
-        return CharacterViewHolder(ItemLocationBinding.inflate(parent.layoutInflater, parent, false))
+        return LocationViewHolder(ItemLocationBinding.inflate(parent.layoutInflater, parent, false))
     }
 }
