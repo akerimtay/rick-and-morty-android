@@ -1,18 +1,20 @@
 package com.akerimtay.rickandmorty.episode.domain
 
+import com.akerimtay.rickandmorty.core.common.model.Episode
 import com.akerimtay.rickandmorty.core.common.usecase.UseCase
-import com.akerimtay.rickandmorty.episode.data.repository.EpisodeRepository
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
 internal class GetEpisodesUseCase @Inject constructor(
     private val episodeRepository: EpisodeRepository
-) : UseCase<Unit, List<Any>>() {
+) : UseCase<GetEpisodesUseCase.Param, List<Episode>>() {
 
     override val dispatcher: CoroutineDispatcher = Dispatchers.IO
 
-    override suspend fun execute(parameters: Unit): List<Any> {
-        return episodeRepository.getEpisodes()
+    override suspend fun execute(parameters: Param): List<Episode> {
+        return episodeRepository.getEpisodes(parameters.season)
     }
+
+    data class Param(val season: String)
 }

@@ -1,12 +1,13 @@
 package com.akerimtay.rickandmorty.episode
 
 import com.akerimtay.rickandmorty.core.common.model.Character
-import com.akerimtay.rickandmorty.episode.data.repository.EpisodeRepository
 import com.akerimtay.rickandmorty.episode.di.EpisodeComponent
+import com.akerimtay.rickandmorty.episode.domain.EpisodeRepository
 import com.akerimtay.rickandmorty.moduleinjector.BaseFeatureAPI
 import com.akerimtay.rickandmorty.moduleinjector.BaseFeatureDependencies
 import com.akerimtay.rickandmorty.moduleinjector.ComponentHolder
 import com.akerimtay.rickandmorty.moduleinjector.ComponentHolderDelegate
+import retrofit2.Retrofit
 
 object EpisodeComponentHolder : ComponentHolder<EpisodeFeatureApi, EpisodeFeatureDependencies> {
 
@@ -24,6 +25,7 @@ object EpisodeComponentHolder : ComponentHolder<EpisodeFeatureApi, EpisodeFeatur
 
 interface EpisodeFeatureDependencies : BaseFeatureDependencies {
 
+    val retrofit: Retrofit
     val characterContract: CharacterContract
 }
 

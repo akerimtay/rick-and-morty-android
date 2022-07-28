@@ -14,6 +14,7 @@ include(":module-injector")
 include(":core:presentation")
 include(":core:common")
 include(":core:strings")
+include(":core:utils")
 
 // Features
 include(":feature:character")

@@ -2,7 +2,8 @@ package com.akerimtay.rickandmorty.episode.di
 
 import com.akerimtay.rickandmorty.episode.EpisodeFeatureApi
 import com.akerimtay.rickandmorty.episode.EpisodeFeatureDependencies
-import com.akerimtay.rickandmorty.episode.presentation.EpisodesFragment
+import com.akerimtay.rickandmorty.episode.presentation.root.EpisodesRootFragment
+import com.akerimtay.rickandmorty.episode.presentation.tab.EpisodesFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -10,6 +11,7 @@ import javax.inject.Singleton
 @Component(dependencies = [EpisodeFeatureDependencies::class], modules = [EpisodeModule::class])
 internal interface EpisodeComponent : EpisodeFeatureApi {
 
+    fun inject(fragment: EpisodesRootFragment)
     fun inject(fragment: EpisodesFragment)
 
     companion object {

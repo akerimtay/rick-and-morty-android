@@ -10,6 +10,7 @@ import com.akerimtay.rickandmorty.episode.EpisodeFeatureDependencies
 import com.akerimtay.rickandmorty.moduleinjector.BaseDependencyHolder
 import com.akerimtay.rickandmorty.moduleinjector.BaseFeatureDependencies
 import com.akerimtay.rickandmorty.moduleinjector.DependencyHolder1
+import retrofit2.Retrofit
 
 object EpisodeComponentDependency : InjectionComponentDependency {
 
@@ -25,6 +26,8 @@ object EpisodeComponentDependency : InjectionComponentDependency {
 
             EpisodeComponentDependencyHolder { dependencies, characterFeatureApi ->
                 object : EpisodeFeatureDependencies {
+                    override val retrofit: Retrofit = app.retrofit
+
                     override val characterContract: CharacterContract = object : CharacterContract {
                         override suspend fun getCharacters(): List<Character> {
                             return characterFeatureApi.characterRepository.getCharacters()

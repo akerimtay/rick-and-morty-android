@@ -14,4 +14,9 @@
     <string name="dead">Dead</string>
     <string name="unknown">Unknown</string>
     <string name="retry">Retry</string>
+    <string name="season_1">Season 1</string>
+    <string name="season_2">Season 2</string>
+    <string name="season_3">Season 3</string>
+    <string name="season_4">Season 4</string>
+    <string name="season_5">Season 5</string>
 </resources>

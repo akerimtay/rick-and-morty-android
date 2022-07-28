@@ -14,6 +14,7 @@ dependencies {
     implementation(projects.core.common)
     implementation(projects.core.presentation)
     implementation(projects.core.strings)
+    implementation(projects.core.utils)
 
     implementation(projects.feature.character)
     implementation(projects.feature.location)
