@@ -3,7 +3,7 @@ package com.akerimtay.rickandmorty.location.di
 import com.akerimtay.rickandmorty.location.data.remote.LocationRemoteDataSource
 import com.akerimtay.rickandmorty.location.data.remote.LocationRemoteDataSourceImpl
 import com.akerimtay.rickandmorty.location.data.remote.LocationService
-import com.akerimtay.rickandmorty.location.data.repository.LocationRepository
+import com.akerimtay.rickandmorty.location.domain.LocationRepository
 import com.akerimtay.rickandmorty.location.data.repository.LocationRepositoryImpl
 import dagger.Binds
 import dagger.Module

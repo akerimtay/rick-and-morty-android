@@ -2,7 +2,7 @@ package com.akerimtay.rickandmorty.characters.di
 
 import com.akerimtay.rickandmorty.characters.CharacterFeatureApi
 import com.akerimtay.rickandmorty.characters.CharacterFeatureDependencies
-import com.akerimtay.rickandmorty.characters.presentation.list.CharactersFragment
+import com.akerimtay.rickandmorty.characters.presentation.ui.list.CharactersFragment
 import dagger.Component
 import javax.inject.Singleton
 

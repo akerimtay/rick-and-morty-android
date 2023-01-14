@@ -6,6 +6,7 @@ import androidx.paging.PagingData
 import com.akerimtay.rickandmorty.core.common.model.Location
 import com.akerimtay.rickandmorty.location.data.paging.LocationPagingSource
 import com.akerimtay.rickandmorty.location.data.remote.LocationRemoteDataSource
+import com.akerimtay.rickandmorty.location.domain.LocationRepository
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 

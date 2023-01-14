@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/episodesFragment"
-        android:name="com.akerimtay.rickandmorty.episode.presentation.root.EpisodesRootFragment"
+        android:name="com.akerimtay.rickandmorty.episode.presentation.ui.root.EpisodesRootFragment"
         android:label="EpisodesFragment"
         tools:layout="@layout/fragment_episodes" />
 </navigation>

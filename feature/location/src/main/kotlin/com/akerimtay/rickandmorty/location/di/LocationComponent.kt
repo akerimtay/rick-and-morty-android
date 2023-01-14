@@ -2,7 +2,7 @@ package com.akerimtay.rickandmorty.location.di
 
 import com.akerimtay.rickandmorty.location.LocationFeatureApi
 import com.akerimtay.rickandmorty.location.LocationFeatureDependencies
-import com.akerimtay.rickandmorty.location.presentation.list.LocationsFragment
+import com.akerimtay.rickandmorty.location.presentation.ui.list.LocationsFragment
 import dagger.Component
 import javax.inject.Singleton
 

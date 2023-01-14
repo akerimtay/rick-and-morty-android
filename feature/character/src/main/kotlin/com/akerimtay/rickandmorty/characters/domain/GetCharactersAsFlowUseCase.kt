@@ -1,7 +1,6 @@
 package com.akerimtay.rickandmorty.characters.domain
 
 import androidx.paging.PagingData
-import com.akerimtay.rickandmorty.characters.data.repository.CharacterRepository
 import com.akerimtay.rickandmorty.core.common.model.Character
 import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
 import com.akerimtay.rickandmorty.core.common.model.Gender

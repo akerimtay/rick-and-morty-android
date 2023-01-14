@@ -1,6 +1,5 @@
 package com.akerimtay.rickandmorty.characters.domain
 
-import com.akerimtay.rickandmorty.characters.data.repository.CharacterRepository
 import com.akerimtay.rickandmorty.core.common.usecase.FlowUseCase
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow

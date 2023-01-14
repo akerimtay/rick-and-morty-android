@@ -5,6 +5,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.akerimtay.rickandmorty.characters.data.paging.CharacterPagingSource
 import com.akerimtay.rickandmorty.characters.data.remote.CharacterRemoteDataSource
+import com.akerimtay.rickandmorty.characters.domain.CharacterRepository
 import com.akerimtay.rickandmorty.core.common.model.Character
 import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
 import com.akerimtay.rickandmorty.core.common.model.Gender

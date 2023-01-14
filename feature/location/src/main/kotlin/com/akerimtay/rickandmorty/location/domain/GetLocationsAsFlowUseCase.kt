@@ -3,7 +3,6 @@ package com.akerimtay.rickandmorty.location.domain
 import androidx.paging.PagingData
 import com.akerimtay.rickandmorty.core.common.model.Location
 import com.akerimtay.rickandmorty.core.common.usecase.FlowUseCase
-import com.akerimtay.rickandmorty.location.data.repository.LocationRepository
 import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 

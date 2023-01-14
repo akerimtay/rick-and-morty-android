@@ -1,6 +1,6 @@
 package com.akerimtay.rickandmorty.location
 
-import com.akerimtay.rickandmorty.location.data.repository.LocationRepository
+import com.akerimtay.rickandmorty.location.domain.LocationRepository
 import com.akerimtay.rickandmorty.location.di.LocationComponent
 import com.akerimtay.rickandmorty.moduleinjector.BaseFeatureAPI
 import com.akerimtay.rickandmorty.moduleinjector.BaseFeatureDependencies

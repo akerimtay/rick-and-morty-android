@@ -3,7 +3,7 @@ package com.akerimtay.rickandmorty.characters.di
 import com.akerimtay.rickandmorty.characters.data.remote.CharacterRemoteDataSource
 import com.akerimtay.rickandmorty.characters.data.remote.CharacterRemoteDataSourceImpl
 import com.akerimtay.rickandmorty.characters.data.remote.CharacterService
-import com.akerimtay.rickandmorty.characters.data.repository.CharacterRepository
+import com.akerimtay.rickandmorty.characters.domain.CharacterRepository
 import com.akerimtay.rickandmorty.characters.data.repository.CharacterRepositoryImpl
 import dagger.Binds
 import dagger.Module

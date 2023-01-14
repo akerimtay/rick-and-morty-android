@@ -2,8 +2,8 @@ package com.akerimtay.rickandmorty.episode.di
 
 import com.akerimtay.rickandmorty.episode.EpisodeFeatureApi
 import com.akerimtay.rickandmorty.episode.EpisodeFeatureDependencies
-import com.akerimtay.rickandmorty.episode.presentation.root.EpisodesRootFragment
-import com.akerimtay.rickandmorty.episode.presentation.tab.EpisodesFragment
+import com.akerimtay.rickandmorty.episode.presentation.ui.root.EpisodesRootFragment
+import com.akerimtay.rickandmorty.episode.presentation.ui.tab.EpisodesFragment
 import dagger.Component
 import javax.inject.Singleton
 

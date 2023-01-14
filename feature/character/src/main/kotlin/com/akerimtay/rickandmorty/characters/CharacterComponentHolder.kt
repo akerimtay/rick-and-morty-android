@@ -1,6 +1,6 @@
 package com.akerimtay.rickandmorty.characters
 
-import com.akerimtay.rickandmorty.characters.data.repository.CharacterRepository
+import com.akerimtay.rickandmorty.characters.domain.CharacterRepository
 import com.akerimtay.rickandmorty.characters.di.CharacterComponent
 import com.akerimtay.rickandmorty.moduleinjector.BaseFeatureAPI
 import com.akerimtay.rickandmorty.moduleinjector.BaseFeatureDependencies
