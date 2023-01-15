@@ -3,7 +3,9 @@ package com.akerimtay.rickandmorty.characters.data
 import com.akerimtay.rickandmorty.characters.data.remote.model.CharacterResponse
 import com.akerimtay.rickandmorty.characters.data.remote.model.CharactersResponse
 import com.akerimtay.rickandmorty.core.common.model.Character
+import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
 import com.akerimtay.rickandmorty.core.common.model.Characters
+import com.akerimtay.rickandmorty.core.common.model.Gender
 
 internal object CharacterMapper {
 
@@ -11,10 +13,10 @@ internal object CharacterMapper {
         return Character(
             id = response.id,
             name = response.name,
-            status = response.status,
+            status = CharacterStatus.toCharacterStatus(response.status),
             species = response.species,
             type = response.type,
-            gender = response.gender,
+            gender = Gender.toGender(response.gender),
             origin = Character.Location(
                 name = response.origin.name,
                 url = response.origin.url

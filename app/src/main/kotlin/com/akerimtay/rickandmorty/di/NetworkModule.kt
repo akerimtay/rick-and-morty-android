@@ -2,12 +2,8 @@ package com.akerimtay.rickandmorty.di
 
 import android.content.Context
 import com.akerimtay.rickandmorty.BuildConfig
-import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
-import com.akerimtay.rickandmorty.core.common.model.Gender
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.applyIf
-import com.akerimtay.rickandmorty.network.adapter.CharacterStatusTypeAdapter
-import com.akerimtay.rickandmorty.network.adapter.DateTypeAdapter
-import com.akerimtay.rickandmorty.network.adapter.GenderTypeAdapter
+import com.akerimtay.rickandmorty.network.DateTypeAdapter
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -42,8 +38,6 @@ class NetworkModule {
     fun provideGson(): Gson {
         return GsonBuilder()
             .registerTypeAdapter(Date::class.java, DateTypeAdapter())
-            .registerTypeAdapter(Gender::class.java, GenderTypeAdapter())
-            .registerTypeAdapter(CharacterStatus::class.java, CharacterStatusTypeAdapter())
             .create()
     }
 

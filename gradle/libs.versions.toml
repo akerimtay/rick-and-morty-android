@@ -1,6 +1,6 @@
 [versions]
 android-gradle-plugin = "7.3.1"
-kotlin-gradle-plugin = "1.7.21"
+kotlin-gradle-plugin = "1.6.21"
 navigation-safe-args-gradle-plugin = "2.5.0"
 androidx-core = "1.7.0"
 androidx-appcompat = "1.4.1"

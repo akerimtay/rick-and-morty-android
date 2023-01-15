@@ -1,7 +1,5 @@
 package com.akerimtay.rickandmorty.characters.data.remote.model
 
-import com.akerimtay.rickandmorty.core.common.model.CharacterStatus
-import com.akerimtay.rickandmorty.core.common.model.Gender
 import com.google.gson.annotations.SerializedName
 import java.util.Date
 
@@ -11,13 +9,13 @@ internal data class CharacterResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("status")
-    val status: CharacterStatus,
+    val status: String,
     @SerializedName("species")
     val species: String,
     @SerializedName("type")
     val type: String,
     @SerializedName("gender")
-    val gender: Gender,
+    val gender: String,
     @SerializedName("origin")
     val origin: LocationResponse,
     @SerializedName("location")
