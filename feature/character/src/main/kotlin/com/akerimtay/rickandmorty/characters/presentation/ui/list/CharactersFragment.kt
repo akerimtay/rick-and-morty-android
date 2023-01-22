@@ -26,7 +26,6 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
     private val viewBinding by viewBinding(FragmentCharactersBinding::bind)
     private val viewModel: CharactersViewModel by viewModels { viewModelFactory }
     private val componentViewModel: ComponentViewModel by viewModels()
-    private val characterAdapter: CharacterAdapter by lazy { CharacterAdapter() }
 
     private val loadStateListener = { states: CombinedLoadStates -> viewModel.onLoadStates(states) }
 
@@ -37,13 +36,14 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit = with(viewBinding) {
         super.onViewCreated(view, savedInstanceState)
-        srlCharacters.setOnRefreshListener { characterAdapter.refresh() }
-
+        val characterAdapter = CharacterAdapter()
         val loadStateAdapter = LoadStateAdapter(characterAdapter::retry)
         characterAdapter.addLoadStateListener(loadStateListener)
         characterAdapter.withLoadStateFooter(loadStateAdapter)
         rvCharacters.adapter = characterAdapter
         rvCharacters.addItemDecoration(DefaultItemDecorator(divider = DIVIDER_SIZE.px))
+
+        srlCharacters.setOnRefreshListener { characterAdapter.refresh() }
 
         viewModel.actions
             .onEach { action ->
@@ -51,9 +51,6 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
             }
             .launchWhenStarted(viewLifecycleOwner)
         viewModel.isSwipeRefreshing.launchWhenStarted(viewLifecycleOwner) { srlCharacters.isRefreshing = it }
-        viewModel.charactersCount.launchWhenStarted(viewLifecycleOwner) { count ->
-            tvCharacterCount.text = getString(R.string.characters_count_format, count)
-        }
         viewModel.items.launchWhenStarted(viewLifecycleOwner) { characterAdapter.submitData(it) }
     }
 

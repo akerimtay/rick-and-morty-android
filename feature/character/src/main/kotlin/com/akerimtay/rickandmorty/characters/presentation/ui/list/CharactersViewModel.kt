@@ -7,15 +7,18 @@ import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import androidx.paging.insertHeaderItem
 import androidx.paging.map
 import com.akerimtay.rickandmorty.characters.domain.GetCharactersAsFlowUseCase
 import com.akerimtay.rickandmorty.characters.domain.GetCharactersCountAsFlowUseCase
 import com.akerimtay.rickandmorty.characters.presentation.model.CharacterItem
+import com.akerimtay.rickandmorty.characters.presentation.model.ListViewType
 import com.akerimtay.rickandmorty.core.presentation.base.BaseViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
 
@@ -31,25 +34,42 @@ internal class CharactersViewModel(
 
     val isSwipeRefreshing: Flow<Boolean> = loadStates.map { states -> states?.refresh is LoadState.Loading }
 
-    val items: Flow<PagingData<CharacterItem>> =
-        getCharactersAsFlowUseCase(GetCharactersAsFlowUseCase.Param())
-            .map { pagingData ->
-                pagingData.map { character ->
-                    CharacterItem(
-                        name = character.name,
-                        imageUrl = character.imageUrl,
-                        statusNameResId = character.status.displayNameResId,
-                        statusColorResId = character.status.colorResId,
-                        species = character.species,
-                        onItemClickListener = {
+    private val pagingSource = getCharactersAsFlowUseCase(GetCharactersAsFlowUseCase.Param())
+        .cachedIn(viewModelScope)
 
+    private val selectedListViewType = MutableStateFlow(ListViewType.HORIZONTAL)
+
+    val items: Flow<PagingData<CharacterItem>> = combine(
+        pagingSource,
+        getCharactersCountAsFlowUseCase(Unit),
+        selectedListViewType
+    ) { pagingData, characterCount, viewType ->
+        pagingData
+            .map { character ->
+                CharacterItem.HorizontalItem(
+                    name = character.name,
+                    imageUrl = character.imageUrl,
+                    statusNameResId = character.status.displayNameResId,
+                    statusColorResId = character.status.colorResId,
+                    species = character.species,
+                    onItemClickListener = {
+
+                    }
+                ) as CharacterItem
+            }.insertHeaderItem(
+                item = CharacterItem.Header(
+                    characterCount = characterCount,
+                    viewType = viewType,
+                    onChangeViewTypeListener = {
+                        selectedListViewType.value = if (selectedListViewType.value == ListViewType.HORIZONTAL) {
+                            ListViewType.GRID
+                        } else {
+                            ListViewType.HORIZONTAL
                         }
-                    )
-                }
-            }
-            .cachedIn(viewModelScope)
-
-    val charactersCount: Flow<Int> = getCharactersCountAsFlowUseCase(Unit)
+                    }
+                ) as CharacterItem
+            )
+    }
 
     fun onLoadStates(state: CombinedLoadStates) {
         loadStates.value = state
