@@ -18,6 +18,8 @@ import javax.inject.Inject
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -37,31 +39,47 @@ internal class CharactersViewModel(
     private val pagingSource = getCharactersAsFlowUseCase(GetCharactersAsFlowUseCase.Param())
         .cachedIn(viewModelScope)
 
-    private val selectedListViewType = MutableStateFlow(ListViewType.HORIZONTAL)
+
+    private val _selectedListViewType = MutableStateFlow(ListViewType.GRID)
+    val selectedListViewType: StateFlow<ListViewType> = _selectedListViewType.asStateFlow()
+
+
 
     val items: Flow<PagingData<CharacterItem>> = combine(
         pagingSource,
         getCharactersCountAsFlowUseCase(Unit),
-        selectedListViewType
+        _selectedListViewType
     ) { pagingData, characterCount, viewType ->
         pagingData
             .map { character ->
-                CharacterItem.HorizontalItem(
-                    name = character.name,
-                    imageUrl = character.imageUrl,
-                    statusNameResId = character.status.displayNameResId,
-                    statusColorResId = character.status.colorResId,
-                    species = character.species,
-                    onItemClickListener = {
+                when (viewType) {
+                    ListViewType.HORIZONTAL -> CharacterItem.HorizontalItem(
+                        name = character.name,
+                        imageUrl = character.imageUrl,
+                        statusNameResId = character.status.displayNameResId,
+                        statusColorResId = character.status.colorResId,
+                        species = character.species,
+                        onItemClickListener = {
 
-                    }
-                ) as CharacterItem
+                        }
+                    )
+                    ListViewType.GRID -> CharacterItem.GridItem(
+                        name = character.name,
+                        imageUrl = character.imageUrl,
+                        statusNameResId = character.status.displayNameResId,
+                        statusColorResId = character.status.colorResId,
+                        species = character.species,
+                        onItemClickListener = {
+
+                        }
+                    )
+                }
             }.insertHeaderItem(
                 item = CharacterItem.Header(
                     characterCount = characterCount,
                     viewType = viewType,
                     onChangeViewTypeListener = {
-                        selectedListViewType.value = if (selectedListViewType.value == ListViewType.HORIZONTAL) {
+                        _selectedListViewType.value = if (_selectedListViewType.value == ListViewType.HORIZONTAL) {
                             ListViewType.GRID
                         } else {
                             ListViewType.HORIZONTAL

@@ -3,6 +3,7 @@ package com.akerimtay.rickandmorty.characters.presentation.ui.list.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import com.akerimtay.rickandmorty.characters.R
+import com.akerimtay.rickandmorty.characters.databinding.ItemCharacterGridBinding
 import com.akerimtay.rickandmorty.characters.databinding.ItemCharacterHeaderBinding
 import com.akerimtay.rickandmorty.characters.databinding.ItemCharacterHorizontalBinding
 import com.akerimtay.rickandmorty.characters.presentation.model.CharacterItem
@@ -18,11 +19,14 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<CharacterItem> {
         return when (viewType) {
+            VIEW_HEADER -> CharacterHeaderViewHolder(
+                ItemCharacterHeaderBinding.inflate(parent.layoutInflater, parent, false)
+            )
             VIEW_HORIZONTAL -> CharacterHorizontalViewHolder(
                 ItemCharacterHorizontalBinding.inflate(parent.layoutInflater, parent, false)
             )
-            VIEW_HEADER -> CharacterHeaderViewHolder(
-                ItemCharacterHeaderBinding.inflate(parent.layoutInflater, parent, false)
+            VIEW_GRID -> CharacterGridViewHolder(
+                ItemCharacterGridBinding.inflate(parent.layoutInflater, parent, false)
             )
             else -> throw IllegalStateException("$viewType is not supported")
         }
@@ -30,8 +34,9 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
 
     override fun getItemViewType(position: Int): Int {
         return when (getItem(position)) {
-            is CharacterItem.HorizontalItem -> VIEW_HORIZONTAL
             is CharacterItem.Header -> VIEW_HEADER
+            is CharacterItem.HorizontalItem -> VIEW_HORIZONTAL
+            is CharacterItem.GridItem -> VIEW_GRID
             else -> super.getItemViewType(position)
         }
     }
@@ -40,11 +45,14 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
 
         override fun areItemsTheSame(oldItem: CharacterItem, newItem: CharacterItem): Boolean {
             return when {
+                oldItem is CharacterItem.Header && newItem is CharacterItem.Header -> {
+                    oldItem.characterCount == newItem.characterCount
+                }
                 oldItem is CharacterItem.HorizontalItem && newItem is CharacterItem.HorizontalItem -> {
                     oldItem.name == newItem.name
                 }
-                oldItem is CharacterItem.Header && newItem is CharacterItem.Header -> {
-                    oldItem.characterCount == newItem.characterCount
+                oldItem is CharacterItem.GridItem && newItem is CharacterItem.GridItem -> {
+                    oldItem.name == newItem.name
                 }
                 else -> false
             }
@@ -52,6 +60,10 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
 
         override fun areContentsTheSame(oldItem: CharacterItem, newItem: CharacterItem): Boolean {
             return when {
+                oldItem is CharacterItem.Header && newItem is CharacterItem.Header -> {
+                    oldItem.characterCount == newItem.characterCount &&
+                        oldItem.viewType == newItem.viewType
+                }
                 oldItem is CharacterItem.HorizontalItem && newItem is CharacterItem.HorizontalItem -> {
                     oldItem.name == newItem.name &&
                         oldItem.imageUrl == newItem.imageUrl &&
@@ -59,9 +71,12 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
                         oldItem.statusColorResId == newItem.statusColorResId &&
                         oldItem.species == newItem.species
                 }
-                oldItem is CharacterItem.Header && newItem is CharacterItem.Header -> {
-                    oldItem.characterCount == newItem.characterCount &&
-                        oldItem.viewType == newItem.viewType
+                oldItem is CharacterItem.GridItem && newItem is CharacterItem.GridItem -> {
+                    oldItem.name == newItem.name &&
+                        oldItem.imageUrl == newItem.imageUrl &&
+                        oldItem.statusNameResId == newItem.statusNameResId &&
+                        oldItem.statusColorResId == newItem.statusColorResId &&
+                        oldItem.species == newItem.species
                 }
                 else -> false
             }
@@ -70,6 +85,10 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
         override fun getChangePayload(oldItem: CharacterItem, newItem: CharacterItem): Any? {
             val diff = mutableSetOf<String>()
             when {
+                oldItem is CharacterItem.Header && newItem is CharacterItem.Header -> {
+                    if (oldItem.characterCount != newItem.characterCount) diff.add(DIFF_CHARACTER_COUNT)
+                    if (oldItem.viewType != newItem.viewType) diff.add(DIFF_VIEW_TYPE)
+                }
                 oldItem is CharacterItem.HorizontalItem && newItem is CharacterItem.HorizontalItem -> {
                     if (oldItem.name != newItem.name) diff.add(DIFF_NAME)
                     if (oldItem.imageUrl != newItem.imageUrl) diff.add(DIFF_IMAGE_URL)
@@ -78,9 +97,13 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
                     ) diff.add(DIFF_STATUS)
                     if (oldItem.species != newItem.species) diff.add(DIFF_SPECIES)
                 }
-                oldItem is CharacterItem.Header && newItem is CharacterItem.Header -> {
-                    if (oldItem.characterCount != newItem.characterCount) diff.add(DIFF_CHARACTER_COUNT)
-                    if (oldItem.viewType != newItem.viewType) diff.add(DIFF_VIEW_TYPE)
+                oldItem is CharacterItem.GridItem && newItem is CharacterItem.GridItem -> {
+                    if (oldItem.name != newItem.name) diff.add(DIFF_NAME)
+                    if (oldItem.imageUrl != newItem.imageUrl) diff.add(DIFF_IMAGE_URL)
+                    if (oldItem.statusNameResId != newItem.statusNameResId ||
+                        oldItem.statusColorResId != newItem.statusColorResId
+                    ) diff.add(DIFF_STATUS)
+                    if (oldItem.species != newItem.species) diff.add(DIFF_SPECIES)
                 }
             }
             return diff.takeIf { it.isNotEmpty() }
@@ -95,6 +118,41 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
 
             const val DIFF_CHARACTER_COUNT = "DIFF_CHARACTER_COUNT"
             const val DIFF_VIEW_TYPE = "DIFF_VIEW_TYPE"
+        }
+    }
+
+    internal class CharacterHeaderViewHolder(
+        private val viewBinding: ItemCharacterHeaderBinding
+    ) : BaseViewHolder<CharacterItem>(viewBinding.root) {
+
+        override fun onBind(item: CharacterItem): Unit = with(viewBinding) {
+            item as CharacterItem.Header
+
+            updateCount(item)
+            updateViewType(item)
+
+            ivSelectorViewType.setOnSafeClickListener { item.onChangeViewTypeListener() }
+        }
+
+        override fun update(item: CharacterItem, keys: Set<String>) {
+            item as CharacterItem.Header
+
+            keys.forEach {
+                when (it) {
+                    CharacterDiffCallback.DIFF_CHARACTER_COUNT -> updateCount(item)
+                    CharacterDiffCallback.DIFF_VIEW_TYPE -> updateViewType(item)
+                }
+            }
+        }
+
+        private fun updateCount(item: CharacterItem.Header): Unit = with(viewBinding) {
+            tvCharacterCount.text = itemView.context.getString(R.string.characters_count_format, item.characterCount)
+        }
+
+        private fun updateViewType(item: CharacterItem.Header): Unit = with(viewBinding) {
+            ivSelectorViewType.setImageResource(
+                if (item.viewType == ListViewType.HORIZONTAL) R.drawable.ic_bullet_24 else R.drawable.ic_grid_24
+            )
         }
     }
 
@@ -147,44 +205,59 @@ internal class CharacterAdapter : BasePagingAdapter<CharacterItem>(CharacterDiff
         }
     }
 
-    internal class CharacterHeaderViewHolder(
-        private val viewBinding: ItemCharacterHeaderBinding
+    internal class CharacterGridViewHolder(
+        private val viewBinding: ItemCharacterGridBinding,
     ) : BaseViewHolder<CharacterItem>(viewBinding.root) {
 
         override fun onBind(item: CharacterItem): Unit = with(viewBinding) {
-            item as CharacterItem.Header
+            item as CharacterItem.GridItem
 
-            updateCount(item)
-            updateViewType(item)
+            updateAvatar(item)
+            updateStatus(item)
+            updateName(item)
+            updateSpecies(item)
 
-            ivSelectorViewType.setOnSafeClickListener { item.onChangeViewTypeListener() }
+            root.setOnSafeClickListener { item.onItemClickListener() }
         }
 
         override fun update(item: CharacterItem, keys: Set<String>) {
-            item as CharacterItem.Header
+            item as CharacterItem.GridItem
 
-            keys.forEach {
-                when (it) {
-                    CharacterDiffCallback.DIFF_CHARACTER_COUNT -> updateCount(item)
-                    CharacterDiffCallback.DIFF_VIEW_TYPE -> updateViewType(item)
+            keys.forEach { key ->
+                when (key) {
+                    CharacterDiffCallback.DIFF_NAME -> updateName(item)
+                    CharacterDiffCallback.DIFF_IMAGE_URL -> updateAvatar(item)
+                    CharacterDiffCallback.DIFF_STATUS -> updateStatus(item)
+                    CharacterDiffCallback.DIFF_SPECIES -> updateSpecies(item)
                 }
             }
         }
 
-        private fun updateCount(item: CharacterItem.Header): Unit = with(viewBinding) {
-            tvCharacterCount.text = itemView.context.getString(R.string.characters_count_format, item.characterCount)
+        private fun updateAvatar(item: CharacterItem.GridItem): Unit = with(viewBinding) {
+            Glide.with(root)
+                .load(item.imageUrl)
+                .circleCrop()
+                .into(ivAvatar)
         }
 
-        private fun updateViewType(item: CharacterItem.Header): Unit = with(viewBinding) {
-            ivSelectorViewType.setImageResource(
-                if (item.viewType == ListViewType.HORIZONTAL) R.drawable.ic_bullet_24 else R.drawable.ic_grid_24
-            )
+        private fun updateStatus(item: CharacterItem.GridItem): Unit = with(viewBinding) {
+            tvStatus.text = root.context.getString(item.statusNameResId)
+            tvStatus.setTextColor(root.color(item.statusColorResId))
+        }
+
+        private fun updateName(item: CharacterItem.GridItem): Unit = with(viewBinding) {
+            tvName.text = item.name
+        }
+
+        private fun updateSpecies(item: CharacterItem.GridItem): Unit = with(viewBinding) {
+            tvSpecies.text = item.species
         }
     }
 
     companion object {
 
-        private const val VIEW_HORIZONTAL = 0
-        private const val VIEW_HEADER = 1
+        private const val VIEW_HEADER = 0
+        private const val VIEW_HORIZONTAL = 1
+        private const val VIEW_GRID = 2
     }
 }

@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.paging.CombinedLoadStates
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.akerimtay.rickandmorty.characters.R
 import com.akerimtay.rickandmorty.characters.databinding.FragmentCharactersBinding
+import com.akerimtay.rickandmorty.characters.presentation.model.ListViewType
 import com.akerimtay.rickandmorty.characters.presentation.ui.ComponentViewModel
 import com.akerimtay.rickandmorty.characters.presentation.ui.list.adapter.CharacterAdapter
 import com.akerimtay.rickandmorty.core.presentation.LoadStateAdapter
@@ -51,11 +54,18 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
             }
             .launchWhenStarted(viewLifecycleOwner)
         viewModel.isSwipeRefreshing.launchWhenStarted(viewLifecycleOwner) { srlCharacters.isRefreshing = it }
+        viewModel.selectedListViewType.launchWhenStarted(viewLifecycleOwner) {
+            rvCharacters.layoutManager = when (it) {
+                ListViewType.HORIZONTAL -> LinearLayoutManager(requireContext())
+                ListViewType.GRID -> GridLayoutManager(requireContext(), SPAN_COUNT)
+            }
+        }
         viewModel.items.launchWhenStarted(viewLifecycleOwner) { characterAdapter.submitData(it) }
     }
 
     companion object {
 
         private const val DIVIDER_SIZE = 24
+        private const val SPAN_COUNT = 2
     }
 }
