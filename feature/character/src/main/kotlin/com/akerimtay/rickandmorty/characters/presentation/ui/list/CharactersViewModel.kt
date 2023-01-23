@@ -7,8 +7,8 @@ import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import androidx.paging.insertHeaderItem
 import androidx.paging.map
+import com.akerimtay.rickandmorty.characters.R
 import com.akerimtay.rickandmorty.characters.domain.GetCharactersAsFlowUseCase
 import com.akerimtay.rickandmorty.characters.domain.GetCharactersCountAsFlowUseCase
 import com.akerimtay.rickandmorty.characters.presentation.model.CharacterItem
@@ -39,58 +39,47 @@ internal class CharactersViewModel(
     private val pagingSource = getCharactersAsFlowUseCase(GetCharactersAsFlowUseCase.Param())
         .cachedIn(viewModelScope)
 
-
-    private val _selectedListViewType = MutableStateFlow(ListViewType.GRID)
+    private val _selectedListViewType = MutableStateFlow(ListViewType.HORIZONTAL)
     val selectedListViewType: StateFlow<ListViewType> = _selectedListViewType.asStateFlow()
+    val listViewTypeIcon: Flow<Int> = _selectedListViewType.map { viewType ->
+        when (viewType) {
+            ListViewType.HORIZONTAL -> R.drawable.ic_bullet_24
+            ListViewType.GRID -> R.drawable.ic_grid_24
+        }
+    }
 
-
+    val charactersCount: Flow<Int> = getCharactersCountAsFlowUseCase(Unit)
 
     val items: Flow<PagingData<CharacterItem>> = combine(
         pagingSource,
-        getCharactersCountAsFlowUseCase(Unit),
         _selectedListViewType
-    ) { pagingData, characterCount, viewType ->
+    ) { pagingData, viewType ->
         pagingData
             .map { character ->
-                when (viewType) {
-                    ListViewType.HORIZONTAL -> CharacterItem.HorizontalItem(
-                        name = character.name,
-                        imageUrl = character.imageUrl,
-                        statusNameResId = character.status.displayNameResId,
-                        statusColorResId = character.status.colorResId,
-                        species = character.species,
-                        onItemClickListener = {
-
-                        }
-                    )
-                    ListViewType.GRID -> CharacterItem.GridItem(
-                        name = character.name,
-                        imageUrl = character.imageUrl,
-                        statusNameResId = character.status.displayNameResId,
-                        statusColorResId = character.status.colorResId,
-                        species = character.species,
-                        onItemClickListener = {
-
-                        }
-                    )
-                }
-            }.insertHeaderItem(
-                item = CharacterItem.Header(
-                    characterCount = characterCount,
+                CharacterItem(
+                    name = character.name,
+                    imageUrl = character.imageUrl,
+                    statusNameResId = character.status.displayNameResId,
+                    statusColorResId = character.status.colorResId,
+                    species = character.species,
                     viewType = viewType,
-                    onChangeViewTypeListener = {
-                        _selectedListViewType.value = if (_selectedListViewType.value == ListViewType.HORIZONTAL) {
-                            ListViewType.GRID
-                        } else {
-                            ListViewType.HORIZONTAL
-                        }
+                    onItemClickListener = {
+
                     }
-                ) as CharacterItem
-            )
+                )
+            }
     }
 
     fun onLoadStates(state: CombinedLoadStates) {
         loadStates.value = state
+    }
+
+    fun onChangeViewTypeClicked() {
+        _selectedListViewType.value = if (_selectedListViewType.value == ListViewType.HORIZONTAL) {
+            ListViewType.GRID
+        } else {
+            ListViewType.HORIZONTAL
+        }
     }
 }
 

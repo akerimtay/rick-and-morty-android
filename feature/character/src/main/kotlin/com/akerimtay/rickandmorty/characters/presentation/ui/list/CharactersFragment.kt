@@ -17,9 +17,9 @@ import com.akerimtay.rickandmorty.core.presentation.base.BaseFragment
 import com.akerimtay.rickandmorty.core.presentation.util.DefaultItemDecorator
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.launchWhenStarted
 import com.akerimtay.rickandmorty.core.presentation.util.extensions.px
+import com.akerimtay.rickandmorty.core.presentation.util.extensions.setOnSafeClickListener
 import com.akerimtay.rickandmorty.core.presentation.viewbinding.viewBinding
 import javax.inject.Inject
-import kotlinx.coroutines.flow.onEach
 
 class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
 
@@ -39,20 +39,17 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit = with(viewBinding) {
         super.onViewCreated(view, savedInstanceState)
-        val characterAdapter = CharacterAdapter()
-        val loadStateAdapter = LoadStateAdapter(characterAdapter::retry)
-        characterAdapter.addLoadStateListener(loadStateListener)
-        characterAdapter.withLoadStateFooter(loadStateAdapter)
+        val characterAdapter = CharacterAdapter().apply {
+            val loadStateAdapter = LoadStateAdapter(::retry)
+            addLoadStateListener(loadStateListener)
+            withLoadStateFooter(loadStateAdapter)
+        }
         rvCharacters.adapter = characterAdapter
         rvCharacters.addItemDecoration(DefaultItemDecorator(divider = DIVIDER_SIZE.px))
 
         srlCharacters.setOnRefreshListener { characterAdapter.refresh() }
+        ivSelectorViewType.setOnSafeClickListener { viewModel.onChangeViewTypeClicked() }
 
-        viewModel.actions
-            .onEach { action ->
-
-            }
-            .launchWhenStarted(viewLifecycleOwner)
         viewModel.isSwipeRefreshing.launchWhenStarted(viewLifecycleOwner) { srlCharacters.isRefreshing = it }
         viewModel.selectedListViewType.launchWhenStarted(viewLifecycleOwner) {
             rvCharacters.layoutManager = when (it) {
@@ -60,7 +57,15 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
                 ListViewType.GRID -> GridLayoutManager(requireContext(), SPAN_COUNT)
             }
         }
-        viewModel.items.launchWhenStarted(viewLifecycleOwner) { characterAdapter.submitData(it) }
+        viewModel.listViewTypeIcon.launchWhenStarted(viewLifecycleOwner) {
+            ivSelectorViewType.setImageResource(it)
+        }
+        viewModel.charactersCount.launchWhenStarted(viewLifecycleOwner) { count ->
+            tvCharacterCount.text = getString(R.string.characters_count_format, count)
+        }
+        viewModel.items.launchWhenStarted(viewLifecycleOwner) {
+            characterAdapter.submitData(it)
+        }
     }
 
     companion object {
