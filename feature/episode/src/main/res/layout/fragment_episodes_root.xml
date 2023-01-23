@@ -34,13 +34,6 @@
                     app:text="@string/find_episode" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tl_episodes"
@@ -53,6 +46,13 @@
             app:tabSelectedTextColor="?attr/colorPrimaryText"
             app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Button"
             app:tabTextColor="?attr/colorOnPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_episodes"
