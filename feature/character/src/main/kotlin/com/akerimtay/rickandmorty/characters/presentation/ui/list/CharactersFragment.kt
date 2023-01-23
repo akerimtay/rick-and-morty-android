@@ -84,18 +84,12 @@ class CharactersFragment : BaseFragment(R.layout.fragment_characters) {
             }
             rvCharacters.layoutManager = layoutManager
         }
-        viewModel.listViewTypeIcon.launchWhenStarted(viewLifecycleOwner) {
-            ivSelectorViewType.setImageResource(it)
-        }
+        viewModel.listViewTypeIcon.launchWhenStarted(viewLifecycleOwner) { ivSelectorViewType.setImageResource(it) }
         viewModel.charactersCount.launchWhenStarted(viewLifecycleOwner) { count ->
             tvCharacterCount.text = getString(R.string.characters_count_format, count)
         }
-        viewModel.items.launchWhenStarted(viewLifecycleOwner) {
-            characterAdapter.submitData(it)
-        }
-        viewModel.isScrollToTopVisible.launchWhenStarted(viewLifecycleOwner) {
-            fabScrollTop.isVisible = it
-        }
+        viewModel.items.launchWhenStarted(viewLifecycleOwner) { characterAdapter.submitData(it) }
+        viewModel.isScrollToTopVisible.launchWhenStarted(viewLifecycleOwner) { fabScrollTop.isVisible = it }
     }
 
     companion object {

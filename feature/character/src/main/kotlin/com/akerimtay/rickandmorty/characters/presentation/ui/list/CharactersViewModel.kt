@@ -74,8 +74,8 @@ internal class CharactersViewModel(
             }
     }
 
-    private val lastVisibleItemPosition = MutableStateFlow(RecyclerView.NO_POSITION)
-    val isScrollToTopVisible = lastVisibleItemPosition
+    private val firstVisibleItemPosition = MutableStateFlow(RecyclerView.NO_POSITION)
+    val isScrollToTopVisible = firstVisibleItemPosition
         .mapLatest { it != RecyclerView.NO_POSITION && it > LAST_VISIBLE_POSITION }
         .stateIn(viewModelScope, SharingStarted.Eagerly, false)
 
@@ -91,8 +91,8 @@ internal class CharactersViewModel(
         }
     }
 
-    fun onScrolled(lastVisibleItemPosition: Int) {
-        this.lastVisibleItemPosition.value = lastVisibleItemPosition
+    fun onScrolled(firstVisibleItemPosition: Int) {
+        this.firstVisibleItemPosition.value = firstVisibleItemPosition
     }
 
     fun onScrollToTopClicked() {
