@@ -91,4 +91,18 @@
                 tools:listitem="@layout/item_character_horizontal" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_scroll_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:src="@drawable/ic_arrow_up_32"
+        android:visibility="gone"
+        app:backgroundTint="?attr/colorPrimary"
+        app:layout_anchor="@id/rv_characters"
+        app:layout_anchorGravity="bottom|end"
+        tools:ignore="ContentDescription"
+        tools:visibility="visible" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
